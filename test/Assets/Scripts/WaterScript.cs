@@ -15,6 +15,7 @@ public class WaterScript : MonoBehaviour
     {
         
     }
+    //Касание воды
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collisionWith = collision.gameObject;
@@ -24,6 +25,7 @@ public class WaterScript : MonoBehaviour
             squareScript.ChangeSpeed(0.03f);
         }
     }
+    //Конец касания воды
     private void OnTriggerExit2D(Collider2D collision)
     {
         GameObject collisionWith = collision.gameObject;
