@@ -19,13 +19,16 @@ public class SqareScript : MonoBehaviour
     // Start is called before the first frame update
     private Animator anim;
     GameObject sword;
+    GameObject spell;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sword = GameObject.Find("/Square/SwordBox");
+        spell = GameObject.Find("/SpellBullet");
         ableToAttack = true;
         sword.SetActive(false);
+        spell.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,6 +63,8 @@ public class SqareScript : MonoBehaviour
 
 
         //Атака. Оптимизировать, вынести в отдельный метод/файл
+
+        //А лучше в скрипт меча
         if (Input.GetKey(KeyCode.Mouse0) && (ableToAttack) && (Time.time > coolDownAttack))
         {
             float x = transform.position.x - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
@@ -90,13 +95,29 @@ public class SqareScript : MonoBehaviour
             if (attackTic==11)
             {
                 attackTic = 0;
-                attack = false;
-                ableToAttack = true;
-                coolDownAttack = Time.time + 0.5f;
+                endAttack(0.5f);
                 sword.SetActive(false);
             }
         }
 
+
+
+
+        if (Input.GetKey(KeyCode.Mouse1) && (ableToAttack) && (Time.time > coolDownAttack))
+        {
+            
+            spell.GetComponent<Spell>().Fire(transform.position.x, transform.position.y, Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            //spell.GetComponent<ConstantForce2D>().
+            
+            endAttack(1f);
+        }
+    }
+
+    private void endAttack(float coolDowd)
+    {
+        attack = false;
+        ableToAttack = true;
+        coolDownAttack = Time.time + coolDowd;
     }
 
     private void Attack()

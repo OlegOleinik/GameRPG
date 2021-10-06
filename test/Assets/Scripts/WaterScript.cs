@@ -23,6 +23,12 @@ public class WaterScript : MonoBehaviour
         {
             SqareScript squareScript = collisionWith.GetComponent<SqareScript>();
             squareScript.ChangeSpeed(0.03f);
+            collisionWith.GetComponent<Rigidbody2D>().mass *= 5;
+        }
+        else if (collisionWith.tag == "Enemy")
+        {
+            collisionWith.GetComponent<Rigidbody2D>().mass *= 5;
+
         }
     }
     //Конец касания воды
@@ -33,6 +39,12 @@ public class WaterScript : MonoBehaviour
         {
             SqareScript squareScript = collisionWith.GetComponent<SqareScript>();
             squareScript.ChangeSpeed(0.06f);
+            collisionWith.GetComponent<Rigidbody2D>().mass /= 5;
+        }
+        else if (collisionWith.tag == "Enemy")
+        {
+            collisionWith.GetComponent<Rigidbody2D>().mass /= 5;
+
         }
     }
 }

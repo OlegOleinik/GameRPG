@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     //œ–»¬ﬂ«¿“‹ œ≈–¬»◊Õ€… —œ¿¬Õ   Ã≈“Œƒ” —œ¿¬Õ
 
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
 
         //transform.position -= targetPoint * speed;
         //print(targetPoint.x);
-        Vector2 velocity = new Vector2(0.03f, 0.03f);
+        //Vector2 velocity = new Vector2(0.03f, 0.03f);
         targetPoint = target.transform.position;
         //rigidbod.MovePosition(targetPoint*velocity);
         rigidbod.AddForce((targetPoint - transform.position).normalized * speed * Time.deltaTime, ForceMode2D.Force);
@@ -107,5 +107,15 @@ public class Enemy : MonoBehaviour
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.color += new Color(0, 0, 0, -1);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collisionWith = collision.gameObject;
+        if (collisionWith.tag == "Player")
+        {
+            Rigidbody2D rigidbody2D = collision.rigidbody;
+            rigidbody2D.AddForce(new Vector2(10 * (collisionWith.transform.position.x - transform.position.x), 10 * (collisionWith.transform.position.y - transform.position.y)), ForceMode2D.Impulse);
+        }
     }
 }
