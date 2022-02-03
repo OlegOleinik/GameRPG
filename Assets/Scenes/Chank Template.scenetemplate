@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13966, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Chank Template
+  m_EditorClassIdentifier: 
+  templateScene: {fileID: 102900000, guid: 67c20ca988d95204eaae5b1d73f9650b, type: 3}
+  templateName: 
+  description: 
+  preview: {fileID: 0}
+  dependencies:
+  - dependency: {fileID: 4123379157898981029, guid: a64050608a72adb45a5f7e6b31a5717c, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 9a4a4c250b5554345812d2c74e5a0f20, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: d14d2e8b10e4098469e3756a01ae6355, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: f8ab829ab23861241be9b1e9b6092d8c, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 16a251e904f40534ab8e71f4ce94d82b, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 3060876520745821915, guid: 167d0a038a9307f4592e33fa047f72de, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 85b1b63d6c3b495479fc8a2583e73f14, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 8907746643425093540, guid: 2c4947472421bc44a870582283dffbe9, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: b3eda2de589ccfc41ac1ec019c46356a, type: 2}
+    instantiationMode: 1
+  templatePipeline: {fileID: 0}
+  addToDefaults: 0
