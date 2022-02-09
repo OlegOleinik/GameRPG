@@ -10,6 +10,8 @@ public class InventoryCellScript : MonoBehaviour
     public Image Image;
     public Text text;
     public bool selected = false;
+
+    //Отрисовка клетки, а также сохранение предмета и id ячейки. СТОИТ РАЗБИТЬ НА 2 МЕТОДА
     public void DrawCell(ItemScriptableObject item, int count, int id)
     {
         this.item = item;
@@ -18,7 +20,7 @@ public class InventoryCellScript : MonoBehaviour
         Image.color = new Color(1, 1, 1, 1);
         text.text = count.ToString();
     }
-
+    //Очистка клетки, а также очистка сохранения предмета и id. СТОИТ РАЗБИТЬ НА 2 МЕТОДА
     public void ClearCell()
     {
         this.item = null;

@@ -7,14 +7,16 @@ public abstract class AEnemy : MonoBehaviour
 
     public float speed;
     public int maxHP;
-    public float respawnTime;
-    public float viewDistance;
+    //public float viewDistance;
+    public float dropedExperience;
+    [SerializeField] private float attack;
+
 
     [SerializeField] private DropedItem dropedItem;
     private Transform targetPlayer;
     private Vector2 targetPoint;
     private Vector2 spawnPosition;
-    public int currentHP;
+    private int _currentHP;
     private float vaitTime=-1;
     private Rigidbody2D rb;
 
@@ -22,6 +24,14 @@ public abstract class AEnemy : MonoBehaviour
 
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
+
+    public int currentHP
+    {
+        get
+        {
+            return _currentHP;
+        }
+    }
     //Ищет игрока, сохраняет позицию спавна, маски для Raycast, задает текущее здоровье максимальным.
     private void Start()
     {
@@ -29,9 +39,10 @@ public abstract class AEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spawnPosition = rb.position;
         targetPoint = spawnPosition;
-        currentHP = maxHP;
+        _currentHP = maxHP;
         layerMask = LayerMask.GetMask("Wall")+ LayerMask.GetMask("Player");
     }
+    //Выбросить предметы, согласну шансу выпадения
     private void DropItems()
     {
         for (int i=0; i<DropList.Count && i< DropChanceList.Count; i++)
@@ -42,15 +53,18 @@ public abstract class AEnemy : MonoBehaviour
             }
         }
     }
+    //Умереть(( Добавить опыт игроку, уничтожиться, бросить предметы
     private void Die()
     {
+        targetPlayer.gameObject.GetComponent<Player>().AddExperience(dropedExperience);
         Destroy(gameObject);
         DropItems();
     }
+    //Получить урон, если ХП меньше/равно 0-умереть
     public void GetDamage(int damage)
     {
-        currentHP -= damage;
-        if (currentHP<=0)
+        _currentHP -= damage;
+        if (_currentHP <= 0)
         {
             Die();
         }
@@ -60,7 +74,7 @@ public abstract class AEnemy : MonoBehaviour
     {
         if ((Vector2.Distance(spawnPosition, transform.position) > 10))
         {
-            currentHP = maxHP;
+            _currentHP = maxHP;
             targetPoint = spawnPosition;
             Move(targetPoint);
         }
@@ -131,13 +145,13 @@ public abstract class AEnemy : MonoBehaviour
         }
     }
 
-    //При столкновении с игроком...
+    //При столкновении с игроком вызывает его метод получения урона
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collisionWith = collision.gameObject;
         if (collisionWith.tag == "Player")
         {
-
+            collisionWith.GetComponent<Player>().GetDamage(attack);
         }
     }
 }

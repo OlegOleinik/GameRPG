@@ -138,8 +138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   maxHP: 3
-  respawnTime: 5
   viewDistance: 0
+  dropedExperience: 1
+  attack: 1
   dropedItem: {fileID: 8303699136908332037, guid: 41764958550dc564eb1f340e2f2d9aef, type: 3}
   currentHP: 0
   DropList:

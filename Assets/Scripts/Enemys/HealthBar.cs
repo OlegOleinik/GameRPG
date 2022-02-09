@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
     MaterialPropertyBlock matBlock;
     MeshRenderer meshRenderer;
     Camera mainCamera;
-    public AEnemy enemy;
+    [SerializeField]private AEnemy enemy;
 
     private void Awake()
     {
@@ -28,7 +28,6 @@ public class HealthBar : MonoBehaviour
         // Only display on partial health
         if (enemy.currentHP < enemy.maxHP)
         {
-            print(enemy.currentHP);
             meshRenderer.enabled = true;
             UpdateParams();
         }

@@ -13,13 +13,12 @@ public class InventoryPanel : MonoBehaviour
     public ItemDescription description;
     private InventoryCellScript selectedCell;
     [SerializeField] private Slider dropItemCountSlider;
+    //Смена выбранной клетки инвентаря, ее цвета и отмена выделения предыдущей, если она имеется
     public void ChangeSelected(InventoryCellScript newSelectedCell)
     {
         if (selectedCell!=null)
         {
-            selectedCell.GetComponent<Image>().color = new Color(1f, 0.7f, 0.44f, 1);
-            selectedCell.selected = false;
-
+            ClearSelected();
         }
         selectedCell = newSelectedCell;
         selectedCell.selected = true;
@@ -27,19 +26,21 @@ public class InventoryPanel : MonoBehaviour
         dropItemCountSlider.maxValue = System.Convert.ToInt32(newSelectedCell.text.text);
     }
 
+    //Очистка клетки от выделения
     public void ClearSelected()
     {
         selectedCell.GetComponent<Image>().color = new Color(1f, 0.7f, 0.44f, 1);
         selectedCell.selected = false;
         selectedCell = null;
     }
-    private void Awake()
+    //Получение инвентаря игрока, массива клеток инвентаря, дезактивация инвентаря на начало игры
+    private void Start()
     {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        playerInventory = GetComponentInParent<UIScript>().player.GetComponent<Inventory>();
         inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
         gameObject.SetActive(false);
     }
-
+    //Удалить вещь из инвентаря. Если выбранная клетка есть, то по количеству спавнить на карте вещь, затем удалять из инвентаря, перерисовать инвентарь, очистить выделенную клетку
     public void DeliteItem()
     {
         if(selectedCell!=null)
@@ -55,7 +56,7 @@ public class InventoryPanel : MonoBehaviour
             ClearSelected();
         }
     }
-
+    //Отрисовка инвентаря. Сначала очистка
     public void DrawInventoty()
     {
         ClearInventory();
@@ -64,7 +65,7 @@ public class InventoryPanel : MonoBehaviour
             inventoryCellScripts[i].DrawCell(playerInventory.inventorySlots[i].ItemScriptableObject, playerInventory.inventorySlots[i].count, i);
         }
     }
-
+    //Очистка инвентаря (визуальная)
     public void ClearInventory()
     {
         foreach (InventoryCellScript cell in inventoryCellScripts)
@@ -73,7 +74,7 @@ public class InventoryPanel : MonoBehaviour
             
         }
     }
-
+    //Описание предмета при наведении курсора
     public void SetDescription(InventoryCellScript cell)
     {
         if(cell.item!=null)
@@ -82,7 +83,7 @@ public class InventoryPanel : MonoBehaviour
         }
 
     }
-
+    //Убрать описание, когда курсор покадает ячейку инвентаря
     public void ClearDescription()
     {
         description.ClearDescription();

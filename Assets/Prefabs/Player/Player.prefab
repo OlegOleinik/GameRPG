@@ -97,8 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d4f6dde9944984b8cba8c8266d6b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.09
-  currentHP: 0
+  _moveSpeed: 0.06
+  _maxHP: 5
+  damageCooldown: 1
+  defence: 0
+  attack: 0
+  blockChance: 0
+  dodgeChance: 0
+  money: 0
+  specsPoints: 0
 --- !u!212 &-4566903299949547401
 SpriteRenderer:
   m_ObjectHideFlags: 0

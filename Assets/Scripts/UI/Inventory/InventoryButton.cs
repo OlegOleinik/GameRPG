@@ -13,6 +13,7 @@ public class InventoryButton : AButton
     {
         CheckKeyboardPress();
     }
+    //Проверка нажатия на клавиатуре клавиши инвентаря
     public override void CheckKeyboardPress()
     {
         if (Input.GetButtonDown("Inventory"))
@@ -21,6 +22,7 @@ public class InventoryButton : AButton
         }
 
     }
+    //Открытие/закрытие инвентаря
     public void OpenCloseInventory()
     {
         if(!isInventoryOpen)

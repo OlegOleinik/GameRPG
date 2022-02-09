@@ -7,23 +7,13 @@ public class Sword : MonoBehaviour
     // Start is called before the first frame update
     private bool ableToAttack = true;
     private float coolDownTime;
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     //Возвращает TRUE, если возможна атака и прошло достаточно времени с предыдущей
     public bool EnableToAttck()
     {
         return (ableToAttack && coolDownTime < Time.time);
     }
-
+    //Пропажа меча и кулдаун атаки
     private void SwordDisappear()
     {
         gameObject.SetActive(false);
