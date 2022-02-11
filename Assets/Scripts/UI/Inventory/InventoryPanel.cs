@@ -13,6 +13,15 @@ public class InventoryPanel : MonoBehaviour
     public ItemDescription description;
     private InventoryCellScript selectedCell;
     [SerializeField] private Slider dropItemCountSlider;
+
+
+    //Получение инвентаря игрока, массива клеток инвентаря, дезактивация инвентаря на начало игры
+    private void Start()
+    {
+        playerInventory = GetComponentInParent<UIScript>().player.GetComponent<Inventory>();
+        inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
+        gameObject.SetActive(false);
+    }
     //Смена выбранной клетки инвентаря, ее цвета и отмена выделения предыдущей, если она имеется
     public void ChangeSelected(InventoryCellScript newSelectedCell)
     {
@@ -33,13 +42,7 @@ public class InventoryPanel : MonoBehaviour
         selectedCell.selected = false;
         selectedCell = null;
     }
-    //Получение инвентаря игрока, массива клеток инвентаря, дезактивация инвентаря на начало игры
-    private void Start()
-    {
-        playerInventory = GetComponentInParent<UIScript>().player.GetComponent<Inventory>();
-        inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
-        gameObject.SetActive(false);
-    }
+
     //Удалить вещь из инвентаря. Если выбранная клетка есть, то по количеству спавнить на карте вещь, затем удалять из инвентаря, перерисовать инвентарь, очистить выделенную клетку
     public void DeliteItem()
     {

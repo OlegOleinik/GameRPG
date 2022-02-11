@@ -4,20 +4,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private int _maxHP;
-    [SerializeField] private float damageCooldown;
-    [SerializeField] private float defence;
-    [SerializeField] private float attack;
-    [SerializeField] private float blockChance;
-    [SerializeField] private float dodgeChance;
-    [SerializeField] private int money;
-    [SerializeField] private int specsPoints;
+    [SerializeField] private float _moveSpeed=0.06f;
+    [SerializeField] private int _maxHP=5;
+    [SerializeField] private float damageCooldown=1;
+    [SerializeField] private float defence=1;
+    [SerializeField] private float attack=1;
+    [SerializeField] private float blockChance=1;
+    [SerializeField] private float dodgeChance=1;
+    [SerializeField] private float magicDamage=1;
+    [SerializeField] private float magicRegen=1;
+    [SerializeField] private float maxMagic=1;
+    [SerializeField] private int money=1;
+    [SerializeField] private int specsPoints=0;
 
     private float nextHitTime = 0;
     private float _requiredExperience=10;
     private float _experience=0;
     private int _currentHP;
+
+    public float[] specsArray;
+    //Dictionary<string, float> specsArray;
 
     public int maxHP
     {
@@ -57,9 +63,17 @@ public class Player : MonoBehaviour
             return _requiredExperience;
         }
     }
+
+    
     //Устанавливает текущее ХП максимальным
     private void Start()
     {
+
+        //specsArray = new Dictionary<string, float>() { { "moveSpeed", _moveSpeed }, { "maxHP", _maxHP }, { "damageCooldown", damageCooldown }, { "defence", defence }, { "attack", attack },
+        //{ "blockChance", blockChance },{ "dodgeChance", dodgeChance },{ "magicDamage", magicDamage },{ "magicRegen", magicRegen },{ "maxMagic", maxMagic }};
+
+        specsArray = new float[] { _moveSpeed, _maxHP, damageCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic};
+
         _currentHP = _maxHP;
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
@@ -72,6 +86,7 @@ public class Player : MonoBehaviour
         {
             _experience -= _requiredExperience;
             _requiredExperience *= 1.5f;
+            specsPoints++;
         }
     }
     //Получение урона игроком
@@ -83,6 +98,15 @@ public class Player : MonoBehaviour
             nextHitTime = Time.time + damageCooldown;
         }
 
+    }
+
+    public void IncreaseSpec(int id, float up)
+    {
+        if (specsPoints>0)
+        {
+            specsPoints--;
+            specsArray[id] += up;
+        }
     }
     private void FixedUpdate()
     {
