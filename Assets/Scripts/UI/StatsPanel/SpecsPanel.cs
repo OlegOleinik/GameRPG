@@ -11,4 +11,10 @@ public class SpecsPanel : MonoBehaviour
         player = GetComponentInParent<UIScript>().player.GetComponent<Player>();
     }
 
+    public void IncreaseSpec(int id, float up)
+    {
+        player.IncreaseSpec(id, up);
+        Debug.Log(2);
+    }
+
 }
