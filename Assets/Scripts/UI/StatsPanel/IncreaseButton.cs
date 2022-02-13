@@ -9,6 +9,5 @@ public class IncreaseButton : MonoBehaviour
     public void OnClick()
     {
         GetComponentInParent<SpecsPanel>().IncreaseSpec(id, up);
-        Debug.Log(1);
     }
 }

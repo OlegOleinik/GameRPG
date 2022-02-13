@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 508302389009025710, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 526566103528932064, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -648
@@ -639,7 +643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3931353449571775435, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
       propertyPath: m_Name
-      value: IncreaseSpeedButton
+      value: IncreaseStaminaButton
       objectReference: {fileID: 0}
     - target: {fileID: 5126831627962359334, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
       propertyPath: m_IsActive
@@ -745,9 +749,13 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1966003082}
+    - target: {fileID: 7502198593743084876, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7502198593842275784, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7502198593842275785, guid: db8ef2bb20959b54187f4c0958c96b05, type: 3}
       propertyPath: m_AnchoredPosition.x

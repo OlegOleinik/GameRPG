@@ -5,8 +5,11 @@ using UnityEngine;
 public abstract class AButton : MonoBehaviour
 {
 
-    
 
+    private void Update()
+    {
+        CheckKeyboardPress();
+    }
     public abstract void CheckKeyboardPress();
     // Start is called before the first frame update
     public void PauseGame()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIScript : MonoBehaviour
 {
+
     public GameObject player;
     private void Awake()
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Stat
 {
     public float Value;
@@ -19,48 +20,48 @@ public class Stat
         return stat.Value;
     }
 
-
-
-    public override string ToString()
-    {
-        return Value.ToString();
-    }
-    public override int GetHashCode()
-    {
-        return Value.GetHashCode();
-    }
+    //public override string ToString()
+    //{
+    //    return Value.ToString();
+    //}
+    //public override int GetHashCode()
+    //{
+    //    return Value.GetHashCode();
+    //}
 }
+
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] private Stat _moveSpeed=0.06f;
-    [SerializeField] private int _maxHP=5;
-    [SerializeField] private float attackCooldown=1;
-    [SerializeField] private float defence=1;
-    [SerializeField] private float attack=1;
-    [SerializeField] private float blockChance=1;
-    [SerializeField] private float dodgeChance=1;
-    [SerializeField] private float magicDamage=1;
-    [SerializeField] private float magicRegen=1;
-    [SerializeField] private float maxMagic=1;
-    [SerializeField] private int money=1;
+    [SerializeField] private float _moveSpeed=0.06f;
+    [SerializeReference] private Stat stamina = 10;
+    [SerializeField] private Stat _maxHP =5;
+    [SerializeField] private Stat attackCooldown =1;
+    [SerializeField] private Stat defence =1;
+    [SerializeField] private Stat attack =1;
+    [SerializeField] private Stat blockChance =1;
+    [SerializeField] private Stat dodgeChance =1;
+    [SerializeField] private Stat magicDamage =1;
+    [SerializeField] private Stat magicRegen =1;
+    [SerializeField] private Stat maxMagic =1;
+    [SerializeField] private int money=0;
     [SerializeField] private int specsPoints=0;
 
     private float nextHitTime = 0;
     private float _requiredExperience=10;
     private float _experience=0;
-    private int _currentHP;
+    private float _currentHP;
 
     //Dictionary<string, float> specsArray;
 
-    public int maxHP
+    public float maxHP
     {
         get
         {
             return _maxHP;
         }
     }
-    public int currentHP
+    public float currentHP
     {
         get
         {
@@ -96,8 +97,6 @@ public class Player : MonoBehaviour
     //Устанавливает текущее ХП максимальным
     private void Start()
     {
-        Stat a = 13;
-        Debug.Log(a);
         //specsArray = new Dictionary<string, float>() { { "moveSpeed", _moveSpeed }, { "maxHP", _maxHP }, { "damageCooldown", damageCooldown }, { "defence", defence }, { "attack", attack },
         //{ "blockChance", blockChance },{ "dodgeChance", dodgeChance },{ "magicDamage", magicDamage },{ "magicRegen", magicRegen },{ "maxMagic", maxMagic }};
 
@@ -131,21 +130,26 @@ public class Player : MonoBehaviour
 
     public void IncreaseSpec(int id, float up)
     {
-        //if (specsPoints>0)
-        //{
-         var specsArray = new Stat[] { _moveSpeed, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic };
+        if (specsPoints > 0)
+        {
+            var specsArray = new Stat[] { stamina, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic };
 
-        specsPoints--;
-        assign(ref specsArray[id].Value, up);
+            specsPoints--;
+            specsArray[id].Value += up;
+            //Если ХП, то считает процентное соотношение шкалы до повышения и приравнивает новую к такому же отношению
+            if (id == 1)
+            {
+                _currentHP = System.Convert.ToInt32((_currentHP / (_maxHP - up)) * maxHP);
+            }
+            //assign(ref specsArray[id].Value, up);
             //specsArray[id].Value +=up;
-        Debug.Log(_moveSpeed +"   "+ moveSpeed);
-        //}
+        }
     }
 
-    private void assign(ref float i, float up)
-    {
-        i += up;
-    }
+    //private void assign(ref float i, float up)
+    //{
+    //    i += up;
+    //}
     private void FixedUpdate()
     {
         rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
