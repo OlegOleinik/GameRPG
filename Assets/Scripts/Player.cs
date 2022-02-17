@@ -141,8 +141,7 @@ public class Player : MonoBehaviour
             {
                 _currentHP = System.Convert.ToInt32((_currentHP / (_maxHP - up)) * maxHP);
             }
-            //assign(ref specsArray[id].Value, up);
-            //specsArray[id].Value +=up;
+            Debug.Log(123);
         }
     }
 

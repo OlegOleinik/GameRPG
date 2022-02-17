@@ -5,23 +5,21 @@ using UnityEngine;
 public abstract class AButton : MonoBehaviour
 {
 
-
+    [SerializeField] private string buttonName;
     private void Update()
     {
         CheckKeyboardPress();
     }
-    public abstract void CheckKeyboardPress();
-    // Start is called before the first frame update
-    public void PauseGame()
+    public void CheckKeyboardPress()
     {
-        GameManager.isGamePaused = true;
-        Time.timeScale = 0;
-    }
+        if (Input.GetButtonDown(buttonName))
+        {
+            OpenClosePanel();
+        }
 
-    //Возобновить
-    public void ResumeGame()
-    {
-        GameManager.isGamePaused = false;
-        Time.timeScale = 1;
     }
+    public abstract void OpenClosePanel();
+    // Start is called before the first frame update
+
+
 }

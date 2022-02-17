@@ -9,6 +9,7 @@ public class SpecsPanel : MonoBehaviour
     void Start()
     {
         player = GetComponentInParent<UIScript>().player.GetComponent<Player>();
+        gameObject.SetActive(false);
     }
 
     public void IncreaseSpec(int id, float up)
