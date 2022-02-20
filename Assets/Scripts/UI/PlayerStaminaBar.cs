@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthBar : MonoBehaviour
+public class PlayerStaminaBar : MonoBehaviour
 {
     MaterialPropertyBlock matBlock;
     MeshRenderer meshRenderer;
@@ -11,7 +11,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     //private void Awake()
     //{
-
+       
     //    // get the damageable parent we're attached to
     //    //Enemy_1 = GetComponentInParent<Damageable>();
     //}
@@ -43,7 +43,7 @@ public class PlayerHealthBar : MonoBehaviour
     private void UpdateParams()
     {
         meshRenderer.GetPropertyBlock(matBlock);
-        matBlock.SetFloat("_Fill", player.currentHP / player.maxHP);
+        matBlock.SetFloat("_Fill", player.currentStamina / player.maxStamina);
         meshRenderer.SetPropertyBlock(matBlock);
     }
 

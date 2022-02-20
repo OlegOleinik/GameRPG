@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] private float _moveSpeed=0.06f;
-    [SerializeReference] private Stat stamina = 10;
+    [SerializeField] private Stat _maxStamina = 10;
     [SerializeField] private Stat _maxHP =5;
     [SerializeField] private Stat attackCooldown =1;
     [SerializeField] private Stat defence =1;
@@ -48,12 +48,29 @@ public class Player : MonoBehaviour
     [SerializeField] private int specsPoints=0;
 
     private float nextHitTime = 0;
+    private float nextRegenStaminaTime = 0;
     private float _requiredExperience=10;
     private float _experience=0;
     private float _currentHP;
+    private float _currentStamina;
+
+    private bool isRegeneratedStamina = false;
 
     //Dictionary<string, float> specsArray;
-
+    public float maxStamina
+    {
+        get
+        {
+            return _maxStamina;
+        }
+    }
+    public float currentStamina
+    {
+        get
+        {
+            return _currentStamina;
+        }
+    }
     public float maxHP
     {
         get
@@ -101,7 +118,7 @@ public class Player : MonoBehaviour
         //{ "blockChance", blockChance },{ "dodgeChance", dodgeChance },{ "magicDamage", magicDamage },{ "magicRegen", magicRegen },{ "maxMagic", maxMagic }};
 
         //specsArray = new Stat[] { _moveSpeed, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic};
-
+        _currentStamina = _maxStamina;
         _currentHP = _maxHP;
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
@@ -132,7 +149,7 @@ public class Player : MonoBehaviour
     {
         if (specsPoints > 0)
         {
-            var specsArray = new Stat[] { stamina, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic };
+            var specsArray = new Stat[] { _maxStamina, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic };
 
             specsPoints--;
             specsArray[id].Value += up;
@@ -141,7 +158,6 @@ public class Player : MonoBehaviour
             {
                 _currentHP = System.Convert.ToInt32((_currentHP / (_maxHP - up)) * maxHP);
             }
-            Debug.Log(123);
         }
     }
 
@@ -151,7 +167,38 @@ public class Player : MonoBehaviour
     //}
     private void FixedUpdate()
     {
-        rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
+
+        Move();
+    }
+    //Движение. Ускорение, если нажат Shift и выносливасть > 0. Если Shift не нажата, то запускается регенерация выносливости через полторы секунды
+    private void Move()
+    {
+        if (Input.GetButton("Shift") && _currentStamina>0)
+        {
+            rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * 2);
+            _currentStamina -= 0.1f;
+            isRegeneratedStamina = false;
+            nextRegenStaminaTime = Time.time + 1.5f;
+        }
+        else
+        {
+            rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
+            if (!isRegeneratedStamina && nextRegenStaminaTime<Time.time)
+            {
+                isRegeneratedStamina = true;
+                StartCoroutine(RegenerateStamina());
+            }
+        }
+    }
+    //Регенерация выносливости
+    IEnumerator RegenerateStamina()
+    {
+        while (_currentStamina<_maxStamina && isRegeneratedStamina)
+        {
+            _currentStamina += _maxStamina * 0.2f * Time.deltaTime;
+            yield return null;
+        }
+        isRegeneratedStamina = false;
     }
 }
 

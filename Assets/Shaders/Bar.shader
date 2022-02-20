@@ -1,4 +1,4 @@
-Shader "UI/HealthBar" {
+Shader "UI/Bar" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
         _Fill ("Fill", float) = 0
