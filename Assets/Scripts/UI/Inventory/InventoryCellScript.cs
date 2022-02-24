@@ -25,6 +25,7 @@ public class InventoryCellScript : MonoBehaviour
         this.id = -1;
         Image.sprite = null;
         Image.color = new Color(1, 1, 1, 0);
+        text.text = "";
     }
 
     public void OnMouseEnter()

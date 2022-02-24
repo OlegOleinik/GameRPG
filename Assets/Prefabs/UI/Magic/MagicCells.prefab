@@ -57,6 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe13a50a3a673f45831290a09082adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCell: {fileID: 0}
+  spell1: {fileID: 11400000, guid: 750b453fcc321da47bd3bdcc87ad1872, type: 2}
+  spell2: {fileID: 11400000, guid: 8268f4a532c116044a878b877418c5dc, type: 2}
 --- !u!1001 &556014042348812621
 PrefabInstance:
   m_ObjectHideFlags: 0

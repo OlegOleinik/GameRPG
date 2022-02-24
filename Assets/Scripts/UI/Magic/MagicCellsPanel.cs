@@ -14,6 +14,7 @@ public class MagicCellsPanel : MonoBehaviour
     //
     //DELITE AFTER TESTS
     [SerializeField] MagicScriptableObject spell1;
+    [SerializeField] MagicScriptableObject spell2;
     //*********
     //
     //
@@ -27,12 +28,25 @@ public class MagicCellsPanel : MonoBehaviour
             magicCells[i].ClearCell();
             magicCells[i].id = i;
         }
+        ChangeSelected(magicCells[0]);
         magicCells[0].DrawCell(spell1);
+        magicCells[1].DrawCell(spell2);
     }
 
     private void Update()
     {
         CheckSelectControl();
+    }
+
+    public float CastSpell()
+    {
+        if (selectedCell.spell!=null)
+        {
+            GameObject spell = Instantiate(selectedCell.spell.spell.gameObject);
+            spell.GetComponent<ASpell>().Spell();
+            return selectedCell.spell.coolDownTime;
+        }
+        return -1;
     }
 
     private void CheckSelectControl()

@@ -25,6 +25,7 @@ public abstract class AEnemy : MonoBehaviour
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
 
+
     public int currentHP
     {
         get
@@ -35,7 +36,7 @@ public abstract class AEnemy : MonoBehaviour
     //Ищет игрока, сохраняет позицию спавна, маски для Raycast, задает текущее здоровье максимальным.
     private void Start()
     {
-        targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        targetPlayer = GameManager.player.transform;
         rb = GetComponent<Rigidbody2D>();
         spawnPosition = rb.position;
         targetPoint = spawnPosition;
@@ -85,7 +86,7 @@ public abstract class AEnemy : MonoBehaviour
         }
         else
         {
-            defaultWalk();
+            DefaultWalk();
         }
     }
 
@@ -110,7 +111,7 @@ public abstract class AEnemy : MonoBehaviour
 
     //Свободное хождение. Если целевая точне не равна текущей-двигаться к ней. ИНАЧЕ, ЕСЛИ время ожидания -1, задать время 1 сек, ИНАЧЕ ЕСЛИ время ожидания больше текущего, задать новую целевую точку.
     //Если время ожидания меньше текущего и не -1, ничего не происходит (противник стоит)
-    private void defaultWalk()
+    private void DefaultWalk()
     {
         if (rb.position!=targetPoint)
         {

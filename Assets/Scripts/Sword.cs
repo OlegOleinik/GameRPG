@@ -5,25 +5,28 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool ableToAttack = true;
-    private float coolDownTime;
+    private bool _ableToAttack = true;
 
-    //Возвращает TRUE, если возможна атака и прошло достаточно времени с предыдущей
-    public bool EnableToAttck()
+
+    public bool ableToAttack
     {
-        return (ableToAttack && coolDownTime < Time.time);
+        get
+        {
+            return _ableToAttack;
+        }
     }
+
     //Пропажа меча и кулдаун атаки
     private void SwordDisappear()
     {
         gameObject.SetActive(false);
-        coolDownTime = Time.time + 0.5f;
-        ableToAttack = true;
+        _ableToAttack = true;
     }
     //Удар 1
-    public void Strike1()
+    public float Strike1()
     {
         StartCoroutine(RotateObject());
+        return 0.5f;
     }
     //Удар 2
     public void Strike2()
@@ -50,7 +53,7 @@ public class Sword : MonoBehaviour
     {
         Quaternion endingAngle;
         float moveSpeed = 450;
-        ableToAttack = false;
+        _ableToAttack = false;
 
 
         float x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;

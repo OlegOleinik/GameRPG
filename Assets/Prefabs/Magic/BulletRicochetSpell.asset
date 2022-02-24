@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e25f0992c88e17a49b9fb1da67624f40, type: 3}
-  m_Name: LaserRicochetSpell
+  m_Name: BulletRicochetSpell
   m_EditorClassIdentifier: 
-  spellSprite: {fileID: 21300000, guid: 9fececdf50af2304aa9b9ceb877b26f3, type: 3}
-  description: Spell ricochetricochetricochet
-  magicCost: 3
-  spellName: Ricochet laser
-  coolDownTime: 1.5
-  spell: {fileID: -4362386524169846594, guid: 55be997c9148530488a7fc6035ab3a8a, type: 3}
+  spellSprite: {fileID: 21300000, guid: 4816a998621610747a1bf6ed80f9744b, type: 3}
+  description: Ricochet fire bullet
+  magicCost: 2
+  spellName: Ricochet bullet
+  coolDownTime: 1
+  spell: {fileID: 4905352817924221860, guid: c832aa332c877e5499dd7f8237f9a9f9, type: 3}

@@ -9,7 +9,7 @@ public class UIScript : MonoBehaviour
     [SerializeField] private List<GameObject> panels;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameManager.player;
         DontDestroyOnLoad(gameObject);
     }
     public void PauseGame()
