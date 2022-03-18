@@ -20,7 +20,7 @@ public class PlayerExperienceBar : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
         matBlock = new MaterialPropertyBlock();
-        player = GetComponentInParent<UIScript>().player.GetComponent<Player>();
+        player = GameManager.player.GetComponent<Player>();
         // Cache since Camera.main is super slow
         mainCamera = Camera.main;
     }

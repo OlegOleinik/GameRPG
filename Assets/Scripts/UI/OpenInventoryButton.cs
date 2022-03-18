@@ -17,7 +17,7 @@ public class OpenInventoryButton : AButton
         if (GetComponentInParent<UIScript>().CheckNotOpen(inventory.gameObject))
         {
             inventory.gameObject.SetActive(true);
-            inventory.DrawInventoty();
+            inventory.DrawInventory();
         }
     }
 }

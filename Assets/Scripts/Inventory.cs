@@ -5,17 +5,17 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
-    public List<InventorySLot> inventorySlots;
+    public List<InventorySlot> inventorySlots;
 
     private void Awake()
     {
-        inventorySlots = new List<InventorySLot>();
+        inventorySlots = new List<InventorySlot>();
     }
 
 
     public bool AddItem(ItemScriptableObject item)
     {
-        foreach (InventorySLot slot in inventorySlots)
+        foreach (InventorySlot slot in inventorySlots)
         {
             if (slot.ItemScriptableObject==item && slot.count < item.maxItems)
             {
@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
         {
             return false;
         }
-        inventorySlots.Add(new InventorySLot(item));
+        inventorySlots.Add(new InventorySlot(item));
 
         return true;
     }
@@ -45,13 +45,18 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public void ReplaceItem(int index, ItemScriptableObject newItem)
+    {
+        inventorySlots[index].ItemScriptableObject = newItem;
+    }
+
 }
 
-public class InventorySLot
+public class InventorySlot
 {
     public ItemScriptableObject ItemScriptableObject;
     public int count;
-    public InventorySLot(ItemScriptableObject item)
+    public InventorySlot(ItemScriptableObject item)
     {
         this.ItemScriptableObject = item;
         this.count = 1;

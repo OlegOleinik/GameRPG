@@ -6,7 +6,7 @@ using UnityEngine;
 public class Stat
 {
     public float Value;
-
+    public float maxValue;
 
     public static implicit operator Stat(float value)
     {
@@ -19,33 +19,28 @@ public class Stat
     {
         return stat.Value;
     }
-
-    //public override string ToString()
-    //{
-    //    return Value.ToString();
-    //}
-    //public override int GetHashCode()
-    //{
-    //    return Value.GetHashCode();
-    //}
 }
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rb;
-    [SerializeField] private float _moveSpeed=0.06f;
-    [SerializeField] private Stat _maxStamina = 10;
-    [SerializeField] private Stat _maxHP =5;
-    [SerializeField] private Stat attackCooldown =1;
-    [SerializeField] private Stat defence =1;
-    [SerializeField] private Stat attack =1;
-    [SerializeField] private Stat blockChance =1;
-    [SerializeField] private Stat dodgeChance =1;
-    [SerializeField] private Stat magicDamage =1;
-    [SerializeField] private Stat magicRegen =1;
-    [SerializeField] private Stat maxMagic =1;
-    [SerializeField] private int money=0;
-    [SerializeField] private int specsPoints=0;
+    private Rigidbody2D rb;
+    [SerializeField] private float _moveSpeed;
+    [SerializeField] private Stat _maxStamina;
+    [SerializeField] private Stat _maxHP;
+    [SerializeField] private Stat _attackCooldown;
+    [SerializeField] private Stat defence;
+    [SerializeField] private Stat _attack;
+    [SerializeField] private Stat blockChance;
+    [SerializeField] private Stat dodgeChance;
+    [SerializeField] private Stat _magicDamage;
+    [SerializeField] private Stat magicRegen;
+    [SerializeField] private Stat maxMagic;
+    [SerializeField] private Stat _speech;
+    [SerializeField] private int _money = 10;
+    [SerializeField] private int _specsPoints = 0;
+
+
+
 
     private float nextHitTime = 0;
     private float nextRegenStaminaTime = 0;
@@ -56,7 +51,37 @@ public class Player : MonoBehaviour
 
     private bool isRegeneratedStamina = false;
 
-    //Dictionary<string, float> specsArray;
+    private PlayerAnimator playerAnimator;
+
+    public float speech
+    {
+        get
+        {
+            return _speech;
+        }
+    }
+    public float attackCooldown
+    {
+        get
+        {
+            return _attackCooldown;
+        }
+    }
+//Dictionary<string, float> specsArray;
+    public float attack
+    {
+        get
+        {
+            return _attack;
+        }
+    }
+    public float magicDamage
+    {
+        get
+        {
+            return _magicDamage;
+        }
+    }
     public float maxStamina
     {
         get
@@ -109,19 +134,43 @@ public class Player : MonoBehaviour
             return _requiredExperience;
         }
     }
+    public int money
+    {
+        set
+        {
+            _money = value;
+        }
+        get
+        {
+            return _money;
+        }
+    }
+    public int specsPoints
+    {
+        get
+        {
+            return _specsPoints;
+        }
+    }
 
-    
+
     //Устанавливает текущее ХП максимальным
     private void Start()
     {
-        //specsArray = new Dictionary<string, float>() { { "moveSpeed", _moveSpeed }, { "maxHP", _maxHP }, { "damageCooldown", damageCooldown }, { "defence", defence }, { "attack", attack },
-        //{ "blockChance", blockChance },{ "dodgeChance", dodgeChance },{ "magicDamage", magicDamage },{ "magicRegen", magicRegen },{ "maxMagic", maxMagic }};
-
-        //specsArray = new Stat[] { _moveSpeed, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic};
+        playerAnimator = GetComponent<PlayerAnimator>();
         _currentStamina = _maxStamina;
         _currentHP = _maxHP;
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void RecoverHP(int addHP)
+    {
+        _currentHP += addHP;
+        if (_currentHP > maxHP)
+        {
+            _currentHP = maxHP;
+        }
     }
     //Добавление опыта, если выше требуемого-устанавливает требуемый больше, сбрасывает текущий, добавляет остаток
     public void AddExperience(float additionalExperience)
@@ -131,7 +180,7 @@ public class Player : MonoBehaviour
         {
             _experience -= _requiredExperience;
             _requiredExperience *= 1.5f;
-            specsPoints++;
+            _specsPoints++;
         }
     }
     //Получение урона игроком
@@ -139,32 +188,38 @@ public class Player : MonoBehaviour
     {
         if (nextHitTime<Time.time)
         {
-            _currentHP -= System.Convert.ToInt32(damage);
-            nextHitTime = Time.time + attackCooldown;
+            if (Random.Range(0f, 1f) > blockChance)
+            {
+                _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
+            }
+            nextHitTime = Time.time + 0.5f;
         }
 
+    }
+
+    public Stat[] GetStats()
+    {
+        return new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, maxMagic, _speech };
     }
 
     public void IncreaseSpec(int id, float up)
     {
-        if (specsPoints > 0)
+        if (_specsPoints > 0)
         {
-            var specsArray = new Stat[] { _maxStamina, _maxHP, attackCooldown, defence, attack, blockChance, dodgeChance, magicDamage, magicRegen, maxMagic };
-
-            specsPoints--;
-            specsArray[id].Value += up;
-            //Если ХП, то считает процентное соотношение шкалы до повышения и приравнивает новую к такому же отношению
-            if (id == 1)
+            var specsArray = new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, maxMagic, _speech };
+            
+            if(specsArray[id]<specsArray[id].maxValue)
             {
-                _currentHP = System.Convert.ToInt32((_currentHP / (_maxHP - up)) * maxHP);
+                _specsPoints--;
+                specsArray[id].Value += up;
+                //Если ХП, то считает процентное соотношение шкалы до повышения и приравнивает новую к такому же отношению
+                if (id == 1)
+                {
+                    _currentHP = System.Convert.ToInt32((_currentHP / (_maxHP - up)) * maxHP);
+                }
             }
         }
     }
-
-    //private void assign(ref float i, float up)
-    //{
-    //    i += up;
-    //}
     private void FixedUpdate()
     {
 
@@ -173,22 +228,44 @@ public class Player : MonoBehaviour
     //Движение. Ускорение, если нажат Shift и выносливасть > 0. Если Shift не нажата, то запускается регенерация выносливости через полторы секунды
     private void Move()
     {
-        if (Input.GetButton("Shift") && _currentStamina>0)
+        if (Input.GetButton(("Horizontal")) || Input.GetButton(("Vertical")))
         {
-            rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * 2);
-            _currentStamina -= 0.1f;
-            isRegeneratedStamina = false;
-            nextRegenStaminaTime = Time.time + 1.5f;
+            if (Input.GetButton("Shift") && _currentStamina > 0)
+            {
+                rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * 2);
+                _currentStamina -= 0.1f;
+                isRegeneratedStamina = false;
+                nextRegenStaminaTime = Time.time + 1.5f;
+                playerAnimator.SetAnimation(2);
+                playerAnimator.SetFlip(rb.position.x);
+                return;
+            }
+            else
+            {
+                rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
+                playerAnimator.SetFlip(rb.position.x);
+                playerAnimator.SetAnimation(1);
+                //ВЫНЕСТИ В МЕТОД
+                if (!isRegeneratedStamina && nextRegenStaminaTime < Time.time)
+                {
+                    isRegeneratedStamina = true;
+                    StartCoroutine(RegenerateStamina());
+                    return;
+                }
+            }
         }
         else
         {
-            rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
-            if (!isRegeneratedStamina && nextRegenStaminaTime<Time.time)
+            playerAnimator.SetAnimation(0);
+            //ВЫНЕСТИ В МЕТОД
+            if (!isRegeneratedStamina && nextRegenStaminaTime < Time.time)
             {
                 isRegeneratedStamina = true;
                 StartCoroutine(RegenerateStamina());
             }
         }
+
+
     }
     //Регенерация выносливости
     IEnumerator RegenerateStamina()

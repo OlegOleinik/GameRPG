@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryCellScript : MonoBehaviour
+public class InventoryCellScript : ACell
 {
-    public ItemScriptableObject item;
     public int id=-1;
-    public Image Image;
     public Text text;
     public bool selected = false;
 
@@ -19,7 +17,7 @@ public class InventoryCellScript : MonoBehaviour
         Image.color = new Color(1, 1, 1, 1);
         text.text = count.ToString();
     }
-    public void ClearCell()
+    public override void ClearCell()
     {
         this.item = null;
         this.id = -1;
@@ -28,7 +26,7 @@ public class InventoryCellScript : MonoBehaviour
         text.text = "";
     }
 
-    public void OnMouseEnter()
+    public override void OnMouseEnter()
     {
         if (!selected)
         {
@@ -36,15 +34,15 @@ public class InventoryCellScript : MonoBehaviour
         }
 
     }
-    public void OnMouseExit()
+    public override void OnMouseExit()
     {
         if (!selected)
         {
-            gameObject.GetComponent<Image>().color = new Color(1f, 0.7f, 0.44f, 1);
+            gameObject.GetComponent<Image>().color = new Color(1f, 0.8f, 0.44f, 1);
         }
     }
 
-    public void OnMouseClick()
+    public virtual void OnMouseClick()
     {
         if(item!=null)
         {

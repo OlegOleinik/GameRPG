@@ -5,12 +5,13 @@ using UnityEngine;
 public class UIScript : MonoBehaviour
 {
 
-    public GameObject player;
     [SerializeField] private List<GameObject> panels;
-    private void Awake()
+    [SerializeField] public ShopController shopController;
+
+    private void Start()
     {
-        player = GameManager.player;
         DontDestroyOnLoad(gameObject);
+        shopController.gameObject.SetActive(false);
     }
     public void PauseGame()
     {
@@ -26,22 +27,27 @@ public class UIScript : MonoBehaviour
     }
     public bool CheckNotOpen(GameObject panel)
     {
+        bool res = true;
         foreach (var item in panels)
         {
             if(item.activeInHierarchy==true && item==panel)
             {
                 item.SetActive(false);
                 ResumeGame();
-                return false;
+                res = false;
             }
             else if(item.activeInHierarchy == true && item != panel)
             {
                 item.SetActive(false);
-                return true;
             }
         }
-        PauseGame();
-        return true;
+
+        if (res)
+        {
+            PauseGame();
+        }
+
+        return res;
     }
     
 }

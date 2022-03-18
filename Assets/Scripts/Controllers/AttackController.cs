@@ -8,11 +8,13 @@ public class AttackController : MonoBehaviour
     public Sword sword;
     private MagicCellsPanel MagicCellsPanel;
     private float coolDownTime;
+    private Player player;
 
     void Start()
     {
-        sword.gameObject.SetActive(false);
+        //sword.gameObject.SetActive(false);
         MagicCellsPanel = GameObject.Find("MagicCells").GetComponent<MagicCellsPanel>();
+        player = GameManager.player.GetComponent<Player>();
     }
 
 
@@ -22,7 +24,7 @@ public class AttackController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && EnableToAttck() && GameManager.isGamePaused == false)
         {
             sword.gameObject.SetActive(true);
-            SetCoolDown(sword.Strike1());
+            SetCoolDown(sword.Strike1()*(0.1f/player.attackCooldown));
         }
         else if (Input.GetButtonDown("Fire2") && EnableToAttck() && GameManager.isGamePaused == false)
         {

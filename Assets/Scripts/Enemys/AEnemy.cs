@@ -16,7 +16,7 @@ public abstract class AEnemy : MonoBehaviour
     private Transform targetPlayer;
     private Vector2 targetPoint;
     private Vector2 spawnPosition;
-    private int _currentHP;
+    private float _currentHP;
     private float vaitTime=-1;
     private Rigidbody2D rb;
 
@@ -26,7 +26,7 @@ public abstract class AEnemy : MonoBehaviour
     [SerializeField] private List<float> DropChanceList;
 
 
-    public int currentHP
+    public float currentHP
     {
         get
         {
@@ -62,7 +62,7 @@ public abstract class AEnemy : MonoBehaviour
         DropItems();
     }
     //Получить урон, если ХП меньше/равно 0-умереть
-    public void GetDamage(int damage)
+    public void GetDamage(float damage)
     {
         _currentHP -= damage;
         if (_currentHP <= 0)
@@ -102,7 +102,7 @@ public abstract class AEnemy : MonoBehaviour
     {
         Debug.DrawRay(transform.position, (targetPlayer.position - transform.position).normalized *5, Color.red);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, (targetPlayer.position - transform.position).normalized, 5, layerMask);
-        if ((hit) && (hit.collider.tag == "Player"))
+        if ((hit) && (hit.collider.tag != "Wall"))
         {
             return true;
         }

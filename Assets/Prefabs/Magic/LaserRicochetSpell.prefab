@@ -86,7 +86,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Positions:
-  - {x: 0, y: 0, z: -1}
+  - {x: 7.6179185, y: -5.2537756, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.09941915
@@ -131,7 +131,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 5

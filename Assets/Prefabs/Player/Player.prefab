@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -4566903299949547401}
   - component: {fileID: -7902106979384553459}
   - component: {fileID: -8653253253220528940}
+  - component: {fileID: 572871959862574909}
+  - component: {fileID: 3450473703720039846}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2070942136330309632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.64, y: 4.63, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1154206159014670709}
   - {fileID: 1391780586831919561}
@@ -52,18 +54,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.8, y: 1}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.16}
+  m_Size: {x: 0.49, y: 0.68}
   m_EdgeRadius: 0
 --- !u!50 &-466608369997441368
 Rigidbody2D:
@@ -99,34 +101,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 0.06
-  stamina:
-    id: 0
+  _maxStamina:
+    Value: 10
+    maxValue: 30
   _maxHP:
     Value: 5
-  attackCooldown:
-    Value: 1
+    maxValue: 15
+  _attackCooldown:
+    Value: 0.1
+    maxValue: 0.2
   defence:
     Value: 1
-  attack:
+    maxValue: 10
+  _attack:
     Value: 1
+    maxValue: 2
   blockChance:
-    Value: 1
+    Value: 0
+    maxValue: 0.27
   dodgeChance:
     Value: 1
-  magicDamage:
+    maxValue: 10
+  _magicDamage:
     Value: 1
+    maxValue: 2
   magicRegen:
     Value: 1
+    maxValue: 10
   maxMagic:
+    Value: 10
+    maxValue: 30
+  _speech:
     Value: 1
-  money: 0
+    maxValue: 5
+  _money: 10
   specsPoints: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: Stat, ns: , asm: Assembly-CSharp}
-      data:
-        Value: 10
 --- !u!212 &-4566903299949547401
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8da19753494475b43b82749da0a44512, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +213,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa85691752a5054a9cfb48f9e86dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 3
+  inventorySize: 24
+--- !u!95 &572871959862574909
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070942136330309632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6303fc1ec5da8514991c0360d8249d3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3450473703720039846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070942136330309632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfc0c8f491d8fd4da43680390ff681d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5491572456359885479
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +391,14 @@ PrefabInstance:
     - target: {fileID: 6826359874083691838, guid: c3a610e24a658b345af6839698747ee0, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826359874083691838, guid: c3a610e24a658b345af6839698747ee0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826359874083691838, guid: c3a610e24a658b345af6839698747ee0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6826359874083691838, guid: c3a610e24a658b345af6839698747ee0, type: 3}
       propertyPath: m_LocalPosition.x
