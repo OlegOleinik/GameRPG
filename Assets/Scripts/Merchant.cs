@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class OnSaleItem
@@ -62,9 +62,9 @@ public class Merchant : ANPC
     //и к нему прикрепить компонент колайдера, для объекта сделать слой, взаимодействующий только с игроком
     IEnumerator CheckButton()
     {
-        while(true)
+        while (true)
         {
-            if (Input.GetButtonDown("Interaction") && (GameManager.UI.GetComponent<UIScript>().CheckNotOpen(shopController.gameObject)))
+            if (/*Input.GetButtonDown("Interaction")*/  Keyboard.current.eKey.wasPressedThisFrame && (GameManager.UI.GetComponent<UIScript>().CheckNotOpen(shopController.gameObject)))
             {
                 OpenShop();
             }

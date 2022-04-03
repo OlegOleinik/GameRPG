@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class Stat
@@ -23,6 +24,7 @@ public class Stat
 
 public class Player : MonoBehaviour
 {
+    private Vector2 moveDir;
     private Rigidbody2D rb;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private Stat _maxStamina;
@@ -34,25 +36,48 @@ public class Player : MonoBehaviour
     [SerializeField] private Stat dodgeChance;
     [SerializeField] private Stat _magicDamage;
     [SerializeField] private Stat magicRegen;
-    [SerializeField] private Stat maxMagic;
+    [SerializeField] private Stat _maxMagic;
     [SerializeField] private Stat _speech;
     [SerializeField] private int _money = 10;
     [SerializeField] private int _specsPoints = 0;
 
 
-
+    private float shiftMod = 1;
 
     private float nextHitTime = 0;
     private float nextRegenStaminaTime = 0;
+    private float nextRegenMagicTime = 0;
     private float _requiredExperience=10;
     private float _experience=0;
     private float _currentHP;
     private float _currentStamina;
+    private float _currentMagic;
 
     private bool isRegeneratedStamina = false;
+    private bool isRegeneratedMagic = false;
+    private bool isWasteStamina = false;
 
     private PlayerAnimator playerAnimator;
 
+
+    public float maxMagic
+    {
+        get
+        {
+            return _maxMagic;
+        }
+    }
+    public float currentMagic
+    {
+        get
+        {
+            return _currentMagic;
+        }
+        set
+        {
+            _currentMagic = value;
+        }
+    }
     public float speech
     {
         get
@@ -67,7 +92,6 @@ public class Player : MonoBehaviour
             return _attackCooldown;
         }
     }
-//Dictionary<string, float> specsArray;
     public float attack
     {
         get
@@ -160,6 +184,7 @@ public class Player : MonoBehaviour
         playerAnimator = GetComponent<PlayerAnimator>();
         _currentStamina = _maxStamina;
         _currentHP = _maxHP;
+        _currentMagic = _maxMagic;
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
     }
@@ -199,14 +224,14 @@ public class Player : MonoBehaviour
 
     public Stat[] GetStats()
     {
-        return new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, maxMagic, _speech };
+        return new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, _maxMagic, _speech };
     }
 
     public void IncreaseSpec(int id, float up)
     {
         if (_specsPoints > 0)
         {
-            var specsArray = new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, maxMagic, _speech };
+            var specsArray = new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, _maxMagic, _speech };
             
             if(specsArray[id]<specsArray[id].maxValue)
             {
@@ -222,53 +247,53 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
         Move();
+        if (!isRegeneratedStamina && nextRegenStaminaTime < Time.time)
+        {
+            isRegeneratedStamina = true;
+            StartCoroutine(RegenerateStamina());
+        }
+        if (!isRegeneratedMagic && nextRegenMagicTime < Time.time)
+        {
+            StartCoroutine(RegenerateMagic());
+        }
+    }
+
+    public void GetRun(InputAction.CallbackContext inputValue)
+    {
+        if (inputValue.phase == InputActionPhase.Started)
+        {
+            StartCoroutine(wasteStamina());
+        }
+        else if (inputValue.phase == InputActionPhase.Canceled)
+        {
+            shiftMod = 1;
+            isWasteStamina = false;
+        }
+    }
+
+    public void GetMove(InputAction.CallbackContext inputValue)
+    {
+        
+        moveDir = inputValue.ReadValue<Vector2>();
+        playerAnimator.SetFlip(moveDir.x);
+        
+        if (inputValue.phase == InputActionPhase.Started && !isWasteStamina)
+        {
+            playerAnimator.SetAnimation(1);
+        }
+        else if (inputValue.phase == InputActionPhase.Canceled)
+        {
+            playerAnimator.SetAnimation(0);
+        }
     }
     //Движение. Ускорение, если нажат Shift и выносливасть > 0. Если Shift не нажата, то запускается регенерация выносливости через полторы секунды
     private void Move()
     {
-        if (Input.GetButton(("Horizontal")) || Input.GetButton(("Vertical")))
-        {
-            if (Input.GetButton("Shift") && _currentStamina > 0)
-            {
-                rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed * 2);
-                _currentStamina -= 0.1f;
-                isRegeneratedStamina = false;
-                nextRegenStaminaTime = Time.time + 1.5f;
-                playerAnimator.SetAnimation(2);
-                playerAnimator.SetFlip(rb.position.x);
-                return;
-            }
-            else
-            {
-                rb.position += (new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * _moveSpeed);
-                playerAnimator.SetFlip(rb.position.x);
-                playerAnimator.SetAnimation(1);
-                //ВЫНЕСТИ В МЕТОД
-                if (!isRegeneratedStamina && nextRegenStaminaTime < Time.time)
-                {
-                    isRegeneratedStamina = true;
-                    StartCoroutine(RegenerateStamina());
-                    return;
-                }
-            }
-        }
-        else
-        {
-            playerAnimator.SetAnimation(0);
-            //ВЫНЕСТИ В МЕТОД
-            if (!isRegeneratedStamina && nextRegenStaminaTime < Time.time)
-            {
-                isRegeneratedStamina = true;
-                StartCoroutine(RegenerateStamina());
-            }
-        }
-
-
+        rb.position += (moveDir * _moveSpeed * shiftMod);
     }
     //Регенерация выносливости
-    IEnumerator RegenerateStamina()
+    private IEnumerator RegenerateStamina()
     {
         while (_currentStamina<_maxStamina && isRegeneratedStamina)
         {
@@ -276,6 +301,53 @@ public class Player : MonoBehaviour
             yield return null;
         }
         isRegeneratedStamina = false;
+    }
+
+    public void WasteMagic(float waste)
+    {
+        _currentMagic -= waste;
+        nextRegenMagicTime = Time.time + 1.5f;
+        isRegeneratedMagic = false;
+    }
+
+    private IEnumerator RegenerateMagic()
+    {
+        isRegeneratedMagic = true;
+        while (_currentMagic < _maxMagic && isRegeneratedMagic)
+        {
+            _currentMagic += _maxMagic * magicRegen * Time.deltaTime;
+            yield return null;
+        }
+        isRegeneratedMagic = false;
+    }
+
+    private IEnumerator wasteStamina()
+    {
+        isWasteStamina = true;
+        shiftMod = 2;
+        while (isWasteStamina)
+        {
+            if (_currentStamina > 0 && moveDir != Vector2.zero)
+            {
+                isRegeneratedStamina = false;
+                shiftMod = 2;
+                _currentStamina -= 5f * Time.deltaTime;
+                nextRegenStaminaTime = Time.time + 1.5f;
+                playerAnimator.SetAnimation(2);
+                yield return null;
+            }
+            else if (moveDir != Vector2.zero)
+            {
+                playerAnimator.SetAnimation(1);
+            }
+            shiftMod = 1;
+            yield return null;
+        }
+        if (moveDir != Vector2.zero)
+        {
+            playerAnimator.SetAnimation(1);
+        }
+        shiftMod = 1;
     }
 }
 

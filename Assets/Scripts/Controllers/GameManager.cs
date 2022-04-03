@@ -7,6 +7,8 @@ public static class GameManager
     public static bool isGamePaused;
     public static GameObject player = GameObject.FindGameObjectWithTag("Player");
     public static GameObject UI = GameObject.Find("UI");
+    public static Color cellColorDefault = new Color(0.925f, 0.91f, 0.8f, 0.57f);
+    public static Color cellColorOnMouse = new Color(0.59f, 0.29f, 0.29f, 0.57f);
 
     public delegate void EndCorutine();
     public static IEnumerator Tweeng(this float duration,
@@ -21,8 +23,9 @@ public static class GameManager
             vary(Mathf.SmoothStep(aa, zz, t));
             yield return null;
         }
-        end();
+        
         vary(zz);
+        end();
     }
 
     public static IEnumerator Tweeng(this float duration,
@@ -51,7 +54,8 @@ public static class GameManager
             vary(Vector3.Lerp(aa, zz, t));
             yield return null;
         }
-        end();
+        
         vary(zz);
+        end();
     }
 }

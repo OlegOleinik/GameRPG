@@ -7,13 +7,13 @@ public class PlayerAnimator : MonoBehaviour
     private Animator playerAnimator;
     private SpriteRenderer spriteRenderer;
     private int state;
-    private float previosX;
+    //private float previosX;
     // Start is called before the first frame update
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        previosX = GameManager.player.transform.position.x;
+      //  previosX = GameManager.player.transform.position.x;
     }
 
     // Update is called once per frame
@@ -30,19 +30,16 @@ public class PlayerAnimator : MonoBehaviour
     public void SetFlip(float x)
     {
 
-        if (previosX > x && spriteRenderer.flipX == false)
+        if (x < 0 && spriteRenderer.flipX == false)
         {
             spriteRenderer.flipX = true;
-            previosX = x;
             return;
         }
-        else if (previosX < x && spriteRenderer.flipX == true)
+        else if (x > 0 && spriteRenderer.flipX == true)
         {
             spriteRenderer.flipX = false;
-            previosX = x;
             return;
         }
-        previosX = x;
     }
 
 }

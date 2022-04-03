@@ -30,9 +30,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5379946999409195969}
   - {fileID: 4224318545738405707}
+  - {fileID: 5379946999409195969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,15 +63,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8, b: 0.44, a: 1}
+  m_Color: {r: 0.925, g: 0.91, b: 0.8, a: 0.5686275}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b08b1d504caede444a3f20378fca7cdb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -91,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930287923af530b4e9687bf0a7efba91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   Image: {fileID: 206149505742298535}
+  item: {fileID: 0}
   id: -1
   text: {fileID: 7092620462156503940}
   selected: 0
@@ -113,13 +114,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6111262265800994256, guid: abfff9f0201954d4f9bf91c3613353ac, type: 3}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InventoryPanel, Assembly-CSharp
           m_MethodName: SetDescription
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 7604507397348582279}
-            m_ObjectArgumentAssemblyTypeName: ACell, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: AItemCell, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -198,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6929586430319036927, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6929586430319036927, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -278,11 +279,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
---- !u!224 &4224318545738405707 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6929586430319036927, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
-  m_PrefabInstance: {fileID: 6536162813207748276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &206149505742298535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6370762308309336851, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
@@ -294,6 +290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4224318545738405707 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6929586430319036927, guid: 1e0ff2620e712b849a31e4ba8d312df6, type: 3}
+  m_PrefabInstance: {fileID: 6536162813207748276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8229609611944633640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -315,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4079165170808463081, guid: 552040c25629b85459680e34be0b39d4, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4079165170808463081, guid: 552040c25629b85459680e34be0b39d4, type: 3}
       propertyPath: m_AnchorMax.x

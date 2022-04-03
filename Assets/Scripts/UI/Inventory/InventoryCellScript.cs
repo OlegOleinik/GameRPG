@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryCellScript : ACell
+public class InventoryCellScript : AItemCell
 {
     public int id=-1;
     public Text text;
@@ -30,7 +30,7 @@ public class InventoryCellScript : ACell
     {
         if (!selected)
         {
-            gameObject.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
+            SetEnterColor();
         }
 
     }
@@ -38,7 +38,7 @@ public class InventoryCellScript : ACell
     {
         if (!selected)
         {
-            gameObject.GetComponent<Image>().color = new Color(1f, 0.8f, 0.44f, 1);
+            SetDefaultColor();
         }
     }
 

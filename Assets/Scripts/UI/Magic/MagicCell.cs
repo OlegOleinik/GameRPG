@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MagicCell : MonoBehaviour
+public class MagicCell : AMagicCell
 {
     public bool selected = false;
     private int _id;
-    public MagicScriptableObject spell;
-    [SerializeField]private Image Image;
+    //public MagicScriptableObject spell;
+    //[SerializeField]private Image Image;
 
     public int id
     {
@@ -24,31 +24,42 @@ public class MagicCell : MonoBehaviour
     }
     public void DrawCell(MagicScriptableObject spell)
     {
-        this.spell = spell;
+        this.magic = spell;
         Image.sprite = spell.spellSprite;
         Image.color = new Color(1, 1, 1, 1);
     }
     //Очистка клетки, а также очистка сохранения предмета и id. СТОИТ РАЗБИТЬ НА 2 МЕТОДА
-    public void ClearCell()
+    public override void ClearCell()
     {
-        spell = null;
+        magic = null;
         Image.sprite = null;
         Image.color = new Color(1, 1, 1, 0);
     }
-    public void OnMouseEnter()
+    public override void OnMouseEnter()
     {
         if (!selected)
         {
-            gameObject.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
+            SetEnterColor();
         }
 
     }
-    public void OnMouseExit()
+    public override void OnMouseExit()
     {
         if (!selected)
         {
-            gameObject.GetComponent<Image>().color = new Color(1f, 0.7f, 0.44f, 1);
+            SetDefaultColor();
         }
+    }
+    public override void SetEnterColor()
+    {
+        Color color = GameManager.cellColorOnMouse;
+        gameObject.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 1f);
+    }
+
+    public override void SetDefaultColor()
+    {
+        Color color = GameManager.cellColorDefault;
+        gameObject.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 1f);
     }
     public void OnMouseClick()
     {

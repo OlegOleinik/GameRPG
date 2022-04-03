@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class MagicCellsPanel : MonoBehaviour
 {
     private MagicCell[] magicCells;
     public MagicCell selectedCell = null;
-    private KeyCode[] numberKeys = new KeyCode[] { KeyCode.Alpha1,
-    KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9 };
+    //private KeyCode[] numberKeys = new KeyCode[] { KeyCode.Alpha1,
+    //KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9 };
     private GameObject activeSpell;
+    private Player player;
+    [SerializeField] MagicUpPanel magicUpPanel;
     //
     //
     //
@@ -28,6 +31,7 @@ public class MagicCellsPanel : MonoBehaviour
     private float timer;
     private void Start()
     {
+        player = GameManager.player.GetComponent<Player>();
         magicCells = gameObject.GetComponentsInChildren<MagicCell>();
         for (int i = 0; i < magicCells.Length; i++)
         {
@@ -45,60 +49,97 @@ public class MagicCellsPanel : MonoBehaviour
 
     private void Update()
     {
-        CheckSelectControl();
+      //  CheckSelectControl();
     }
 
+    public int GetSpellLvl(MagicScriptableObject spell)
+    {
+        return magicUpPanel.GetSpellLvl(spell);
+    }
     public float CastSpell()
     {
-        if (activeSpell != null)
+        if (activeSpell != null && player.currentMagic >= selectedCell.magic.magicCost)
         {
-            //GameObject spell = Instantiate(selectedCell.spell.spell.gameObject);
-            //spell.GetComponent<ASpell>().Spell();
-            //selectedCell.spell.spell.GetComponent<ASpell>().Spell();
-            //activeSpell.SetActive(true);
             activeSpell.GetComponent<ASpell>().Spell();
-            return selectedCell.spell.coolDownTime;
+            player.WasteMagic(selectedCell.magic.magicCost + (selectedCell.magic.magicCost * GetSpellLvl(selectedCell.magic) *0.1f));
+            return selectedCell.magic.coolDownTime;
         }
         return -1;
     }
 
-    private void CheckSelectControl()
+    //private void CheckSelectControl()
+    //{
+    //    //float mouseWheelAxis = Input.GetAxis("Mouse ScrollWheel");
+    //    //if (mouseWheelAxis != 0 && selectedCell != null)
+    //    //{
+    //    //    if (selectedCell.id==0 && mouseWheelAxis<0)
+    //    //    {
+    //    //        ChangeSelected(magicCells[8]);
+    //    //        return;
+    //    //    }
+    //    //    else if (selectedCell.id == 8 && mouseWheelAxis > 0)
+    //    //    {
+    //    //        ChangeSelected(magicCells[0]);
+    //    //        return;
+    //    //    }
+    //    //    ChangeSelected(magicCells[selectedCell.id+ System.Convert.ToInt32(mouseWheelAxis)]);
+    //    //    return;
+    //    //}
+    //    //int keyKode = CheckNumberDown();
+    //    //if (keyKode >= 0)
+    //    //{
+    //    //    ChangeSelected(magicCells[keyKode]);
+    //    //}
+
+    //}
+    public void SetByScroll(InputAction.CallbackContext inputValue)
     {
-        float mouseWheelAxis = Input.GetAxis("Mouse ScrollWheel");
-        if (mouseWheelAxis != 0 && selectedCell != null)
+
+        float axis = inputValue.ReadValue<float>();
+        //Debug.Log(axis);
+        if (axis != 0 && selectedCell != null)
         {
-            if (selectedCell.id==0 && mouseWheelAxis<0)
+            if (selectedCell.id == 0 && axis < 0)
             {
                 ChangeSelected(magicCells[8]);
                 return;
             }
-            else if (selectedCell.id == 8 && mouseWheelAxis > 0)
+            else if (selectedCell.id == 8 && axis > 0)
             {
                 ChangeSelected(magicCells[0]);
                 return;
             }
-            ChangeSelected(magicCells[selectedCell.id+ System.Convert.ToInt32(mouseWheelAxis)]);
+            ChangeSelected(magicCells[selectedCell.id + (int)axis]);
             return;
         }
-        int keyKode = CheckNumberDown();
-        if (keyKode >= 0)
-        {
-            ChangeSelected(magicCells[keyKode]);
-        }
-
     }
 
-    private int CheckNumberDown()
+    public void SetByNumber(InputAction.CallbackContext inputValue)
     {
-        for (int i = 0; i < numberKeys.Length; i++)
+        //YourInputAction.YourActionMap.SwitchWeapon.performed += ctx => print(ctx.ReadValue())
+        if(inputValue.phase == InputActionPhase.Started)
         {
-            if (Input.GetKeyDown(numberKeys[i]))
-            {
-                return i;
-            }
+            ChangeSelected(magicCells[(int)inputValue.ReadValue<float>()]);
         }
-        return -1;
+
+        //Keyboard.current. wKey.ReadValue()
+        //Debug.Log(((KeyControl)inputValue.control).keyCode);
+
+
+
     }
+
+    //private int CheckNumberDown()
+    //{
+    //    for (int i = 0; i < numberKeys.Length; i++)
+    //    {
+    //        if (Input.GetKeyDown(numberKeys[i]))
+    //        {
+    //            return i;
+    //        }
+    //    }
+    //    return -1;
+    //}
 
     public void ChangeSelected(MagicCell newCell)
     {
@@ -109,10 +150,11 @@ public class MagicCellsPanel : MonoBehaviour
         }
         selectedCell = newCell;
         selectedCell.selected = true;
-        selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
-        if (selectedCell.spell!=null)
+        selectedCell.SetEnterColor();
+        if (selectedCell.magic != null)
         {
-            activeSpell = Instantiate(selectedCell.spell.spell.gameObject);
+            activeSpell = Instantiate(selectedCell.magic.spell.gameObject);
+            activeSpell.GetComponent<ASpell>().SetLvl(GetSpellLvl(selectedCell.magic));
             DontDestroyOnLoad(activeSpell);
             //activeSpell.SetActive(false);
         }
@@ -122,10 +164,10 @@ public class MagicCellsPanel : MonoBehaviour
 
     private void ShowSpellName()
     {
-        if (selectedCell.spell!=null)
+        if (selectedCell.magic != null)
         {
             text.color = new Color(0.196f, 0.196f, 0.196f, 1);
-            text.text = selectedCell.spell.spellName;
+            text.text = selectedCell.magic.spellName;
             timer = Time.time + 2;
             if (!isDisappearingText)
             {
@@ -139,7 +181,7 @@ public class MagicCellsPanel : MonoBehaviour
 
     public void ClearSelected()
     {
-        selectedCell.GetComponent<Image>().color = new Color(1f, 0.7f, 0.44f, 1);
+        selectedCell.SetDefaultColor();
         selectedCell.selected = false;
         selectedCell = null;
     }
@@ -150,7 +192,7 @@ public class MagicCellsPanel : MonoBehaviour
         isDisappearingText = true;
         while (timer > Time.time)
         {
-            text.color -= new Color(0, 0, 0, 0.002f);
+            text.color -= new Color(0, 0, 0, 0.8f * Time.deltaTime);
             yield return null;
         }
         text.color = new Color(0, 0, 0, 0);

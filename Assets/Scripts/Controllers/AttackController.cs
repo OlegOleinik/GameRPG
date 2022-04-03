@@ -1,46 +1,96 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class AttackController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Sword sword;
     private MagicCellsPanel MagicCellsPanel;
-    private float coolDownTime;
-    private Player player;
+    private float swordCoolDownTime;
+    private float magicCoolDownTime;
+    private float nextRegFire1; //ƒанна€ переменна€ дл€ удобства ввода атаки
+
+    private bool isWeaponInHand = true;
+
 
     void Start()
     {
         //sword.gameObject.SetActive(false);
         MagicCellsPanel = GameObject.Find("MagicCells").GetComponent<MagicCellsPanel>();
-        player = GameManager.player.GetComponent<Player>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && EnableToAttck() && GameManager.isGamePaused == false)
+
+    }
+    public void MagicAttack(InputAction.CallbackContext inputValue)
+    {
+        if (/*inputValue.phase == InputActionPhase.Started && */EnableToMagicAttck() && GameManager.isGamePaused == false)
         {
-            sword.gameObject.SetActive(true);
-            SetCoolDown(sword.Strike1()*(0.1f/player.attackCooldown));
+            SetMagicCoolDown(MagicCellsPanel.CastSpell());
         }
-        else if (Input.GetButtonDown("Fire2") && EnableToAttck() && GameManager.isGamePaused == false)
-        {
-            SetCoolDown(MagicCellsPanel.CastSpell());
-        }
+    }
 
 
+    public void SwordAttack(InputAction.CallbackContext inputValue)
+    {
+        if (/*inputValue.phase == InputActionPhase.Started &&*/ GameManager.isGamePaused == false && nextRegFire1 < Time.time)
+        {
+            if (EnableToSwordAttck())
+            {
+                sword.gameObject.SetActive(true);
+                sword.Strike1();
+                nextRegFire1 = Time.time + 0.3f;
+                StartCoroutine(CheckHoldLeftButton(inputValue.action));
+            }
+
+        }
+    }
+
+    private IEnumerator CheckHoldLeftButton(InputAction inputValue)
+    {
+        while (sword.isActiveAndEnabled)
+        {
+            if (inputValue.IsPressed() && !sword.isNextStrike && nextRegFire1 < Time.time)
+            {
+                sword.isNextStrike = true;
+                nextRegFire1 = Time.time + 0.2f;
+            }
+            yield return null;
+        }
+
+    }
+
+    public void SwitchWeaponReady(InputAction.CallbackContext inputValue)
+    {
+        sword.GetHideSword(isWeaponInHand);
+        isWeaponInHand = !isWeaponInHand;
+    }
+
+
+
+
+    //¬ данном случае провер€етс€ меч, чтобы не кастовать при ударе мечем
+    public bool EnableToMagicAttck()
+    {
+        return (isWeaponInHand && sword.ableToAttack && magicCoolDownTime < Time.time);
     }
     //¬озвращает TRUE, если возможна атака и прошло достаточно времени с предыдущей
-    public bool EnableToAttck()
+    public bool EnableToSwordAttck()
     {
-        return (sword.ableToAttack && coolDownTime < Time.time);
+        return (isWeaponInHand && sword.ableToAttack && swordCoolDownTime < Time.time);
     }
 
-    private void SetCoolDown(float addTime)
+    public void SetSwordCoolDown(float addTime)
     {
-        coolDownTime = Time.time + addTime;
+        swordCoolDownTime = Time.time + addTime;
+    }
+
+    public void SetMagicCoolDown(float addTime)
+    {
+        magicCoolDownTime = Time.time + addTime;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SwordCell : ACell
+public class SwordCell : AItemCell
 {
     private void Start()
     {
@@ -24,12 +24,12 @@ public class SwordCell : ACell
 
     public override void OnMouseEnter()
     {
-        gameObject.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
+        SetEnterColor();
 
     }
     public override void OnMouseExit()
     {
-        gameObject.GetComponent<Image>().color = new Color(1f, 0.8f, 0.44f, 1);
+        SetDefaultColor();
     }
 
     //public void OnMouseClick()

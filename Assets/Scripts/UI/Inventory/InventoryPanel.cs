@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryPanel : MonoBehaviour
@@ -52,7 +50,7 @@ public class InventoryPanel : MonoBehaviour
     //Очистка клетки от выделения
     public void ClearSelected()
     {
-        _selectedCell.GetComponent<Image>().color = new Color(1f, 0.8f, 0.44f, 1);
+        _selectedCell.GetComponent<Image>().color = GameManager.cellColorDefault;
         _selectedCell.selected = false;
         _selectedCell = null;
         useButton.ChangeActive(_selectedCell);
@@ -137,12 +135,14 @@ public class InventoryPanel : MonoBehaviour
     {
         foreach (InventoryCellScript cell in inventoryCellScripts)
         {
+            cell.OnMouseExit();
             cell.ClearCell();
             
         }
+        ClearDescription();
     }
     //Описание предмета при наведении курсора
-    public void SetDescription(ACell cell)
+    public void SetDescription(AItemCell cell)
     {
         if(cell.item!=null)
         {

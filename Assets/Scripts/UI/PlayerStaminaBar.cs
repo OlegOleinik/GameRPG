@@ -9,35 +9,19 @@ public class PlayerStaminaBar : MonoBehaviour
     Camera mainCamera;
     private Player player;
 
-    //private void Awake()
-    //{
-       
-    //    // get the damageable parent we're attached to
-    //    //Enemy_1 = GetComponentInParent<Damageable>();
-    //}
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         matBlock = new MaterialPropertyBlock();
         player = GameManager.player.GetComponent<Player>();
-        // Cache since Camera.main is super slow
         mainCamera = Camera.main;
     }
 
     private void Update()
     {
-        // Only display on partial health
-        //if (player.ex < enemy.maxHP)
-        //{
-        //print(enemy.currentHP);
-        // meshRenderer.enabled = true;
         UpdateParams();
-        //}
-        //else
-        //{
-        //   // meshRenderer.enabled = false;
-        //}
+
     }
 
     private void UpdateParams()

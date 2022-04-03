@@ -27,7 +27,7 @@ public class ShopController : MonoBehaviour
     }
 
 
-    public void SetDescription(ACell cell)
+    public void SetDescription(AItemCell cell)
     {
         if (cell.item != null)
         {
@@ -101,13 +101,13 @@ public class ShopController : MonoBehaviour
         }
         selectedCell = newSelectedCell;
         selectedCell.selected = true;
-        selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
+        selectedCell.SetColor();
     }
 
     //Очистка клетки от выделения
     public void ClearSelected()
     {
-        selectedCell.GetComponent<Image>().color = new Color(1f, 0.8f, 0.44f, 1);
+        selectedCell.ClearColor();
         selectedCell.selected = false;
         selectedCell = null;
     }
@@ -151,8 +151,10 @@ public class ShopController : MonoBehaviour
     {
         foreach (var item in shopCells)
         {
+            item.OnMouseExit();
             item.ClearCell();
         }
+        ClearDescription();
     }
 }
 
