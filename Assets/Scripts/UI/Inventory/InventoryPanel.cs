@@ -14,6 +14,8 @@ public class InventoryPanel : MonoBehaviour
     [SerializeField] private Slider dropItemCountSlider;
     [SerializeField] private SwordCell swordCell;
     [SerializeField] private Text money;
+    public delegate void NewSelect();
+    public event NewSelect onChangeSelected;
 
     public InventoryCellScript selectedCell
     {
@@ -29,6 +31,35 @@ public class InventoryPanel : MonoBehaviour
         playerInventory = GameManager.player.GetComponent<Inventory>();
         inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
         gameObject.SetActive(false);
+        ResetSlider();
+    }
+    private void OnDisable()
+    {
+        ClearSelected();
+    }
+
+    private void SetSlider(int max)
+    {
+        dropItemCountSlider.minValue = 1;
+        dropItemCountSlider.interactable = true;
+        dropItemCountSlider.maxValue = max;
+    }
+    private void ResetSlider()
+    {
+        dropItemCountSlider.minValue = 0;
+        dropItemCountSlider.value = 0;
+        dropItemCountSlider.interactable = false;
+    }
+    private void ChangeSelectedActive(bool isItemInCell)
+    {
+        if (isItemInCell)
+        {
+            SetSlider(System.Convert.ToInt32(_selectedCell.text.text));
+        }
+        else
+        {
+            ClearSelected();
+        }
     }
 
 
@@ -36,24 +67,33 @@ public class InventoryPanel : MonoBehaviour
     //Смена выбранной клетки инвентаря, ее цвета и отмена выделения предыдущей, если она имеется
     public void ChangeSelected(InventoryCellScript newSelectedCell)
     {
-        if (_selectedCell != null)
+
+        ClearSelected();
+        if (newSelectedCell.item != null)
         {
-            ClearSelected();
+            _selectedCell = newSelectedCell;
+            _selectedCell.selected = true;
+            _selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
+            SetSlider(System.Convert.ToInt32(newSelectedCell.text.text));
+            useButton.ChangeActive(_selectedCell);
+            onChangeSelected();
         }
-        _selectedCell = newSelectedCell;
-        _selectedCell.selected = true;
-        _selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 1);
-        dropItemCountSlider.maxValue = System.Convert.ToInt32(newSelectedCell.text.text);
-        useButton.ChangeActive(_selectedCell);
+
     }
 
     //Очистка клетки от выделения
     public void ClearSelected()
     {
-        _selectedCell.GetComponent<Image>().color = GameManager.cellColorDefault;
-        _selectedCell.selected = false;
-        _selectedCell = null;
-        useButton.ChangeActive(_selectedCell);
+        if (_selectedCell != null)
+        {
+            _selectedCell.GetComponent<Image>().color = GameManager.cellColorDefault;
+            _selectedCell.selected = false;
+            _selectedCell = null;
+            useButton.ChangeActive(_selectedCell);
+            ResetSlider();
+            onChangeSelected();
+        }
+
     }
 
     //Удалить вещь из инвентаря. Если выбранная клетка есть, то по количеству спавнить на карте вещь, затем удалять из инвентаря, перерисовать инвентарь, очистить выделенную клетку
@@ -61,6 +101,7 @@ public class InventoryPanel : MonoBehaviour
     {
         if(_selectedCell != null)
         {
+            bool isItemInCell = true;
             Vector2 side;
             if (GameManager.player.GetComponent<SpriteRenderer>().flipX)
             {
@@ -71,7 +112,10 @@ public class InventoryPanel : MonoBehaviour
                 side = new Vector2(1f, 0);
             }
 
-
+            if (dropItemCountSlider.value >= System.Convert.ToInt32(_selectedCell.text.text))
+            {
+                isItemInCell = false;
+            }
             for (int i = 0; i < dropItemCountSlider.value; i++)
             {
                 dropedItem.DropItem(_selectedCell.item, GameManager.player.GetComponent<Rigidbody2D>().position + side);
@@ -80,9 +124,12 @@ public class InventoryPanel : MonoBehaviour
 
             }
             DrawInventory();
-            ClearSelected();
+            ChangeSelectedActive(isItemInCell);
         }
     }
+
+
+
 
     public void SetSword()
     {
@@ -101,7 +148,7 @@ public class InventoryPanel : MonoBehaviour
             
         }
         DrawInventory();
-        ClearSelected();
+        ChangeSelectedActive(false);
         GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
 
 
@@ -116,7 +163,11 @@ public class InventoryPanel : MonoBehaviour
         DrawInventory();
         if (count == "1")
         {
-            ClearSelected();
+            ChangeSelectedActive(false);
+        }
+        else
+        {
+            ChangeSelectedActive(true);
         }
     }
 
@@ -147,12 +198,12 @@ public class InventoryPanel : MonoBehaviour
         if(cell.item!=null)
         {
             ItemScriptableObject item = cell.item;
-            string text = $"{item.itemName}\n\n{item.description}\n\nCost: {item.cost}";
+            string text = $"{item.itemName}\n\n{item.description}\n\nBase cost: {item.cost}\nSell cost: {GetSellCost(item)}";
             if (cell.item.type=="Sword")
             {
                 text += $"\nDamage: {(item as SwordScriptableObject).damage}";
             }
-            if (cell.item.type == "Potion")
+            else if (cell.item.type == "Potion")
             {
                 text += $"\nRecover: {(item as PotionScriprableObject).recoveryHP} HP";
             }
@@ -175,19 +226,27 @@ public class InventoryPanel : MonoBehaviour
         return "";
     }
 
-
+    private int GetSellCost(ItemScriptableObject item)
+    {
+        return System.Convert.ToInt32(item.cost - (item.cost * (0.5 / GameManager.player.GetComponent<Player>().speech)));
+    }
     public void SellItem()
     {
         if (_selectedCell != null)
         {
+            bool isItemInCell = true;
             Player player = GameManager.player.GetComponent<Player>();
+            if (dropItemCountSlider.value >= System.Convert.ToInt32(_selectedCell.text.text))
+            {
+                isItemInCell = false;
+            }
             for (int i = 0; i < dropItemCountSlider.value; i++)
             {
-                player.money += System.Convert.ToInt32(_selectedCell.item.cost - (selectedCell.item.cost * (0.5 / player.speech)));
+                player.money += GetSellCost(_selectedCell.item);
                 playerInventory.DeliteItem(_selectedCell.id);
             }
             DrawInventory();
-            ClearSelected();
+            ChangeSelectedActive(isItemInCell);
         }
     }
 

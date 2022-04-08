@@ -13,7 +13,7 @@ public class OpenSpecPanelButton : AButton
         if (GetComponentInParent<UIScript>().CheckNotOpen(specsPanel.gameObject))
         {
             specsPanel.gameObject.SetActive(true);
-            specsPanel.SetText();
+            specsPanel.SetButtons();
         }
     }
 }

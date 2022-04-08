@@ -11,8 +11,8 @@ public class AttackController : MonoBehaviour
     private float magicCoolDownTime;
     private float nextRegFire1; //Данная переменная для удобства ввода атаки
 
-    private bool isWeaponInHand = true;
-
+    private bool isWeaponInHand = false;
+    [SerializeField] private PlayerAnimator playerAnimator;
 
     void Start()
     {
@@ -21,16 +21,16 @@ public class AttackController : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void MagicAttack(InputAction.CallbackContext inputValue)
     {
         if (/*inputValue.phase == InputActionPhase.Started && */EnableToMagicAttck() && GameManager.isGamePaused == false)
         {
             SetMagicCoolDown(MagicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+
+
+            playerAnimator.FlipPlayer(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x - transform.position.x);
+            playerAnimator.BlockFlip(0.19f);
         }
     }
 
@@ -43,6 +43,7 @@ public class AttackController : MonoBehaviour
             {
                 sword.gameObject.SetActive(true);
                 sword.Strike1();
+
                 nextRegFire1 = Time.time + 0.3f;
                 StartCoroutine(CheckHoldLeftButton(inputValue.action));
             }
@@ -66,8 +67,13 @@ public class AttackController : MonoBehaviour
 
     public void SwitchWeaponReady(InputAction.CallbackContext inputValue)
     {
-        sword.GetHideSword(isWeaponInHand);
-        isWeaponInHand = !isWeaponInHand;
+        if(swordCoolDownTime < Time.time)
+        {
+            sword.GetHideSword(isWeaponInHand);
+            SetSwordCoolDown(0.7f * (0.1f / GameManager.player.GetComponent<Player>().attackCooldown));
+            isWeaponInHand = !isWeaponInHand;
+        }
+
     }
 
 

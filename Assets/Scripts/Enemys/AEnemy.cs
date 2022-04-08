@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AEnemy : MonoBehaviour
+public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 {
 
     public float speed;
@@ -24,8 +24,17 @@ public abstract class AEnemy : MonoBehaviour
 
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
+    [SerializeField] private Animator enemyAnimator;
 
+    private float _nextDamage = 0;
 
+    public float nextDamage
+    {
+        get
+        {
+            return _nextDamage;
+        }
+    }
     public float currentHP
     {
         get
@@ -55,34 +64,86 @@ public abstract class AEnemy : MonoBehaviour
         }
     }
     //Умереть(( Добавить опыт игроку, уничтожиться, бросить предметы
-    private void Die()
+    public void Die()
     {
         targetPlayer.gameObject.GetComponent<Player>().AddExperience(dropedExperience);
         Destroy(gameObject);
         DropItems();
     }
     //Получить урон, если ХП меньше/равно 0-умереть
+    public void GetDamage(float damage, Vector2 force)
+    {
+        if (nextDamage < Time.time)
+        {
+            LostHP(damage);
+            GetForce(force);
+            SetDamageCoolDown(0.5f);
+            if (_currentHP <= 0)
+            {
+                Die();
+            }
+        }
+
+    }
     public void GetDamage(float damage)
     {
-        _currentHP -= damage;
-        if (_currentHP <= 0)
+        if (nextDamage < Time.time)
         {
-            Die();
+            LostHP(damage);
+            SetDamageCoolDown(0.5f);
+            if (_currentHP <= 0)
+            {
+                Die();
+            }
         }
+    }
+
+    public void LostHP(float damage)
+    {
+        _currentHP -= damage;
+    }
+
+    public void GetForce(Vector2 force)
+    {
+        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+    }
+
+
+
+    private void SetFlip(float x)
+    {
+        if (x > 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (x < 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+
+    private void SetDamageCoolDown(float addCD)
+    {
+        _nextDamage = Time.time + addCD;
     }
     //ЕСЛИ дистанция до точки спавна > 10, цель движения-точка спавна, иначе если виден игрок и целевая точка-не точка спавна-преследовать игрока, иначе свободно ходить
     private void FixedUpdate()
+    {
+        Move();
+    }
+
+    public void Move()
     {
         if ((Vector2.Distance(spawnPosition, transform.position) > 10))
         {
             _currentHP = maxHP;
             targetPoint = spawnPosition;
-            Move(targetPoint);
+            MoveToPos(targetPoint);
         }
-        else if (IsSeen() && targetPoint!=spawnPosition)
+        else if (IsSeen() && targetPoint != spawnPosition)
         {
             targetPoint = targetPlayer.position;
-            Move(targetPoint);
+            MoveToPos(targetPoint);
         }
         else
         {
@@ -90,11 +151,12 @@ public abstract class AEnemy : MonoBehaviour
         }
     }
 
-
     //Переместить врага к целевой точке
-    private void Move(Vector2 position)
+    private void MoveToPos(Vector2 position)
     {
         rb.position = Vector2.MoveTowards(transform.position, position, speed);
+        SetFlip(position.x - transform.position.x);
+        enemyAnimator.SetInteger("State", 1);
     }
 
     //Проверка видимости игрока, противник видит слой стен и игрока (заданы в Start), но true, только когда виден игрок
@@ -115,10 +177,11 @@ public abstract class AEnemy : MonoBehaviour
     {
         if (rb.position!=targetPoint)
         {
-            Move(targetPoint);
+            MoveToPos(targetPoint);
         }
         else
         {
+            enemyAnimator.SetInteger("State", 0);
             if (vaitTime == -1)
             {
                 vaitTime = Time.time + 1;
@@ -155,4 +218,6 @@ public abstract class AEnemy : MonoBehaviour
             collisionWith.GetComponent<Player>().GetDamage(attack);
         }
     }
+
+
 }

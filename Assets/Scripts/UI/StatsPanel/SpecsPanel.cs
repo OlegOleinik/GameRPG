@@ -20,15 +20,23 @@ public class SpecsPanel : MonoBehaviour
     public void IncreaseSpec(int id, float up)
     {
         player.IncreaseSpec(id, up);
-        SetText();
+        SetButtons();
     }
 
-    public void SetText()
+    public void SetButtons()
     {
         Stat[] stats = player.GetStats();
         for (int i = 0; i < stats.Length && i < buttons.Length; i++)
         {
-            buttons[i].SetText($" {stats[i].Value}");
+            if (buttons[i].isUpdate)
+            {
+                buttons[i].SetText($"{stats[i].Value}/{stats[i].maxValue}");
+                if (stats[i].Value >= stats[i].maxValue)
+                {
+                    buttons[i].SetMax($"{stats[i].Value}");
+                }
+            }
+
         }
         specspoints.text = $"Specs Points {player.specsPoints}";
     }

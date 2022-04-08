@@ -19,11 +19,23 @@ public class ShopController : MonoBehaviour
 
     private Merchant merchant;
     private ShopCell[] shopCells;
-    //private List<OnSaleItem> onSaleItems;
     private void Start()
     {
         shopCells = GetComponentsInChildren<ShopCell>();
         gameObject.SetActive(false);
+        inventoryPanel.onChangeSelected += SetSellButtonActive;
+    }
+
+    private void SetSellButtonActive()
+    {
+        if (inventoryPanel.selectedCell != null)
+        {
+            sellButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            sellButton.GetComponent<Button>().interactable = false;
+        }
     }
 
 
@@ -32,14 +44,26 @@ public class ShopController : MonoBehaviour
         if (cell.item != null)
         {
             ItemScriptableObject item = cell.item;
-            string text = $"{item.itemName}\n\n{item.description}\n\nCost: {item.cost + (item.cost * (0.5 / GameManager.player.GetComponent<Player>().speech))}";
+            string text = $"{item.itemName}\n\n{item.description}\n\nBase cost: {item.cost}\nBuy cost: {GetBuyCost(item)}";
             if (cell.item.type == "Sword")
             {
                 text += $"\nDamage: {(item as SwordScriptableObject).damage}";
             }
+            else if (cell.item.type == "Potion")
+            {
+                text += $"\nRecover: {(item as PotionScriprableObject).recoveryHP} HP";
+            }
             description.SetDescription(text);
         }
 
+
+
+
+    }
+
+    private int GetBuyCost(ItemScriptableObject item)
+    {
+        return System.Convert.ToInt32(item.cost + (item.cost * (0.5 / GameManager.player.GetComponent<Player>().speech)));
     }
     //”брать описание, когда курсор покадает €чейку инвентар€
     public void ClearDescription()
@@ -52,25 +76,19 @@ public class ShopController : MonoBehaviour
     public void OpenShop(Merchant merchant)
     {
         this.merchant = merchant;
-        //this.onSaleItems = onSaleItems;
-        //inventoryPanel.gameObject.SetActive(true);
-        //merchantPanel.SetActive(false);
-
         ChangeActive(false);
         inventoryPanel.DrawInventory();
-        //openInventoryButton.interactable = false;
-        //openShopButton.interactable = true;
-        //buyButton.SetActive(false);
-        //sellButton.SetActive(true);
     }
 
 
     public void ClickSellButton()
     {
-        merchant.AddItem(inventoryPanel.selectedCell.item);
-        inventoryPanel.SellItem();
-        //Debug.Log(merchant);
-        //Debug.Log(selectedCell.item);
+        if (inventoryPanel.selectedCell != null)
+        {
+            merchant.AddItem(inventoryPanel.selectedCell.item);
+            inventoryPanel.SellItem();
+        }
+
         
     }
 
@@ -79,7 +97,7 @@ public class ShopController : MonoBehaviour
     {
   
         Player player = GameManager.player.GetComponent<Player>();
-        int cost = System.Convert.ToInt32(selectedCell.item.cost + (selectedCell.item.cost * (0.5 / player.speech)));
+        int cost = GetBuyCost(selectedCell.item);
         if ((selectedCell != null) && (player.money >= cost && (GameManager.player.GetComponent<Inventory>().AddItem(selectedCell.item))))
         {
             player.money -= cost;
@@ -95,21 +113,28 @@ public class ShopController : MonoBehaviour
 
     public void ChangeSelected(ShopCell newSelectedCell)
     {
-        if (selectedCell != null)
+        ClearSelected();
+        if (newSelectedCell.item != null)
         {
-            ClearSelected();
+            buyButton.GetComponent<Button>().interactable = true;
+            selectedCell = newSelectedCell;
+            selectedCell.selected = true;
+            selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
         }
-        selectedCell = newSelectedCell;
-        selectedCell.selected = true;
-        selectedCell.SetColor();
+
     }
 
     //ќчистка клетки от выделени€
     public void ClearSelected()
     {
-        selectedCell.ClearColor();
-        selectedCell.selected = false;
-        selectedCell = null;
+        if (selectedCell != null)
+        {
+            selectedCell.SetDefaultColor();
+            selectedCell.selected = false;
+            selectedCell = null;
+            buyButton.GetComponent<Button>().interactable = false;
+        }
+
     }
 
 

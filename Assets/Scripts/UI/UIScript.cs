@@ -7,11 +7,13 @@ public class UIScript : MonoBehaviour
 
     [SerializeField] private List<GameObject> panels;
     [SerializeField] public ShopController shopController;
+    [SerializeField] private GameObject closeButton;
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         shopController.gameObject.SetActive(false);
+        closeButton.SetActive(false);
     }
     public void PauseGame()
     {
@@ -25,6 +27,16 @@ public class UIScript : MonoBehaviour
         GameManager.isGamePaused = false;
         Time.timeScale = 1;
     }
+
+    public void CloseAllPanels()
+    {
+        foreach (var item in panels)
+        {
+            item.SetActive(false);
+        }
+        closeButton.SetActive(false);
+        ResumeGame();
+    }
     public bool CheckNotOpen(GameObject panel)
     {
         bool res = true;
@@ -33,6 +45,7 @@ public class UIScript : MonoBehaviour
             if(item.activeInHierarchy==true && item==panel)
             {
                 item.SetActive(false);
+                closeButton.SetActive(false);
                 ResumeGame();
                 res = false;
             }
@@ -44,6 +57,7 @@ public class UIScript : MonoBehaviour
 
         if (res)
         {
+            closeButton.SetActive(true);
             PauseGame();
         }
 

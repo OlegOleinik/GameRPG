@@ -44,10 +44,6 @@ public class InventoryCellScript : AItemCell
 
     public virtual void OnMouseClick()
     {
-        if(item!=null)
-        {
-            gameObject.GetComponentInParent<InventoryPanel>().ChangeSelected(this);
-        }
-
+        gameObject.GetComponentInParent<InventoryPanel>().ChangeSelected(this);
     }
 }
