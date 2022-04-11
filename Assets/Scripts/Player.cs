@@ -22,7 +22,7 @@ public class Stat
     }
 }
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
 {
     private Vector2 moveDir;
     private Rigidbody2D rb;
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     private bool isRegeneratedMagic = false;
     private bool isWasteStamina = false;
 
-    private PlayerAnimator playerAnimator;
+    [SerializeField] private PlayerAnimator playerAnimator;
 
 
     public float maxMagic
@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
     //Устанавливает текущее ХП максимальным
     private void Start()
     {
-        playerAnimator = GetComponent<PlayerAnimator>();
+        //playerAnimator = GetComponent<PlayerAnimator>();
         _currentStamina = _maxStamina;
         _currentHP = _maxHP;
         _currentMagic = _maxMagic;
@@ -209,17 +209,48 @@ public class Player : MonoBehaviour
         }
     }
     //Получение урона игроком
-    public void GetDamage(float damage)
+    public void GetDamage(float damage, Vector2 force)
     {
         if (nextHitTime<Time.time)
         {
             if (Random.Range(0f, 1f) > blockChance)
             {
-                _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
+                LostHP(damage);
+                GetForce(force);
             }
             nextHitTime = Time.time + 0.5f;
         }
+    }
 
+    public void GetDamage(float damage)
+    {
+        if (nextHitTime < Time.time)
+        {
+            if (Random.Range(0f, 1f) > blockChance)
+            {
+                LostHP(damage);
+            }
+        }
+    }
+
+    public void LostHP(float damage)
+    {
+        _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
+        playerAnimator.Hit();
+        StartCoroutine(Wait());
+    }
+
+    public void GetForce(Vector2 force)
+    {
+        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+    }
+
+
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerAnimator.HeadIdle();
     }
 
     public Stat[] GetStats()
@@ -276,21 +307,26 @@ public class Player : MonoBehaviour
     {
         
         moveDir = inputValue.ReadValue<Vector2>();
-        playerAnimator.SetFlip(moveDir.x);
+
         
+        //playerAnimator.SetFlip(moveDir.x);
+        playerAnimator.Walk();
         if (inputValue.phase == InputActionPhase.Started && !isWasteStamina)
         {
-            playerAnimator.SetAnimation(1);
+            //playerAnimator.SetAnimation(1);
+            playerAnimator.Walk();
         }
         else if (inputValue.phase == InputActionPhase.Canceled)
         {
-            playerAnimator.SetAnimation(0);
+            //  playerAnimator.SetAnimation(0);
+            playerAnimator.Idle();
         }
     }
     //Движение. Ускорение, если нажат Shift и выносливасть > 0. Если Shift не нажата, то запускается регенерация выносливости через полторы секунды
-    private void Move()
+    public void Move()
     {
         rb.position += (moveDir * _moveSpeed * shiftMod);
+        playerAnimator.FlipPlayer(moveDir.x);
     }
     //Регенерация выносливости
     private IEnumerator RegenerateStamina()
@@ -333,21 +369,31 @@ public class Player : MonoBehaviour
                 shiftMod = 2;
                 _currentStamina -= 5f * Time.deltaTime;
                 nextRegenStaminaTime = Time.time + 1.5f;
-                playerAnimator.SetAnimation(2);
+                // playerAnimator.SetAnimation(2);
+                playerAnimator.Run();
                 yield return null;
             }
             else if (moveDir != Vector2.zero)
             {
-                playerAnimator.SetAnimation(1);
+                // playerAnimator.SetAnimation(1);
+                playerAnimator.Walk();
             }
             shiftMod = 1;
             yield return null;
         }
         if (moveDir != Vector2.zero)
         {
-            playerAnimator.SetAnimation(1);
+            //  playerAnimator.SetAnimation(1);
+            playerAnimator.Walk();
         }
         shiftMod = 1;
     }
+
+    public void Die()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+
 }
 

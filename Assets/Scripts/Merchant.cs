@@ -64,6 +64,7 @@ public class Merchant : ANPC
     {
         while (true)
         {
+            //ямхгс цнбмнйнд - наъгюрекэмн оепеохяюрэ
             if (/*Input.GetButtonDown("Interaction")*/  Keyboard.current.eKey.wasPressedThisFrame && (GameManager.UI.GetComponent<UIScript>().CheckNotOpen(shopController.gameObject)))
             {
                 OpenShop();

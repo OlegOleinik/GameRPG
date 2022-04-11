@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject UIPrefab;
+    [SerializeField] private GameObject globalLightPrefab;
 
 
     //private void Start()
@@ -19,18 +20,19 @@ public class MainMenu : MonoBehaviour
         
         GameObject player = Instantiate(playerPrefab);
         GameObject ui = Instantiate(UIPrefab);
+        Instantiate(globalLightPrefab);
         SceneManager.LoadScene("0.0");
         ui.GetComponent<Canvas>().worldCamera = player.GetComponentInChildren<Camera>();
     }
 
     public void LoadGame()
     {
-        print("Load");
+        Debug.Log("Load");
     }
 
     public void Exit()
     {
-        Application.Quit();
-        print("Exit");
+        GameManager.ExitGame();
+
     }
 }

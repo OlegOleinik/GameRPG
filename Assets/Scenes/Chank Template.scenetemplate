@@ -23,17 +23,27 @@ MonoBehaviour:
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: f9e28e9390e18864cb82f75c48dc480f, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: eda968c245f43234fa5dfa33b9613de5, type: 2}
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 1b22fb709ae5cff4fad9cb62218b40c5, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 403da06e20249ed49ad6c5193000a66f, type: 2}
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: d14d2e8b10e4098469e3756a01ae6355, type: 3}
     instantiationMode: 1
+  - dependency: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    instantiationMode: 0
   - dependency: {fileID: 11400000, guid: f8ab829ab23861241be9b1e9b6092d8c, type: 2}
     instantiationMode: 1
+  - dependency: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 16a251e904f40534ab8e71f4ce94d82b, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 3060876520745821915, guid: 167d0a038a9307f4592e33fa047f72de, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 85b1b63d6c3b495479fc8a2583e73f14, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 28904328ecc46b043bcc8ae1a8416557, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 8907746643425093540, guid: 2c4947472421bc44a870582283dffbe9, type: 3}
     instantiationMode: 1
@@ -41,7 +51,11 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 11400000, guid: b3eda2de589ccfc41ac1ec019c46356a, type: 2}
     instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: ebfc2a24e01522b49ac3178dbdbcf63f, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2100000, guid: 1a788ce4d4a47c245a44be038eccc5dd, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: b8f3df88b1c05be4c837f94ee7645a42, type: 3}
     instantiationMode: 0
   templatePipeline: {fileID: 0}
   addToDefaults: 0

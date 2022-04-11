@@ -6,15 +6,18 @@ using UnityEngine.InputSystem;
 public class Sword : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool _ableToAttack = false;
-    private SwordScriptableObject sword;
-    private SpriteRenderer spriteRenderer;
+    private bool _ableToAttack = true;
+    [SerializeField] private SwordScriptableObject sword;
+    private SpriteRenderer swordSpriteRenderer;
     [SerializeField] private SpriteRenderer sheath;
+    [SerializeField] private SpriteRenderer swordInHand;
     private Player player;
     private GameManager.EndCorutine end;
     private float strikeNumMod;
     private int strikeNum = 0;
 
+
+    [SerializeField] private PlayerAnimator playerAnimator;
     private bool _isNextStrike = false;
 
     public bool isNextStrike
@@ -28,17 +31,6 @@ public class Sword : MonoBehaviour
             _isNextStrike = value;
         }
     }
-    private void Start()
-    {
-        player = GameManager.player.GetComponent<Player>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        end = EndStrike;
-        gameObject.SetActive(false);
-    }
-    public void GetHideSword(bool isActive)
-    {
-        sheath.gameObject.SetActive(isActive);
-    }
 
     public bool ableToAttack
     {
@@ -47,19 +39,45 @@ public class Sword : MonoBehaviour
             return _ableToAttack;
         }
     }
+    private void Start()
+    {
+        player = GameManager.player.GetComponent<Player>();
+        swordSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        end = EndStrike;
+        gameObject.SetActive(false);
+        SetSword(sword);
+        GetHideSword(true);
+    }
+    public void GetHideSword(bool isActive)
+    {
+        sheath.gameObject.SetActive(isActive);
+        swordInHand.gameObject.SetActive(!isActive);
+        if (isActive)
+        {
+            SwordDisappear();
+            playerAnimator.HideWeapon();
+        }
+        else
+        {
+            playerAnimator.ReadyWeapon();
+        }
+
+    }
+
+
 
     public void SetSword(SwordScriptableObject newSword)
     {
         sword = newSword;
-        _ableToAttack = true;
-        spriteRenderer.sprite = sword.itemSprite;
+        swordSpriteRenderer.sprite = sword.itemSprite;
         sheath.sprite = sword.itemSprite;
+        swordInHand.sprite = sword.itemSprite;
     }
     private void EndStrike()
     {
 
         //Возможно, переписать
-        if (isNextStrike && strikeNum < 3)
+        if (_isNextStrike && strikeNum < 3)
         {
             if (strikeNum == 1)
             {
@@ -72,7 +90,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            
+            swordInHand.gameObject.SetActive(true);
             GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));
             SwordDisappear();
         }
@@ -82,12 +100,13 @@ public class Sword : MonoBehaviour
     //Пропажа меча и кулдаун атаки
     private void SwordDisappear()
     {
-        transform.localPosition = Vector3.zero;
-
+        transform.localPosition = new Vector3(0, -0.19f, 0);
+        playerAnimator.ReadyWeapon();
         strikeNum = 0;
         isNextStrike = false;
         gameObject.SetActive(false);
         _ableToAttack = true;
+
     }
     private float GetX()
     {
@@ -101,52 +120,67 @@ public class Sword : MonoBehaviour
     //Удар 1
     public void Strike1()
     {
+        swordInHand.gameObject.SetActive(false);
+        playerAnimator.Strike1();
         strikeNum = 1;
         strikeNumMod = 1;
         float x = GetX();
         float angle = GetAngle(x);
-        int mod = LeftRigntMod(x);
+        int flipMod = LeftRigntMod(x);
         _ableToAttack = false;
-        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle+(mod*60), angle-(mod*60), end));
+
+        playerAnimator.FlipPlayer(x);
+        playerAnimator.BlockFlip(0.45f);
+        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle+(flipMod * 60), angle-(flipMod * 60), end));
         //return 1f;
     }
     //Удар 2
     public void Strike2()
     {
+        playerAnimator.Strike2();
         strikeNum = 2;
         isNextStrike = false;
         strikeNumMod = 0.6f;
         float x = GetX();
         float angle = GetAngle(x);
-        int mod = LeftRigntMod(x);
-        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle - (mod * 60), angle + (mod * 60), end));
+        int flipMod = LeftRigntMod(x);
+
+        playerAnimator.FlipPlayer(x);
+        playerAnimator.BlockFlip(0.45f);
+        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle - (flipMod * 60), angle + (flipMod * 60), end));
     }
     public void Strike3()
     {
+        playerAnimator.Strike3();
         strikeNum = 3;
         isNextStrike = false;
         strikeNumMod = 1.3f;
         float x = GetX();
         float y = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).y - transform.position.y;
         float angle = GetAngle(x);
+
         //int mod = LeftRigntMod(x);
         _ableToAttack = false;
-        
+        playerAnimator.FlipPlayer(x);
+        playerAnimator.BlockFlip(0.19f);
 
+        int flipMod = LeftRigntMod(x);
 
-        StartCoroutine(0.2f.Tweeng((u) => transform.localPosition = u, new Vector3(0,0,0), new Vector3(x, y, 0).normalized / 5, end));
+        StartCoroutine(0.2f.Tweeng((u) => transform.localPosition = u, new Vector3(0, 0, 0), new Vector3(x * flipMod, y , 0).normalized / 5, end));
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
     }
     //Столкновение меча с чем-либо. С врагом-отталкивет, со стеной-пропадает.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(5*((collision.transform.position - transform.position).normalized), ForceMode2D.Impulse);
-            collision.GetComponent<AEnemy>().GetDamage(strikeNumMod * sword.damage * player.attack);
+            
+            collision.GetComponent<AEnemy>().GetDamage(strikeNumMod * sword.damage * player.attack, 5 * (collision.transform.position - transform.position).normalized);
         }
         else if (collision.tag == "Wall")
         {
+
             SwordDisappear();
         }
     }

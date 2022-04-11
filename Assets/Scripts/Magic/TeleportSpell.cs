@@ -22,14 +22,13 @@ public class TeleportSpell : ASpell
     }
     private void ShowPlayer()
     {
-        GameManager.player.GetComponent<BoxCollider2D>().enabled = true;
-        GameManager.player.GetComponent<SpriteRenderer>().enabled = true;
+        GameManager.player.GetComponent<PlayerAnimator>().HidePlayer(false);
+
     }
 
     private void HidePlayer()
     {
-        GameManager.player.GetComponent<BoxCollider2D>().enabled = false;
-        GameManager.player.GetComponent<SpriteRenderer>().enabled = false;
+        GameManager.player.GetComponent<PlayerAnimator>().HidePlayer(true);
     }
 
     public override void SetLvl(int lvl)

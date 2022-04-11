@@ -2,32 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMagicBar : MonoBehaviour
+public class PlayerMagicBar : ABar
 {
-    MaterialPropertyBlock matBlock;
-    MeshRenderer meshRenderer;
-    Camera mainCamera;
+
     private Player player;
 
-    private void Start()
+    public override void SetLocalParams()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        matBlock = new MaterialPropertyBlock();
         player = GameManager.player.GetComponent<Player>();
-        // Cache since Camera.main is super slow
-        mainCamera = Camera.main;
+
     }
 
-    private void Update()
+    public override float UpdateCount()
     {
-        UpdateParams();
+        return player.currentMagic / player.maxMagic;
     }
-
-    private void UpdateParams()
-    {
-        meshRenderer.GetPropertyBlock(matBlock);
-        matBlock.SetFloat("_Fill", player.currentMagic / player.maxMagic);
-        meshRenderer.SetPropertyBlock(matBlock);
-    }
-
 }

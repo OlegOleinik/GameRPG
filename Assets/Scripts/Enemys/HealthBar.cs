@@ -2,30 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : ABar
 {
-    MaterialPropertyBlock matBlock;
-    MeshRenderer meshRenderer;
-    Camera mainCamera;
-    [SerializeField]private AEnemy enemy;
-
-    private void Awake()
+    private AEnemy enemy;
+    public override void Update()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        matBlock = new MaterialPropertyBlock();
-        // get the damageable parent we're attached to
-        //Enemy_1 = GetComponentInParent<Damageable>();
-    }
-
-    private void Start()
-    {
-        // Cache since Camera.main is super slow
-        mainCamera = Camera.main;
-    }
-
-    private void Update()
-    {
-        // Only display on partial health
         if (enemy.currentHP < enemy.maxHP)
         {
             meshRenderer.enabled = true;
@@ -36,12 +17,15 @@ public class HealthBar : MonoBehaviour
             meshRenderer.enabled = false;
         }
     }
-
-    private void UpdateParams()
+    public override void SetLocalParams()
     {
-        meshRenderer.GetPropertyBlock(matBlock);
-        matBlock.SetFloat("_Fill", enemy.currentHP / (float)enemy.maxHP);
-        meshRenderer.SetPropertyBlock(matBlock);
+        enemy = GetComponentInParent<AEnemy>();
+        GetComponent<MeshRenderer>().sortingOrder = 20;
+    }
+
+    public override float UpdateCount()
+    {
+        return enemy.currentHP / (float)enemy.maxHP;
     }
 
 }
