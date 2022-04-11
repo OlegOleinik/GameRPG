@@ -17,7 +17,10 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] private Text statText;
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -45,7 +48,10 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -135,8 +141,11 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======

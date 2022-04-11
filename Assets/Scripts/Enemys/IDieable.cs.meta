@@ -2,6 +2,7 @@ fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 5088fb3fed9e7f547b7505d00b2f7f63
 =======
 <<<<<<< HEAD:Assets/Scripts/Enemys/IDamagable.cs.meta
@@ -20,6 +21,13 @@ guid: 5088fb3fed9e7f547b7505d00b2f7f63
 =======
 <<<<<<< HEAD:Assets/Scripts/MenuBorders.cs.meta
 guid: 4e8bcba7582a78f4fbdcb28168577b72
+=======
+guid: 5088fb3fed9e7f547b7505d00b2f7f63
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203:Assets/Scripts/Enemys/IDieable.cs.meta
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+<<<<<<< HEAD:Assets/Scripts/UI/ABar.cs.meta
+guid: 0653d1162e50a8f4e8b0770ce2ffbefa
 =======
 guid: 5088fb3fed9e7f547b7505d00b2f7f63
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203:Assets/Scripts/Enemys/IDieable.cs.meta

@@ -13,7 +13,11 @@ public class IncreaseButton : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void Awake()
+=======
+    private void Start()
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
     private void Start()
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
@@ -44,7 +48,11 @@ public class IncreaseButton : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
+=======
+        gameObject.GetComponentInChildren<Text>().text = text +$": {stat}";
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
         gameObject.GetComponentInChildren<Text>().text = text +$": {stat}";
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203

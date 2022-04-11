@@ -28,7 +28,10 @@ public class OpenSpecPanelButton : AButton
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             uIScript.ExpandPanel(specsPanel.gameObject, transform.localPosition);
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======

@@ -41,6 +41,7 @@ public class UIScript : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public void ExpandPanel(GameObject panel, Vector2 startPos)
     {
@@ -54,6 +55,8 @@ public class UIScript : MonoBehaviour
     }
 
 
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======

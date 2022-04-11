@@ -11,7 +11,11 @@ public class PlayerAnimator : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private bool _isFlip = false;
+=======
+    private bool isFlip = false;
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
     private bool isFlip = false;
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
@@ -27,6 +31,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator headAnim;
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private SpriteRenderer sheath;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +62,11 @@ public class PlayerAnimator : MonoBehaviour
     private float nextFlipTime;
     //[SerializeField] private Animation walk;
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+
+    private float nextFlipTime;
+    //[SerializeField] private Animation walk;
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
     void Start()
     {
         //playerAnimator = GetComponent<Animator>();
@@ -65,7 +75,10 @@ public class PlayerAnimator : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         spritesObjects = new SpriteRenderer[] { legAnim.gameObject.GetComponent<SpriteRenderer>(), bodyAnim.gameObject.GetComponent<SpriteRenderer>(), headAnim.gameObject.GetComponent<SpriteRenderer>(), sheath, swordInHand};
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -90,6 +103,7 @@ public class PlayerAnimator : MonoBehaviour
         //legAnim.StartPlayback();
         legAnim.SetInteger("State", 1);
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -241,6 +255,36 @@ public class PlayerAnimator : MonoBehaviour
         bodyAnim.SetInteger("State", 3);
     }
 
+=======
+
+    public void Idle()
+    {
+        //legAnim.StopPlayback();
+        legAnim.SetInteger("State", 0);
+    }
+
+    public void Run()
+    {
+        legAnim.SetInteger("State", 2);
+    }
+
+
+    public void Strike1()
+    {
+        bodyAnim.SetInteger("State", 1);
+    }
+
+    public void Strike2()
+    {
+        bodyAnim.SetInteger("State", 2);
+    }
+
+    public void Strike3()
+    {
+        bodyAnim.SetInteger("State", 3);
+    }
+
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
     public void MagicCast()
     {
         //bodyAnim.SetInteger("State", 3);
@@ -262,6 +306,9 @@ public class PlayerAnimator : MonoBehaviour
         nextFlipTime = Time.time + addTime;
     }
 
+<<<<<<< HEAD
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
@@ -271,6 +318,9 @@ public class PlayerAnimator : MonoBehaviour
         if (dir < 0 && !isFlip && nextFlipTime < Time.time)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
@@ -280,6 +330,7 @@ public class PlayerAnimator : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             playerCamera.transform.localRotation = Quaternion.Euler(0, 180, 0);
             playerCamera.transform.localPosition = new Vector3(0, 0, 10);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -293,10 +344,17 @@ public class PlayerAnimator : MonoBehaviour
         }
         else if (dir > 0 && isFlip && nextFlipTime < Time.time){
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+            isFlip = true;
+            sheath.sortingOrder = 11;
+        }
+        else if (dir > 0 && isFlip && nextFlipTime < Time.time){
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             playerCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
             playerCamera.transform.localPosition = new Vector3(0, 0, -10);
+<<<<<<< HEAD
 <<<<<<< HEAD
             _isFlip = false;
             sheath.sortingOrder = 9;
@@ -311,6 +369,10 @@ public class PlayerAnimator : MonoBehaviour
 =======
             isFlip = true;
             sheath.sortingOrder = 11;
+=======
+            isFlip = false;
+            sheath.sortingOrder = 9;
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
             isFlip = false;
             sheath.sortingOrder = 9;

@@ -22,8 +22,11 @@ public class ShopController : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void Awake()
 =======
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -49,6 +52,7 @@ public class ShopController : MonoBehaviour
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 
     private void SetSellButtonActive()
@@ -61,6 +65,8 @@ public class ShopController : MonoBehaviour
         {
             sellButton.GetComponent<Button>().interactable = false;
         }
+=======
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======

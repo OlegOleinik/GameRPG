@@ -29,10 +29,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private GameObject healthBar;
 
     private float _nextDamage = 0;
 
+=======
+    private float _nextDamage = 0;
+
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
     private float _nextDamage = 0;
 
@@ -134,11 +139,20 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         if (x > 0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 =======
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+=======
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (x < 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+>>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -158,6 +172,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private void SetDamageCoolDown(float addCD)
+    {
+        _nextDamage = Time.time + addCD;
     }
 
     private void SetDamageCoolDown(float addCD)
