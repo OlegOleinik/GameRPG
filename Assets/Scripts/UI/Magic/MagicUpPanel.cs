@@ -13,8 +13,22 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
 
     private MagicUpCell[] magicUpCells;
 
-    //Unity doesn't know how to serialize a Dictionary
-    //public Dictionary<int, string> _myDictionary = new Dictionary<int, string>();
+    public List<int> GetLvls()
+    {
+        List<int> lvls = new List<int>();
+        foreach (var item in magicLevels)
+        {
+            lvls.Add(item.Value);
+        }
+        return lvls;
+    }
+    public void SetLvls(List<int> lvls)
+    {
+        _values = lvls;
+        OnAfterDeserialize();
+    }
+
+
     public void OnBeforeSerialize()
     {
 

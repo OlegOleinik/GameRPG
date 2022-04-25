@@ -14,26 +14,33 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     [SerializeField] private DropedItem dropedItem;
     private Transform targetPlayer;
-    private Vector2 targetPoint;
-    private Vector2 spawnPosition;
+    public Vector2 targetPoint;
+    public Vector2 spawnPosition;
     private float _currentHP;
     private float vaitTime=-1;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+    
 
     private LayerMask layerMask;
 
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
+<<<<<<< Updated upstream
     [SerializeField] private Animator enemyAnimator;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+    [SerializeField] private Animator enemyLegAnimator;
+
+>>>>>>> Stashed changes
     private GameObject healthBar;
 
     private float _nextDamage = 0;
 
+<<<<<<< Updated upstream
 =======
     private float _nextDamage = 0;
 
@@ -50,6 +57,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     private float _nextDamage = 0;
 
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+>>>>>>> Stashed changes
     public float nextDamage
     {
         get
@@ -75,6 +84,16 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         layerMask = LayerMask.GetMask("Wall")+ LayerMask.GetMask("Player");
 
         healthBar = GetComponentInChildren<HealthBar>().gameObject;
+<<<<<<< Updated upstream
+=======
+        SetStart();
+    }
+
+
+    public virtual void SetStart()
+    {
+
+>>>>>>> Stashed changes
     }
     //Выбросить предметы, согласну шансу выпадения
     private void DropItems()
@@ -92,8 +111,12 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         targetPlayer.gameObject.GetComponent<Player>().AddExperience(dropedExperience);
         Destroy(gameObject);
+        DieEvent();
         DropItems();
     }
+
+
+    public abstract void DieEvent();
     //Получить урон, если ХП меньше/равно 0-умереть
     public void GetDamage(float damage, Vector2 force)
     {
@@ -137,6 +160,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     private void SetFlip(float x)
     {
         if (x > 0)
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,6 +193,13 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
         else if (x < 0)
         {
+=======
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (x < 0)
+        {
+>>>>>>> Stashed changes
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -177,6 +208,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     private void SetDamageCoolDown(float addCD)
     {
         _nextDamage = Time.time + addCD;
+<<<<<<< Updated upstream
     }
 
     private void SetDamageCoolDown(float addCD)
@@ -197,6 +229,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     private void SetDamageCoolDown(float addCD)
     {
         _nextDamage = Time.time + addCD;
+=======
+>>>>>>> Stashed changes
     }
     //ЕСЛИ дистанция до точки спавна > 10, цель движения-точка спавна, иначе если виден игрок и целевая точка-не точка спавна-преследовать игрока, иначе свободно ходить
     private void FixedUpdate()
@@ -204,7 +238,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         Move();
     }
 
+<<<<<<< Updated upstream
     public void Move()
+=======
+    public virtual void Move()
+>>>>>>> Stashed changes
     {
         if ((Vector2.Distance(spawnPosition, transform.position) > 10))
         {
@@ -224,13 +262,25 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     //Переместить врага к целевой точке
+<<<<<<< Updated upstream
     private void MoveToPos(Vector2 position)
     {
         rb.position = Vector2.MoveTowards(transform.position, position, speed);
         SetFlip(position.x - transform.position.x);
         enemyAnimator.SetInteger("State", 1);
+=======
+    public virtual void MoveToPos(Vector2 position)
+    {
+        rb.position = Vector2.MoveTowards(transform.position, position, speed);
+        SetFlip(position.x - transform.position.x);
+        SetLegAnim(1);
+>>>>>>> Stashed changes
     }
+    public virtual void SetLegAnim(int i)
+    {
+        enemyLegAnimator.SetInteger("State", i);
 
+    }
     //Проверка видимости игрока, противник видит слой стен и игрока (заданы в Start), но true, только когда виден игрок
     private bool IsSeen()
     {
@@ -245,7 +295,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //Свободное хождение. Если целевая точне не равна текущей-двигаться к ней. ИНАЧЕ, ЕСЛИ время ожидания -1, задать время 1 сек, ИНАЧЕ ЕСЛИ время ожидания больше текущего, задать новую целевую точку.
     //Если время ожидания меньше текущего и не -1, ничего не происходит (противник стоит)
-    private void DefaultWalk()
+    public virtual void DefaultWalk()
     {
         if (rb.position!=targetPoint)
         {
@@ -253,7 +303,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
         else
         {
+<<<<<<< Updated upstream
             enemyAnimator.SetInteger("State", 0);
+=======
+            SetLegAnim(0);
+>>>>>>> Stashed changes
             if (vaitTime == -1)
             {
                 vaitTime = Time.time + 1;
@@ -267,13 +321,13 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
     //Ставит рандомную целевую точку в круге радиуса 5 вокруг точки спавна
-    private Vector2 SetRandomTargetPoint()
+    public Vector2 SetRandomTargetPoint()
     {
         return (Random.insideUnitCircle * 5) + spawnPosition;
     }
 
     //При столкновении со стеной выбрать новую целевую точку. Используется именно Stay, т.к. при Enter все еще может застрять
-    private void OnCollisionStay2D(Collision2D collision)
+    public virtual void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
@@ -282,14 +336,24 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     //При столкновении с игроком вызывает его метод получения урона
-    private void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collisionWith = collision.gameObject;
         if (collisionWith.tag == "Player")
         {
             collisionWith.GetComponent<Player>().GetDamage(attack);
+            targetPoint = targetPlayer.position;
+            AttackAnimation();
         }
     }
 
+<<<<<<< Updated upstream
+=======
+    public virtual void AttackAnimation()
+    {
+
+    }
+
+>>>>>>> Stashed changes
 
 }

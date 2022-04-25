@@ -34,9 +34,15 @@ public class LaserRicochetAim : MonoBehaviour
                     isRicochet = true;
                     ricochetCount++;
                     newDir = Vector2.Reflect(direction, hit.normal);
-                    endPosition = hit.point;
-                }
+                //
+                    endPosition = hit.point + (newDir.normalized / 100);
             }
+               else
+               {
+                    endPosition = hit.point;
+               }
+
+        }
         aimLine.SetPosition(++aimLine.positionCount - 1, endPosition);
         if (isRicochet)
         {

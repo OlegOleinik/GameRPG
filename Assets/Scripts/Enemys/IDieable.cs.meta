@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -32,6 +33,9 @@ guid: 0653d1162e50a8f4e8b0770ce2ffbefa
 guid: 5088fb3fed9e7f547b7505d00b2f7f63
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203:Assets/Scripts/Enemys/IDieable.cs.meta
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+guid: 5088fb3fed9e7f547b7505d00b2f7f63
+>>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

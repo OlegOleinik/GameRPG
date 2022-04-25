@@ -28,6 +28,7 @@ public class SpecsPanel : MonoBehaviour
         Stat[] stats = player.GetStats();
         for (int i = 0; i < stats.Length && i < buttons.Length; i++)
         {
+<<<<<<< Updated upstream
             if (buttons[i].isUpdate)
             {
                 buttons[i].SetText($"{stats[i].Value}/{stats[i].maxValue}");
@@ -37,6 +38,17 @@ public class SpecsPanel : MonoBehaviour
                 }
             }
 
+=======
+            
+            if (stats[i].Value >= stats[i].maxValue)
+            {
+                buttons[i].SetMax($"{stats[i].Value}");
+            }
+            else
+            {
+                buttons[i].SetText($"{stats[i].Value}/{stats[i].maxValue}");
+            }
+>>>>>>> Stashed changes
         }
         specspoints.text = $"Specs Points {player.specsPoints}";
     }

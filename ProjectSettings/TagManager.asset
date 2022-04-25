@@ -8,6 +8,10 @@ TagManager:
   - Wall
   - InventoryCell
   - UI
+<<<<<<< Updated upstream
+=======
+  - Quest
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,11 @@ TagManager:
   - Player
   - Wall
   - WaterCollider
+<<<<<<< Updated upstream
   - 
+=======
+  - NonWaterEnemys
+>>>>>>> Stashed changes
   - 
   - 
   - 

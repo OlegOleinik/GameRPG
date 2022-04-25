@@ -13,12 +13,39 @@ public static class GameManager
     public delegate void EndCorutine();
 
 
+<<<<<<< Updated upstream
+=======
+    public static void SetNewPlayer(GameObject newPlayer)
+    {
+        player = newPlayer;
+    }
+
+>>>>>>> Stashed changes
     public static void ExitGame()
     {
         Application.Quit();
         Debug.Log("Exit");
     }
 
+<<<<<<< Updated upstream
+=======
+
+    public static void PauseGame()
+    {
+        isGamePaused = true;
+        Time.timeScale = 0;
+    }
+
+    //Возобновить
+    public static void ResumeGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1;
+    }
+
+
+
+>>>>>>> Stashed changes
     public static IEnumerator Tweeng(this float duration,
     System.Action<float> vary, float aa, float zz, EndCorutine end)
     {
@@ -83,4 +110,24 @@ public static class GameManager
         }
         vary(zz);
     }
+<<<<<<< Updated upstream
+=======
+
+
+
+    public static IEnumerator Tweeng(this float duration,
+  System.Action<Color> vary, Color aa, Color zz)
+    {
+        float sT = Time.time;
+        float eT = sT + duration;
+
+        while (Time.time < eT)
+        {
+            float t = (Time.time - sT) / duration;
+            vary(Color.Lerp(aa, zz, t));
+            yield return null;
+        }
+        vary(zz);
+    }
+>>>>>>> Stashed changes
 }

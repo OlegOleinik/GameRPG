@@ -52,19 +52,54 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     private float _currentHP;
     private float _currentStamina;
     private float _currentMagic;
+    private float _rollCollDown = 0;
 
     private bool isRegeneratedStamina = false;
     private bool isRegeneratedMagic = false;
     private bool isWasteStamina = false;
 
+<<<<<<< Updated upstream
+    [SerializeField] private PlayerAnimator playerAnimator;
+=======
+    private int _lvl = 0;
+>>>>>>> Stashed changes
+
     [SerializeField] private PlayerAnimator playerAnimator;
 
 
+
+    public float rollCollDown
+    {
+        get
+        {
+            return _rollCollDown;
+        }
+        set
+        {
+            _rollCollDown = value;
+        }
+    }
+
+    public int lvl
+    {
+        get
+        {
+            return _lvl;
+        }
+        set
+        {
+            _lvl = value;
+        }
+    }
     public float maxMagic
     {
         get
         {
             return _maxMagic;
+        }
+        set
+        {
+            _maxMagic = value;
         }
     }
     public float currentMagic
@@ -119,6 +154,10 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             return _currentStamina;
         }
+        set
+        {
+            _currentStamina = value;
+        }
     }
     public float maxHP
     {
@@ -133,12 +172,20 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             return _currentHP;
         }
+        set
+        {
+            _currentHP = value;
+        }
     }
     public float experience
     {
         get
         {
             return _experience;
+        }
+        set
+        {
+            _experience = value;
         }
     }
     public float moveSpeed{
@@ -157,6 +204,10 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             return _requiredExperience;
         }
+        set
+        {
+            _requiredExperience = value;
+        }
     }
     public int money
     {
@@ -174,6 +225,10 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         get
         {
             return _specsPoints;
+        }
+        set
+        {
+           _specsPoints = value;
         }
     }
 
@@ -206,6 +261,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             _experience -= _requiredExperience;
             _requiredExperience *= 1.5f;
             _specsPoints++;
+            _lvl++;
         }
     }
     //Получение урона игроком
@@ -232,6 +288,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             }
         }
     }
+<<<<<<< Updated upstream
 
     public void LostHP(float damage)
     {
@@ -245,6 +302,21 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
+=======
+
+    public void LostHP(float damage)
+    {
+        _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
+        playerAnimator.Hit();
+        StartCoroutine(Wait());
+    }
+
+    public void GetForce(Vector2 force)
+    {
+        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+    }
+
+>>>>>>> Stashed changes
 
 
     IEnumerator Wait()
@@ -256,6 +328,16 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     public Stat[] GetStats()
     {
         return new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, _maxMagic, _speech };
+    }
+
+    public void SetStats(List<float> loadedStats)
+    {
+        //Debug.Log(loadedStats[0]);
+        var stats = new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, _maxMagic, _speech };
+        for (int i = 0; i < stats.Length; i++)
+        {
+            stats[i].Value = loadedStats[i];
+        }
     }
 
     public void IncreaseSpec(int id, float up)
@@ -289,6 +371,21 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             StartCoroutine(RegenerateMagic());
         }
     }
+
+
+    public void Roll(InputAction.CallbackContext inputValue)
+    {
+        if (inputValue.phase == InputActionPhase.Started && _rollCollDown < Time.time && _currentStamina >= 3)
+        {
+            _rollCollDown = Time.time + 1f;
+            rb.AddForce(moveDir*50, ForceMode2D.Impulse);
+            _currentStamina -= 3;
+            isRegeneratedStamina = false;
+            nextRegenStaminaTime = Time.time + 1.5f;
+        }
+    }
+
+
 
     public void GetRun(InputAction.CallbackContext inputValue)
     {

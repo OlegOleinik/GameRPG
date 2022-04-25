@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7323915710453220309}
   - component: {fileID: 7323915710453220305}
   - component: {fileID: 7323915710453220304}
+  - component: {fileID: 152249219560152203}
   m_Layer: 6
   m_Name: Merchant
   m_TagString: Untagged
@@ -147,7 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d559f4dfec01149839b048980d47ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onSaleItems: []
+  onSaleItems:
+  - item: {fileID: 11400000, guid: e8c6188e99056cf4286bf35ae5829d85, type: 2}
+    count: 24
+  - item: {fileID: 11400000, guid: d860852e8f6850f42866a9c516263403, type: 2}
+    count: 2
+  - item: {fileID: 11400000, guid: 3a235cb1988778e47a89d3eb89bf65a9, type: 2}
+    count: 35
+  nPCid: 0
 --- !u!58 &7323915710453220304
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +172,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.74
+--- !u!114 &152249219560152203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323915710453220314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbed3292e4e672042b3dad8e2ddbe103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  merchant: {fileID: 7323915710453220305}
+  branchingDialogueSentences:
+  - {fileID: 11400000, guid: b5e3814aca2e0e64fa3550cfd1ce1e67, type: 2}
+  - {fileID: 11400000, guid: 56fc769255c933945a306ca44194bd15, type: 2}
+  - {fileID: 11400000, guid: 8f05be14ba1c377438c5b593b70e7e01, type: 2}
+  kill3RoostersQuest: {fileID: 7633008908506939022, guid: 95cc4ae59d32b5b418c2704c3c0682ba, type: 3}

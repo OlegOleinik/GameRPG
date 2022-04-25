@@ -19,6 +19,7 @@ public class ShopController : MonoBehaviour
 
     private Merchant merchant;
     private ShopCell[] shopCells;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,6 +34,9 @@ public class ShopController : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
     private void Start()
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+    private void Awake()
+>>>>>>> Stashed changes
     {
         shopCells = GetComponentsInChildren<ShopCell>();
         inventoryPanel.onChangeSelected += SetSellButtonActive;
@@ -71,6 +75,18 @@ public class ShopController : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+    }
+
+    private void SetSellButtonActive()
+    {
+        if (inventoryPanel.selectedCell != null)
+        {
+            sellButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            sellButton.GetComponent<Button>().interactable = false;
+        }
     }
 
 
@@ -201,7 +217,7 @@ public class ShopController : MonoBehaviour
 
         ClearShop();
         money.text = $"{GameManager.player.GetComponent<Player>().money}";
-        for (int i=0; i< merchant.onSaleItems.Count && i< shopCells.Length-1; i++)
+        for (int i=0; i< Mathf.Min(merchant.onSaleItems.Count, shopCells.Length-1); i++)
         {
             shopCells[i].DrawCell(merchant.onSaleItems[i].item, merchant.onSaleItems[i].count, i);
         }

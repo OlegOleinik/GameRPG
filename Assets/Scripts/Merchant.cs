@@ -17,15 +17,20 @@ public class OnSaleItem
 
 public class Merchant : ANPC
 {
-    private Coroutine checkButton;
+   // private Coroutine checkButton;
     SpriteRenderer spriteRenderer;
     private ShopController shopController;
     public List<OnSaleItem> onSaleItems;
+    public int nPCid;
+
+
+    private InteractionController interactionController;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         shopController = GameManager.UI.GetComponent<UIScript>().shopController;
+        interactionController = GameManager.player.GetComponent<InteractionController>();
         // Debug.Log(GameManager.UI.GetComponentInChildren<ShopController>());
         //shopController.gameObject.SetActive(false);
 
@@ -39,14 +44,26 @@ public class Merchant : ANPC
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (collision.tag=="Player")
         {
-            spriteRenderer.color = new Color(1, 0.98f, 0.32f, 1);
-            checkButton = StartCoroutine(CheckButton());
+            if (interactionController.AddInteraction(StartDialog, transform.position))
+            {
+                spriteRenderer.color = new Color(1, 0.98f, 0.32f, 1);
+            }
+            else
+            {
+                spriteRenderer.color = new Color(1, 1, 1, 1);
+            }
+
+          
+
+           // checkButton = StartCoroutine(CheckButton());
         }
     }
+
 
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -54,14 +71,30 @@ public class Merchant : ANPC
         if (collision.tag == "Player")
         {
             spriteRenderer.color = new Color(1, 1, 1, 1);
-            StopCoroutine(checkButton);
+            interactionController.RemoveInteraction(StartDialog);
+            StopDialog();
+           // StopCoroutine(checkButton);
         }
     }
 
     //»спользовал IEnumerator дл€ оптимизации, так как OnTriggerStay вызываетс€ от воды и стен. ¬торой способ-создать внутри торговца игровой объект
     //и к нему прикрепить компонент колайдера, дл€ объекта сделать слой, взаимодействующий только с игроком
-    IEnumerator CheckButton()
+   // IEnumerator CheckButton()
+    //{
+    //    while (true)
+    //    {
+    //        //—Ќ»«” √ќ¬Ќќ ќƒ - ќЅя«ј“≈Ћ№Ќќ ѕ≈–≈ѕ»—ј“№
+    //        if (/*Input.GetButtonDown("Interaction")*/  Keyboard.current.eKey.wasPressedThisFrame && (GameManager.UI.GetComponent<UIScript>().CheckNotOpen(shopController.gameObject)))
+    //        {
+    //            OpenShop();
+    //        }
+    //        yield return null;
+    //    }
+    //}
+
+    public void StartDialog()
     {
+<<<<<<< Updated upstream
         while (true)
         {
             //—Ќ»«” √ќ¬Ќќ ќƒ - ќЅя«ј“≈Ћ№Ќќ ѕ≈–≈ѕ»—ј“№
@@ -71,12 +104,26 @@ public class Merchant : ANPC
             }
             yield return null;
         }
+=======
+        interactionController.ClearInteraction();
+        GameManager.player.GetComponent<NPCController>().StartDialogue(nPCid);
+
+>>>>>>> Stashed changes
     }
 
-    private void OpenShop()
+    public void StopDialog()
     {
-        shopController.gameObject.SetActive(true);
-        shopController.OpenShop(this);
+        GameManager.player.GetComponent<NPCController>().StopDialog();
+    }
+
+    public void OpenShop()
+    {
+        if (GameManager.UI.GetComponent<UIScript>().CheckNotOpen(shopController.gameObject))
+        {
+            shopController.gameObject.SetActive(true);
+            shopController.OpenShop(this);
+        }
+
     }
 
     public void AddItem(ItemScriptableObject addItem)

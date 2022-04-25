@@ -46,6 +46,10 @@ public class Sword : MonoBehaviour
         end = EndStrike;
         gameObject.SetActive(false);
         SetSword(sword);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         GetHideSword(true);
     }
     public void GetHideSword(bool isActive)
@@ -72,6 +76,15 @@ public class Sword : MonoBehaviour
         swordSpriteRenderer.sprite = sword.itemSprite;
         sheath.sprite = sword.itemSprite;
         swordInHand.sprite = sword.itemSprite;
+<<<<<<< Updated upstream
+=======
+        //GameManager.UI.GetComponentInChildren<Inventory>().DrawCell(sword);
+    }
+
+    public ItemScriptableObject GetSword()
+    {
+        return sword;
+>>>>>>> Stashed changes
     }
     private void EndStrike()
     {
@@ -180,7 +193,12 @@ public class Sword : MonoBehaviour
         }
         else if (collision.tag == "Wall")
         {
+<<<<<<< Updated upstream
 
+=======
+            swordInHand.gameObject.SetActive(true);
+            GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));
+>>>>>>> Stashed changes
             SwordDisappear();
         }
     }

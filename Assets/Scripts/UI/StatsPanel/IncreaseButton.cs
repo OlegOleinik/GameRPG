@@ -9,6 +9,7 @@ public class IncreaseButton : MonoBehaviour
     [SerializeField] private float up;
     private string text;
     private Button button;
+<<<<<<< Updated upstream
     public bool isUpdate = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -27,13 +28,21 @@ public class IncreaseButton : MonoBehaviour
 =======
     private void Start()
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+    //public bool isUpdate = true;
+    private void Awake()
+>>>>>>> Stashed changes
     {
         text = gameObject.GetComponentInChildren<Text>().text;
         button = GetComponent<Button>();
     }
     public void SetMax(string stat)
     {
+<<<<<<< Updated upstream
         isUpdate = false;
+=======
+       // isUpdate = false;
+>>>>>>> Stashed changes
         button.interactable = false;
         gameObject.GetComponentInChildren<Text>().text = text + $": max({stat})";
     }
@@ -45,6 +54,7 @@ public class IncreaseButton : MonoBehaviour
 
     public void SetText(string stat)
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,5 +72,9 @@ public class IncreaseButton : MonoBehaviour
 =======
         gameObject.GetComponentInChildren<Text>().text = text +$": {stat}";
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+        button.interactable = true;
+        gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
+>>>>>>> Stashed changes
     }
 }

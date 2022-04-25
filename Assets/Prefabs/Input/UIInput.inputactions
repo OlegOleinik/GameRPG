@@ -51,6 +51,18 @@
                     "initialStateCheck": true
                 },
                 {
+<<<<<<< Updated upstream
+=======
+                    "name": "Journal",
+                    "type": "Button",
+                    "id": "3bbc18a0-bc31-45f7-a95e-2397a4ae8f1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+>>>>>>> Stashed changes
                     "name": "Exit",
                     "type": "Button",
                     "id": "891abfd8-18f4-4055-ab1f-176c58fd3e37",
@@ -214,6 +226,20 @@
                     "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "name": "",
+                    "id": "d107d75a-a675-42c2-953d-620802728199",
+                    "path": "<Keyboard>/j",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Journal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+>>>>>>> Stashed changes
                 }
             ]
         }

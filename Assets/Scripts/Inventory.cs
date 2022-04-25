@@ -62,4 +62,10 @@ public class InventorySlot
         this.count = 1;
     }
 
+    public InventorySlot(ItemScriptableObject item, int count)
+    {
+        this.ItemScriptableObject = item;
+        this.count = count;
+    }
+
 }

@@ -65,6 +65,10 @@ public class LaserRicochetSpell : ASpell
                     isRicochet = true;
                     ricochetCount++;
                     newDir = Vector2.Reflect(direction, item.normal);
+                    endPosition = item.point + (newDir.normalized / 100);
+                }
+                else
+                {
                     endPosition = item.point;
                 }
                 break;
@@ -75,8 +79,12 @@ public class LaserRicochetSpell : ASpell
         {
             ShootLaser(endPosition, newDir, length);
         }
-        StartCoroutine(1f.Tweeng((u) => line.startColor = new Color(1f, 1f, 1f, u), 1f, 0f));
-        StartCoroutine(1f.Tweeng((u) => line.endColor= new Color(1f, 1f, 1f, u), 1f, 0f, end));
+        else
+        {
+            StartCoroutine(1f.Tweeng((u) => line.startColor = new Color(1f, 1f, 1f, u), 1f, 0f));
+            StartCoroutine(1f.Tweeng((u) => line.endColor = new Color(1f, 1f, 1f, u), 1f, 0f, end));
+        }
+
     }
 
     public override void SetLvl(int lvl)
@@ -86,17 +94,23 @@ public class LaserRicochetSpell : ASpell
             case 1:
                 lvlMod = 1;
                 maxRicochetCount = 1;
-               // shootLine.enabled = false;
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                // shootLine.enabled = false;
                 break;
             case 2:
                 lvlMod = 1.2f;
                 maxRicochetCount = 2;
-              //  shootLine.enabled = false;
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                //  shootLine.enabled = false;
                 break;
             case 3:
                 lvlMod = 1.5f;
                 maxRicochetCount = 3;
-               // shootLine.enabled = false;
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                // shootLine.enabled = false;
                 break;
             case 4:
                 lvlMod = 1.6f;
