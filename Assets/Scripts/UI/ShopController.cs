@@ -20,6 +20,7 @@ public class ShopController : MonoBehaviour
     private Merchant merchant;
     private ShopCell[] shopCells;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -34,6 +35,9 @@ public class ShopController : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
     private void Start()
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+    private void Awake()
+>>>>>>> Stashed changes
 =======
     private void Awake()
 >>>>>>> Stashed changes
@@ -75,6 +79,18 @@ public class ShopController : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+    }
+
+    private void SetSellButtonActive()
+    {
+        if (inventoryPanel.selectedCell != null)
+        {
+            sellButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            sellButton.GetComponent<Button>().interactable = false;
+        }
     }
 
     private void SetSellButtonActive()

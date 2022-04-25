@@ -110,15 +110,21 @@ TextureImporter:
         x: 0
         y: 10
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -138,15 +144,21 @@ TextureImporter:
         x: 0
         y: 5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -166,15 +178,21 @@ TextureImporter:
         x: 0
         y: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -188,7 +206,10 @@ TextureImporter:
       edges: []
       weights: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - serializedVersion: 2
       name: Rooster_3
       rect:
@@ -210,6 +231,9 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     outline: []
     physicsShape: []
@@ -224,6 +248,10 @@ TextureImporter:
     nameFileIdTable:
       Rooster_1: 133314621
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
 =======
       Rooster_3: -2059575148
 >>>>>>> Stashed changes

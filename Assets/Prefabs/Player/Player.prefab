@@ -191,6 +191,7 @@ MonoBehaviour:
   playerCamera: {fileID: 2214474049433722677}
   sheath: {fileID: 7761997644021840532}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -204,6 +205,9 @@ MonoBehaviour:
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+  swordInHand: {fileID: 7152715992198483945}
+>>>>>>> Stashed changes
 =======
   swordInHand: {fileID: 7152715992198483945}
 >>>>>>> Stashed changes
@@ -481,6 +485,9 @@ MonoBehaviour:
   m_PointerBehavior: 0
 --- !u!1 &4439410004348885837
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -553,7 +560,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 10
+=======
+  m_SortingOrder: 11
+>>>>>>> Stashed changes
   m_Sprite: {fileID: -1966772868, guid: 1793e193661c6e749bf377d580e34364, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -731,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6711880743034970915
+<<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes
 GameObject:
@@ -1270,6 +1282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6711880743034970915
+=======
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

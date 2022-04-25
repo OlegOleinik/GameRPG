@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+using UnityEngine.UI;
+>>>>>>> Stashed changes
 =======
 using UnityEngine.UI;
 >>>>>>> Stashed changes
@@ -12,14 +16,20 @@ public class UIScript : MonoBehaviour
 
     [SerializeField] private List<GameObject> panels;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [SerializeField] public ShopController shopController;
     [SerializeField] private GameObject closeButton;
 =======
+=======
+>>>>>>> Stashed changes
     public ShopController shopController;
     [SerializeField] private GameObject closeButton;
     public DialogueController dialogueController;
     [SerializeField] private GameObject saveUnlocked;
     [SerializeField] private Button saveButton;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     private void Start()
@@ -30,7 +40,10 @@ public class UIScript : MonoBehaviour
         shopController.gameObject.SetActive(false);
         closeButton.SetActive(false);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         StartCoroutine(SetPanelsNotActive());
 
     }
@@ -38,6 +51,7 @@ public class UIScript : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         CloseAllPanels();
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
     }
     public MagicUpPanel GetMagicUpPanel()
@@ -52,6 +66,21 @@ public class UIScript : MonoBehaviour
         saveUnlocked.SetActive(true);
         saveButton.interactable = true;
     }
+=======
+    }
+    public MagicUpPanel GetMagicUpPanel()
+    {
+        return panels[3].GetComponent<MagicUpPanel>();
+    }
+
+
+
+    public void SetSaveActive()
+    {
+        saveUnlocked.SetActive(true);
+        saveButton.interactable = true;
+    }
+>>>>>>> Stashed changes
 
     public void SetSaveDisable()
     {
@@ -73,6 +102,7 @@ public class UIScript : MonoBehaviour
     //}
 
     public void CloseAllPanels()
+<<<<<<< Updated upstream
     {
         foreach (var item in panels)
         {
@@ -121,12 +151,32 @@ public class UIScript : MonoBehaviour
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
+=======
+    {
+        foreach (var item in panels)
+        {
+            item.SetActive(false);
+        }
+        closeButton.SetActive(false);
+        GameManager.ResumeGame();
+    }
+
+    public void ExpandPanel(GameObject panel, Vector2 startPos)
+    {
+        StartCoroutine(0.1f.Tweeng((u) => panel.transform.localPosition = u, startPos, Vector2.zero));
+        StartCoroutine(0.1f.Tweeng((u) => panel.transform.localScale = u, Vector3.zero, Vector3.one));
+    }
+
+>>>>>>> Stashed changes
     //public void ExitGame(InputAction.CallbackContext inputValue)
     //{
     //    GameManager.ExitGame();
     //}
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public bool CheckNotOpen(GameObject panel)
     {
@@ -138,7 +188,11 @@ public class UIScript : MonoBehaviour
                 item.SetActive(false);
                 closeButton.SetActive(false);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 ResumeGame();
+=======
+                GameManager.ResumeGame();
+>>>>>>> Stashed changes
 =======
                 GameManager.ResumeGame();
 >>>>>>> Stashed changes
@@ -154,7 +208,11 @@ public class UIScript : MonoBehaviour
         {
             closeButton.SetActive(true);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             PauseGame();
+=======
+            GameManager.PauseGame();
+>>>>>>> Stashed changes
 =======
             GameManager.PauseGame();
 >>>>>>> Stashed changes

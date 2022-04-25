@@ -14,12 +14,18 @@ public static class GameManager
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     public static void SetNewPlayer(GameObject newPlayer)
     {
         player = newPlayer;
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public static void ExitGame()
     {
@@ -28,7 +34,10 @@ public static class GameManager
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
     public static void PauseGame()
     {
@@ -45,6 +54,9 @@ public static class GameManager
 
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public static IEnumerator Tweeng(this float duration,
     System.Action<float> vary, float aa, float zz, EndCorutine end)
@@ -111,7 +123,10 @@ public static class GameManager
         vary(zz);
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
 
 
@@ -129,5 +144,8 @@ public static class GameManager
         }
         vary(zz);
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

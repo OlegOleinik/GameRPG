@@ -25,23 +25,7 @@ public class OpenSpecPanelButton : AButton
         {
             specsPanel.gameObject.SetActive(true);
             specsPanel.SetButtons();
-<<<<<<< Updated upstream:Assets/Scripts/UI/OpenSpecPanelButton.cs
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             uIScript.ExpandPanel(specsPanel.gameObject, transform.localPosition);
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
-            uIScript.ExpandPanel(specsPanel.gameObject, transform.localPosition);
->>>>>>> Stashed changes:Assets/Scripts/UI/OpenButtons/OpenSpecPanelButton.cs
         }
     }
 }

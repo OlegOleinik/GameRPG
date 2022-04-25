@@ -26,6 +26,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [SerializeField] private Animator enemyAnimator;
 
 <<<<<<< HEAD
@@ -59,6 +60,14 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> Stashed changes
+=======
+    [SerializeField] private Animator enemyLegAnimator;
+
+    private GameObject healthBar;
+
+    private float _nextDamage = 0;
+
+>>>>>>> Stashed changes
     public float nextDamage
     {
         get
@@ -85,7 +94,10 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
         healthBar = GetComponentInChildren<HealthBar>().gameObject;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         SetStart();
     }
 
@@ -93,6 +105,9 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     public virtual void SetStart()
     {
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
     //Выбросить предметы, согласну шансу выпадения
@@ -161,6 +176,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         if (x > 0)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -202,12 +218,22 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> Stashed changes
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+=======
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (x < 0)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+>>>>>>> Stashed changes
         healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void SetDamageCoolDown(float addCD)
     {
         _nextDamage = Time.time + addCD;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     }
 
@@ -229,6 +255,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     private void SetDamageCoolDown(float addCD)
     {
         _nextDamage = Time.time + addCD;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -239,7 +267,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void Move()
+=======
+    public virtual void Move()
+>>>>>>> Stashed changes
 =======
     public virtual void Move()
 >>>>>>> Stashed changes
@@ -263,11 +295,19 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //Переместить врага к целевой точке
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     private void MoveToPos(Vector2 position)
     {
         rb.position = Vector2.MoveTowards(transform.position, position, speed);
         SetFlip(position.x - transform.position.x);
         enemyAnimator.SetInteger("State", 1);
+=======
+    public virtual void MoveToPos(Vector2 position)
+    {
+        rb.position = Vector2.MoveTowards(transform.position, position, speed);
+        SetFlip(position.x - transform.position.x);
+        SetLegAnim(1);
+>>>>>>> Stashed changes
 =======
     public virtual void MoveToPos(Vector2 position)
     {
@@ -304,7 +344,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         else
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             enemyAnimator.SetInteger("State", 0);
+=======
+            SetLegAnim(0);
+>>>>>>> Stashed changes
 =======
             SetLegAnim(0);
 >>>>>>> Stashed changes
@@ -348,12 +392,18 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     public virtual void AttackAnimation()
     {
 
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 }

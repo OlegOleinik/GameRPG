@@ -95,6 +95,7 @@ public class Merchant : ANPC
     public void StartDialog()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         while (true)
         {
             //ÑÍÈÇÓ ÃÎÂÍÎÊÎÄ - ÎÁßÇÀÒÅËÜÍÎ ÏÅÐÅÏÈÑÀÒÜ
@@ -104,6 +105,11 @@ public class Merchant : ANPC
             }
             yield return null;
         }
+=======
+        interactionController.ClearInteraction();
+        GameManager.player.GetComponent<NPCController>().StartDialogue(nPCid);
+
+>>>>>>> Stashed changes
 =======
         interactionController.ClearInteraction();
         GameManager.player.GetComponent<NPCController>().StartDialogue(nPCid);

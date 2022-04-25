@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject UIPrefab;
     [SerializeField] private GameObject globalLightPrefab;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+    [SerializeField] private GameObject currentGlobalLight;
+    [SerializeField] private GameObject loadGamePanel;
+>>>>>>> Stashed changes
 =======
 
     [SerializeField] private GameObject currentGlobalLight;
@@ -47,8 +53,11 @@ public class MainMenu : MonoBehaviour
     IEnumerator Load(string txt)
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Debug.Log("Load");
 =======
+=======
+>>>>>>> Stashed changes
         yield return new WaitForEndOfFrame();
         GameManager.player.GetComponent<SaveLoadController>().Load(txt);
     }
@@ -71,6 +80,9 @@ public class MainMenu : MonoBehaviour
         ui.GetComponent<Canvas>().worldCamera = player.GetComponentInChildren<Camera>();
         Instantiate(globalLightPrefab);
         
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 

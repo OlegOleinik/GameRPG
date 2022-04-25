@@ -9,6 +9,10 @@ TagManager:
   - InventoryCell
   - UI
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - Quest
+>>>>>>> Stashed changes
 =======
   - Quest
 >>>>>>> Stashed changes
@@ -26,7 +30,11 @@ TagManager:
   - Wall
   - WaterCollider
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - 
+=======
+  - NonWaterEnemys
+>>>>>>> Stashed changes
 =======
   - NonWaterEnemys
 >>>>>>> Stashed changes

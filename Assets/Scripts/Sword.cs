@@ -47,6 +47,10 @@ public class Sword : MonoBehaviour
         gameObject.SetActive(false);
         SetSword(sword);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -60,11 +64,19 @@ public class Sword : MonoBehaviour
         {
             SwordDisappear();
             playerAnimator.HideWeapon();
+<<<<<<< Updated upstream
         }
         else
         {
             playerAnimator.ReadyWeapon();
         }
+=======
+        }
+        else
+        {
+            playerAnimator.ReadyWeapon();
+        }
+>>>>>>> Stashed changes
 
     }
 
@@ -77,13 +89,19 @@ public class Sword : MonoBehaviour
         sheath.sprite = sword.itemSprite;
         swordInHand.sprite = sword.itemSprite;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         //GameManager.UI.GetComponentInChildren<Inventory>().DrawCell(sword);
     }
 
     public ItemScriptableObject GetSword()
     {
         return sword;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
     private void EndStrike()
@@ -194,7 +212,12 @@ public class Sword : MonoBehaviour
         else if (collision.tag == "Wall")
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+            swordInHand.gameObject.SetActive(true);
+            GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));
+>>>>>>> Stashed changes
 =======
             swordInHand.gameObject.SetActive(true);
             GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));

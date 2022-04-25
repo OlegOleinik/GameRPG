@@ -9,6 +9,7 @@ public class PlayerAnimator : MonoBehaviour
     //private int state;
     //private float previosX;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -29,6 +30,9 @@ public class PlayerAnimator : MonoBehaviour
 =======
     private bool _isFlip = false;
 >>>>>>> Stashed changes
+=======
+    private bool _isFlip = false;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     [SerializeField] private Animator legAnim;
     [SerializeField] private Animator bodyAnim;
@@ -36,10 +40,13 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private SpriteRenderer sheath;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     [SerializeField] private SpriteRenderer swordInHand;
@@ -55,6 +62,7 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
     private float nextFlipTime;
@@ -77,11 +85,14 @@ public class PlayerAnimator : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     void Start()
     {
         //playerAnimator = GetComponent<Animator>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
         //  previosX = GameManager.player.transform.position.x;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +107,9 @@ public class PlayerAnimator : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+        spritesObjects = new SpriteRenderer[] { legAnim.gameObject.GetComponent<SpriteRenderer>(), bodyAnim.gameObject.GetComponent<SpriteRenderer>(), headAnim.gameObject.GetComponent<SpriteRenderer>(), sheath, swordInHand};
+>>>>>>> Stashed changes
 =======
         spritesObjects = new SpriteRenderer[] { legAnim.gameObject.GetComponent<SpriteRenderer>(), bodyAnim.gameObject.GetComponent<SpriteRenderer>(), headAnim.gameObject.GetComponent<SpriteRenderer>(), sheath, swordInHand};
 >>>>>>> Stashed changes
@@ -118,10 +132,13 @@ public class PlayerAnimator : MonoBehaviour
         legAnim.SetInteger("State", 1);
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
     public void Idle()
     {
@@ -157,6 +174,7 @@ public class PlayerAnimator : MonoBehaviour
     }
 
     public void ReadyWeapon()
+<<<<<<< Updated upstream
 =======
 
     public void Idle()
@@ -198,10 +216,28 @@ public class PlayerAnimator : MonoBehaviour
     }
 
     public void HideWeapon()
+=======
+    {
+        bodyAnim.SetInteger("State", 0);
+    }
+
+    public void HideWeapon()
     {
         bodyAnim.SetInteger("State", -1);
     }
 
+    public void BlockFlip(float addTime)
+    {
+        nextFlipTime = Time.time + addTime;
+    }
+
+    public void FlipPlayer(float dir)
+>>>>>>> Stashed changes
+    {
+        bodyAnim.SetInteger("State", -1);
+    }
+
+<<<<<<< Updated upstream
     public void BlockFlip(float addTime)
     {
         nextFlipTime = Time.time + addTime;
@@ -397,10 +433,14 @@ public class PlayerAnimator : MonoBehaviour
 =======
         if (dir < 0 && !_isFlip && nextFlipTime < Time.time)
 >>>>>>> Stashed changes
+=======
+        if (dir < 0 && !_isFlip && nextFlipTime < Time.time)
+>>>>>>> Stashed changes
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             playerCamera.transform.localRotation = Quaternion.Euler(0, 180, 0);
             playerCamera.transform.localPosition = new Vector3(0, 0, 10);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -408,10 +448,13 @@ public class PlayerAnimator : MonoBehaviour
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             _isFlip = true;
             sheath.sortingOrder = 11;
         }
         else if (dir > 0 && _isFlip && nextFlipTime < Time.time){
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
             isFlip = true;
@@ -439,6 +482,15 @@ public class PlayerAnimator : MonoBehaviour
             _isFlip = false;
             sheath.sortingOrder = 9;
         }
+=======
+
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            playerCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            playerCamera.transform.localPosition = new Vector3(0, 0, -10);
+            _isFlip = false;
+            sheath.sortingOrder = 9;
+        }
+>>>>>>> Stashed changes
     }
 
     public void HidePlayer(bool isHide)
@@ -446,6 +498,7 @@ public class PlayerAnimator : MonoBehaviour
         foreach (var item in spritesObjects)
         {
             item.enabled = !isHide;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
             isFlip = true;
@@ -476,6 +529,9 @@ public class PlayerAnimator : MonoBehaviour
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
         }
+=======
+        }
+>>>>>>> Stashed changes
 =======
         }
 >>>>>>> Stashed changes

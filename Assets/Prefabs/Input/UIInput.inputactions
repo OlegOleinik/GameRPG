@@ -52,7 +52,10 @@
                 },
                 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
                     "name": "Journal",
                     "type": "Button",
                     "id": "3bbc18a0-bc31-45f7-a95e-2397a4ae8f1d",
@@ -62,6 +65,9 @@
                     "initialStateCheck": true
                 },
                 {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     "name": "Exit",
                     "type": "Button",
@@ -227,7 +233,10 @@
                     "isComposite": false,
                     "isPartOfComposite": false
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
                 },
                 {
                     "name": "",
@@ -239,6 +248,9 @@
                     "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 }
             ]

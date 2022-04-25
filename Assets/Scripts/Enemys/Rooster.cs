@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 public class Rooster : Enemy_1
 {
 
 =======
+=======
+>>>>>>> Stashed changes
 public class Rooster : AEnemy
 {
     [SerializeField] private Animator roosterBodyAnimator;
@@ -26,5 +29,8 @@ public class Rooster : AEnemy
     {
         GameManager.player.GetComponent<QuestsController>().onRoosterKilled?.Invoke();
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

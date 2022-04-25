@@ -59,7 +59,11 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     private bool isWasteStamina = false;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [SerializeField] private PlayerAnimator playerAnimator;
+=======
+    private int _lvl = 0;
+>>>>>>> Stashed changes
 =======
     private int _lvl = 0;
 >>>>>>> Stashed changes
@@ -277,6 +281,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             nextHitTime = Time.time + 0.5f;
         }
     }
+<<<<<<< Updated upstream
 
     public void GetDamage(float damage)
     {
@@ -304,6 +309,20 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
 
 =======
 
+=======
+
+    public void GetDamage(float damage)
+    {
+        if (nextHitTime < Time.time)
+        {
+            if (Random.Range(0f, 1f) > blockChance)
+            {
+                LostHP(damage);
+            }
+        }
+    }
+
+>>>>>>> Stashed changes
     public void LostHP(float damage)
     {
         _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
@@ -316,6 +335,9 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 

@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD:Assets/Scripts/Controllers/GlobalLightController.cs.meta
 guid: b2fb599b05509e643ac226145d9b0c7f
 =======
@@ -8,6 +9,13 @@ guid: d4ab1e41dfb8ea842b12a9ae251b53ee
 =======
 <<<<<<< Updated upstream:Assets/Scripts/UI/MerchantPanel.cs.meta
 guid: f5e353e8e4241e842ba0cbd6f577b6f3
+=======
+guid: b2fb599b05509e643ac226145d9b0c7f
+>>>>>>> Stashed changes:Assets/Scripts/Controllers/GlobalLightController.cs.meta
+>>>>>>> Stashed changes
+=======
+<<<<<<< Updated upstream:Assets/Scripts/Controllers/NPCController.cs.meta
+guid: 516d7027da7d3dd46bca19ac4ba0ec02
 =======
 guid: b2fb599b05509e643ac226145d9b0c7f
 >>>>>>> Stashed changes:Assets/Scripts/Controllers/GlobalLightController.cs.meta

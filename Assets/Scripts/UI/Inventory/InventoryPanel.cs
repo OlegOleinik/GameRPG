@@ -15,6 +15,7 @@ public class InventoryPanel : MonoBehaviour
     [SerializeField] private SwordCell swordCell;
     [SerializeField] private Text money;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -31,10 +32,15 @@ public class InventoryPanel : MonoBehaviour
     public delegate void NewSelect();
     public event NewSelect onChangeSelected;
 =======
+=======
+>>>>>>> Stashed changes
     [SerializeField] private Text statText;
     public delegate void NewSelect();
     public event NewSelect onChangeSelected;
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     public InventoryCellScript selectedCell
@@ -53,6 +59,7 @@ public class InventoryPanel : MonoBehaviour
         gameObject.SetActive(false);
         ResetSlider();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -66,6 +73,8 @@ public class InventoryPanel : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -155,6 +164,7 @@ public class InventoryPanel : MonoBehaviour
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -163,6 +173,9 @@ public class InventoryPanel : MonoBehaviour
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -202,7 +215,11 @@ public class InventoryPanel : MonoBehaviour
             
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         DrawInventory();
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes
@@ -241,14 +258,20 @@ public class InventoryPanel : MonoBehaviour
             inventoryCellScripts[i].DrawCell(playerInventory.inventorySlots[i].ItemScriptableObject, playerInventory.inventorySlots[i].count, i);
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Player player = GameManager.player.GetComponent<Player>();
         statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
 =======
+=======
+>>>>>>> Stashed changes
         statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
 
 
         swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
     //Очистка инвентаря (визуальная)

@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
 guid: 161f501c9b955cc43a1f431bd926861c
 =======
 guid: 939e1f3507fe5834a9a747a8b8512674
 >>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+guid: 161f501c9b955cc43a1f431bd926861c
+>>>>>>> Stashed changes
 =======
 guid: 161f501c9b955cc43a1f431bd926861c
 >>>>>>> Stashed changes
@@ -42,7 +46,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     filterMode: 1
+=======
+    filterMode: 0
+>>>>>>> Stashed changes
 =======
     filterMode: 0
 >>>>>>> Stashed changes
@@ -60,7 +68,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spritePixelsToUnits: 100
+=======
+  spritePixelsToUnits: 30
+>>>>>>> Stashed changes
 =======
   spritePixelsToUnits: 30
 >>>>>>> Stashed changes
@@ -93,7 +105,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   - serializedVersion: 3
@@ -121,8 +136,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   spriteSheet:
@@ -181,6 +199,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
     nameFileIdTable:
       Leg_0: 702650399
@@ -188,6 +207,11 @@ TextureImporter:
 =======
     nameFileIdTable: {}
 >>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+    nameFileIdTable:
+      Leg_0: 702650399
+      Leg_1: 972338430
+>>>>>>> Stashed changes
 =======
     nameFileIdTable:
       Leg_0: 702650399

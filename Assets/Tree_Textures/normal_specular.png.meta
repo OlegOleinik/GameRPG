@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
 guid: dba924eed734cfb478776642099539b1
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
