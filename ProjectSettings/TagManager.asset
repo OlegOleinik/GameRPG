@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - Wall
   - InventoryCell
+  - UI
+  - Quest
+  - NPC
+  - PlayerWeapon
+  - GlobalLight
   layers:
   - Default
   - TransparentFX
@@ -19,10 +24,10 @@ TagManager:
   - Items
   - Player
   - Wall
-  - 
-  - 
-  - 
-  - 
+  - WaterCollider
+  - NonWaterEnemys
+  - SaveArea
+  - FieldOfView
   - 
   - 
   - 
@@ -41,6 +46,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3852787381
+    locked: 0
+  - name: BottomNoLight
+    uniqueID: 1884781007
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UpNoLight
+    uniqueID: 2397331091
     locked: 0

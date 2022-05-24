@@ -8,7 +8,6 @@ public class InventoryCellScript : AItemCell
     public int id=-1;
     public Text text;
     public bool selected = false;
-
     public void DrawCell(ItemScriptableObject item, int count, int id)
     {
         this.item = item;
@@ -17,6 +16,7 @@ public class InventoryCellScript : AItemCell
         Image.color = new Color(1, 1, 1, 1);
         text.text = count.ToString();
     }
+
     public override void ClearCell()
     {
         this.item = null;
@@ -34,6 +34,7 @@ public class InventoryCellScript : AItemCell
         }
 
     }
+
     public override void OnMouseExit()
     {
         if (!selected)
@@ -44,10 +45,6 @@ public class InventoryCellScript : AItemCell
 
     public virtual void OnMouseClick()
     {
-        if(item!=null)
-        {
-            gameObject.GetComponentInParent<InventoryPanel>().ChangeSelected(this);
-        }
-
+        gameObject.GetComponentInParent<InventoryPanel>().ChangeSelected(this);
     }
 }

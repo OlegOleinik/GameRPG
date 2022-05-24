@@ -5,4 +5,9 @@ using UnityEngine;
 public class SwordScriptableObject : ItemScriptableObject
 {
     public int damage;
+
+    private void Awake()
+    {
+        type = "Sword";
+    }
 }

@@ -5,4 +5,9 @@ using UnityEngine;
 public class PotionScriprableObject : ItemScriptableObject
 {
     public int recoveryHP;
+
+    private void Awake()
+    {
+        type = "Potion";
+    }
 }

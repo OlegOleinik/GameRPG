@@ -1,25 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public abstract class AButton : MonoBehaviour
 {
-
-   // [SerializeField] private string buttonName;
-    private void Update()
+    public virtual void OnAction(InputAction.CallbackContext inputValue)
     {
-        //CheckKeyboardPress();
+        
+        if (inputValue.started)
+        {
+
+            OpenClosePanel();
+        }
     }
-    //public void CheckKeyboardPress()
-    //{
-    //    if (Input.GetButtonDown(buttonName))
-    //    {
-    //        OpenClosePanel();
-    //    }
-
-    //}
-    public abstract void OpenClosePanel();
-    // Start is called before the first frame update
-
-
+    public virtual void OpenClosePanel()
+    {
+        GameManager.ClickPlay();
+    }
 }

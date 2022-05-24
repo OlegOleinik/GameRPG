@@ -3,34 +3,79 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject UIPrefab;
+    [SerializeField] private GameObject globalLightPrefab;
+    [SerializeField] private GameObject currentGlobalLight;
+    [SerializeField] private GameObject loadGamePanel;
 
-
-    //private void Start()
-    //{
-    //    NewGame();
-    //}
     public void NewGame()
     {
-        
-        GameObject player = Instantiate(playerPrefab);
-        GameObject ui = Instantiate(UIPrefab);
-        SceneManager.LoadScene("0.0");
-        ui.GetComponent<Canvas>().worldCamera = player.GetComponentInChildren<Camera>();
+        SpawnPlayer();
+        SceneManager.LoadScene("NGStartScene");
+        Destroy(currentGlobalLight);
+        Instantiate(globalLightPrefab);
     }
 
-    public void LoadGame()
+    public void LoadGame(string txt)
     {
-        print("Load");
+        SpawnPlayer();
+        Destroy(currentGlobalLight);
+        Instantiate(globalLightPrefab);
+        StartCoroutine(Load(txt));
+    }
+
+    IEnumerator Load(string txt)
+    {
+        yield return new WaitForEndOfFrame();
+        GameManager.player.GetComponent<SaveLoadController>().Load(txt);
+    }
+
+    public void LoadGameButton()
+    {
+        GameManager.ClickPlay();
+        loadGamePanel.SetActive(!loadGamePanel.activeInHierarchy);
+        if (loadGamePanel.activeInHierarchy)
+        {
+            loadGamePanel.GetComponent<MenuLoadPanel>().ShowLoadGames();
+        }
+    }
+
+    public void StartTestLocation()
+    {
+        SpawnPlayer();
+        Destroy(currentGlobalLight);
+        SceneManager.LoadScene("TestLocation");
+        Instantiate(globalLightPrefab);
+    }
+
+    private void SpawnPlayer()
+    {
+        if (GameManager.player == null)
+        {
+            GameObject player = Instantiate(playerPrefab);
+            GameManager.SetNewPlayerLink(player);
+            GameObject ui = Instantiate(UIPrefab);
+            GameManager.SetNewUILink(ui);
+            ui.GetComponent<Canvas>().worldCamera = player.GetComponentInChildren<Camera>();
+        }
+        else
+        {
+            GameManager.player.transform.position = Vector3.zero;
+            GameManager.player.SetActive(true);
+            GameManager.UI.SetActive(true);
+            GameManager.player.GetComponent<SaveLoadController>().SetPlayerDefault();
+            GameManager.player.GetComponent<PlayerInput>().enabled = true;
+        }
     }
 
     public void Exit()
     {
-        Application.Quit();
-        print("Exit");
+        GameManager.ClickPlay();
+        GameManager.ExitGame();
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1106883302966527046}
   - component: {fileID: 5211795763347570138}
   - component: {fileID: -5369297039369162206}
+  - component: {fileID: 4089735271952829800}
   m_Layer: 6
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -146,6 +147,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8c6188e99056cf4286bf35ae5829d85, type: 2}
   DropChanceList:
   - 1
+  enemyAnimator: {fileID: 4089735271952829800}
+--- !u!95 &4089735271952829800
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907843208340570290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 164db664537ec1f40b3d30510a5050dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7304153835603127643
 PrefabInstance:
   m_ObjectHideFlags: 0

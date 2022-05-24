@@ -6,6 +6,7 @@ public class SliderValue : MonoBehaviour
 {
     public void SetValue(Slider slider)
     {
+        GameManager.ClickPlay();
         gameObject.GetComponent<Text>().text = slider.value.ToString();
     }
 }

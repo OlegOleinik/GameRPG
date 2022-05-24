@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public abstract class ACell : MonoBehaviour
 {
-
     public Image Image;
     public abstract void ClearCell();
     public abstract void OnMouseEnter();

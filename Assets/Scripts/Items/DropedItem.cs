@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class DropedItem : MonoBehaviour
 {
-
-
     [SerializeField] protected ItemScriptableObject itemScriptableObject;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!itemScriptableObject)
@@ -15,21 +12,19 @@ public class DropedItem : MonoBehaviour
             return;
         }
         Inventory inventory = collision.GetComponent<Inventory>();
-
         if (inventory)
         {
             if (inventory.AddItem(itemScriptableObject))
             {
+                GameManager.player.GetComponent<PlayerAudio>().PlayItemUpSound();
                 Destroy(gameObject);
             }
-
         }
     }
     public void DropItem(ItemScriptableObject item, Vector2 position)
     {
         SetItem(item);
         Instantiate(gameObject, new Vector2(position.x + getChange(), position.y + getChange()), Quaternion.identity);
-        
     }
 
     public void SetItem(ItemScriptableObject item)

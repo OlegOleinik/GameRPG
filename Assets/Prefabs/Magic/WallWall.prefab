@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2684020982626088397}
   - component: {fileID: -4768860901279213454}
   - component: {fileID: 4967633261952668373}
+  - component: {fileID: 5378428206153902978}
+  - component: {fileID: 6834814168227522639}
   m_Layer: 10
   m_Name: WallWall
   m_TagString: Wall
@@ -26,8 +28,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3095058452253755373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2298, y: 3.7297678, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8814175, w: 0.47233796}
+  m_LocalPosition: {x: 3.8824363, y: -3.1453214, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -659229712, guid: ebfc2a24e01522b49ac3178dbdbcf63f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,3 +126,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb38ef785507278498815573cd457af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5378428206153902978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095058452253755373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 938429378233887255
+  updateError: 1
+  checkTime: 0.2
+--- !u!114 &6834814168227522639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095058452253755373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.25, y: -1, z: 0}
+  - {x: -0.25, y: 1, z: 0}
+  - {x: 0.02, y: 1, z: 0}
+  - {x: 0.02, y: -1, z: 0}
+  m_ShapePathHash: -222339443
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -332906

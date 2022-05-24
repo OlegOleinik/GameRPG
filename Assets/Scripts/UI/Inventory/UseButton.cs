@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UseButton : MonoBehaviour
 {
     [SerializeField] private InventoryPanel InventoryPanel;
-    // Start is called before the first frame update
+
     void Start()
     {
         gameObject.GetComponent<Button>().interactable = false;

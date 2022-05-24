@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 3095058452253755373, guid: dcc870c98efbbff469c73dc2ae95c8e5, type: 3}
+  circle: {fileID: 3235835924844077494, guid: e4acf3a8f5fdff14a888677f040af754, type: 3}
 --- !u!212 &1495440411104796031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -659229712, guid: ebfc2a24e01522b49ac3178dbdbcf63f, type: 3}
   m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.6156863}
   m_FlipX: 0
