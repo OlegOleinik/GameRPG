@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6516015537297135475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4195113826168491932}
+  - component: {fileID: 7036221706245358082}
+  m_Layer: 0
+  m_Name: RoosterRevenge
+  m_TagString: Quest
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4195113826168491932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516015537297135475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7036221706245358082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516015537297135475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6edc48681d24d0478d984a0d51a98fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 0
+  quest: {fileID: 11400000, guid: 332583e4a48bece448ced149f5641615, type: 2}
+  questsController: {fileID: 0}
+  rewardEP: 0
+  rewardCoin: 0
+  rewardItems: []
+  talkToComplete: {fileID: 11400000, guid: 896a4c646652cc24fad5271754b93650, type: 2}
+  talkNotEnough: {fileID: 11400000, guid: e2fa84e344b772143b1c60bc0f95ba36, type: 2}
+  shopAble: {fileID: 11400000, guid: 2f335d9dc4ff4ce4aaa7eec43ef9ea03, type: 2}
