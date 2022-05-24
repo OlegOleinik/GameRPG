@@ -50,10 +50,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     private float _currentStamina;
     private float _currentMagic;
     private float _rollCollDown = 0;
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     private bool isRegeneratedStamina = false;
     private bool isRegeneratedMagic = false;
     private bool isWasteStamina = false;
@@ -62,23 +58,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     [SerializeField] private PlayerAudio playerAudio;
     private float targetYCamOffset;
 
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    [SerializeField] private PlayerAnimator playerAnimator;
-=======
-    private int _lvl = 0;
->>>>>>> Stashed changes
-=======
-    private int _lvl = 0;
->>>>>>> Stashed changes
-
-    [SerializeField] private PlayerAnimator playerAnimator;
-
-
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     public float rollCollDown
     {
         get
@@ -90,10 +69,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             _rollCollDown = value;
         }
     }
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     public int lvl
     {
         get
@@ -249,21 +224,13 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
         set
         {
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-           _specsPoints = value;
-=======
             _specsPoints = value;
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
         }
     }
 
     //Устанавливает текущее ХП максимальным
     private void Start()
     {
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-        //playerAnimator = GetComponent<PlayerAnimator>();
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
         _currentStamina = _maxStamina;
         _currentHP = _maxHP;
         _currentMagic = _maxMagic;
@@ -298,8 +265,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
     //Получение урона игроком
     public void GetDamage(float damage, Vector2 force)
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-=======
     {
         if (nextHitTime < Time.time)
         {
@@ -313,83 +278,16 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     public void GetDamage(float damage)
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     {
         if (nextHitTime < Time.time)
         {
             if (Random.Range(0f, 1f) > blockChance)
             {
                 LostHP(damage);
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-                GetForce(force);
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
             }
             nextHitTime = Time.time + 0.5f;
         }
     }
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-<<<<<<< Updated upstream
-
-    public void GetDamage(float damage)
-    {
-        if (nextHitTime < Time.time)
-        {
-            if (Random.Range(0f, 1f) > blockChance)
-            {
-                LostHP(damage);
-            }
-        }
-    }
-<<<<<<< Updated upstream
-
-    public void LostHP(float damage)
-    {
-        _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
-        playerAnimator.Hit();
-        StartCoroutine(Wait());
-    }
-
-    public void GetForce(Vector2 force)
-    {
-        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
-    }
-
-=======
-
-=======
-
-    public void GetDamage(float damage)
-    {
-        if (nextHitTime < Time.time)
-        {
-            if (Random.Range(0f, 1f) > blockChance)
-            {
-                LostHP(damage);
-            }
-        }
-    }
-
->>>>>>> Stashed changes
-    public void LostHP(float damage)
-    {
-        _currentHP -= damage - Mathf.Floor(damage * ((defence - 1) * 0.1f));
-        playerAnimator.Hit();
-        StartCoroutine(Wait());
-    }
-
-    public void GetForce(Vector2 force)
-    {
-        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
-    }
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-
-=======
 
     public void LostHP(float damage)
     {
@@ -408,7 +306,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f);
@@ -428,18 +325,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
 
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-    public void SetStats(List<float> loadedStats)
-    {
-        //Debug.Log(loadedStats[0]);
-        var stats = new Stat[] { _maxStamina, _maxHP, _attackCooldown, defence, _attack, blockChance, dodgeChance, _magicDamage, magicRegen, _maxMagic, _speech };
-        for (int i = 0; i < stats.Length; i++)
-        {
-            stats[i].Value = loadedStats[i];
-        }
-    }
-
-=======
     public void SetDefaultStats()
     {
         _maxStamina.Value = 10;
@@ -454,7 +339,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         _maxMagic.Value = 10;
         _speech.Value = 1;
     }
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     public void IncreaseSpec(int id, float up)
     {
         if (_specsPoints > 0)
@@ -487,10 +371,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
 
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     public void Roll(InputAction.CallbackContext inputValue)
     {
         if (inputValue.phase == InputActionPhase.Started && _rollCollDown < Time.time && _currentStamina >= 3)
@@ -503,11 +383,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
 
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     public void GetRun(InputAction.CallbackContext inputValue)
     {
         if (inputValue.phase == InputActionPhase.Started)
@@ -524,21 +399,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     public void GetMove(InputAction.CallbackContext inputValue)
     {
         moveDir = inputValue.ReadValue<Vector2>();
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-
-        
-        //playerAnimator.SetFlip(moveDir.x);
-        playerAnimator.Walk();
-        if (inputValue.phase == InputActionPhase.Started && !isWasteStamina)
-        {
-            //playerAnimator.SetAnimation(1);
-            playerAnimator.Walk();
-        }
-        else if (inputValue.phase == InputActionPhase.Canceled)
-        {
-            //  playerAnimator.SetAnimation(0);
-            playerAnimator.Idle();
-=======
         playerAnimator.Walk();
         if (inputValue.phase == InputActionPhase.Started && !isWasteStamina)
         {
@@ -549,7 +409,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             playerAnimator.Idle();
             playerAudio.PlayerStop();
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
         }
     }
 
@@ -558,8 +417,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         rb.position += (moveDir * _moveSpeed * shiftMod);
         playerAnimator.FlipPlayer(moveDir.x);
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-=======
         float xOffset = 0;
         float yOffset = 0;
         if (Camera.main.transform.localPosition.x < 1)
@@ -575,7 +432,6 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             yOffset = targetYCamOffset * 0.05f;
         }
         Camera.main.transform.localPosition += new Vector3(xOffset, yOffset, 0);
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
     }
 
     //Регенерация выносливости
@@ -619,49 +475,27 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
                 shiftMod = 2;
                 _currentStamina -= 5f * Time.deltaTime;
                 nextRegenStaminaTime = Time.time + 1.5f;
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-                // playerAnimator.SetAnimation(2);
-                playerAnimator.Run();
-=======
                 playerAnimator.Run();
                 playerAudio.PlayerRun();
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
                 yield return null;
             }
             else if (moveDir != Vector2.zero)
             {
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-                // playerAnimator.SetAnimation(1);
-                playerAnimator.Walk();
-=======
                 playerAnimator.Walk();
                 playerAudio.PlayerWalk();
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
             }
             shiftMod = 1;
             yield return null;
         }
         if (moveDir != Vector2.zero)
         {
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-            //  playerAnimator.SetAnimation(1);
-            playerAnimator.Walk();
-=======
             playerAnimator.Walk();
             playerAudio.PlayerWalk();
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
         }
         shiftMod = 1;
     }
 
     public void Die()
-<<<<<<< Updated upstream:Assets/Scripts/Player.cs
-    {
-        //throw new System.NotImplementedException();
-    }
-
-
-=======
     { 
         GameManager.UI.GetComponent<UIScript>().SetDeathMessage(GetEnemy(), _money, _lvl, GetComponent<AttackController>().GetSword().itemName);
         GetComponent<PlayerInput>().enabled = false;
@@ -680,6 +514,5 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         System.Array.Sort(distances, objects);
         return objects[0].GetComponent<AEnemy>().enemyName;
     }
->>>>>>> Stashed changes:Assets/Scripts/Player/Player.cs
 }
 

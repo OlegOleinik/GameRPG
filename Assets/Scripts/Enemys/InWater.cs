@@ -12,6 +12,10 @@ public class InWater : MonoBehaviour
         defSort = sprite.sortingOrder;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -20,6 +24,10 @@ public class InWater : MonoBehaviour
         sprite.sortingOrder = 1;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -28,7 +36,10 @@ public class InWater : MonoBehaviour
         sprite.sortingOrder = defSort;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }

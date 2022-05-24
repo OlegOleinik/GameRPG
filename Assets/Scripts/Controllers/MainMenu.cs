@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
     [SerializeField] private GameObject currentGlobalLight;
@@ -118,6 +119,53 @@ public class MainMenu : MonoBehaviour
 
     private void SpawnPlayer()
     {
+=======
+    [SerializeField] private GameObject currentGlobalLight;
+    [SerializeField] private GameObject loadGamePanel;
+
+    public void NewGame()
+    {
+        SpawnPlayer();
+        SceneManager.LoadScene("NGStartScene");
+        Destroy(currentGlobalLight);
+        Instantiate(globalLightPrefab);
+    }
+
+    public void LoadGame(string txt)
+    {
+        SpawnPlayer();
+        Destroy(currentGlobalLight);
+        Instantiate(globalLightPrefab);
+        StartCoroutine(Load(txt));
+    }
+
+    IEnumerator Load(string txt)
+    {
+        yield return new WaitForEndOfFrame();
+        GameManager.player.GetComponent<SaveLoadController>().Load(txt);
+    }
+
+    public void LoadGameButton()
+    {
+        GameManager.ClickPlay();
+        loadGamePanel.SetActive(!loadGamePanel.activeInHierarchy);
+        if (loadGamePanel.activeInHierarchy)
+        {
+            loadGamePanel.GetComponent<MenuLoadPanel>().ShowLoadGames();
+        }
+    }
+
+    public void StartTestLocation()
+    {
+        SpawnPlayer();
+        Destroy(currentGlobalLight);
+        SceneManager.LoadScene("TestLocation");
+        Instantiate(globalLightPrefab);
+    }
+
+    private void SpawnPlayer()
+    {
+>>>>>>> Stashed changes
         if (GameManager.player == null)
         {
             GameObject player = Instantiate(playerPrefab);
@@ -134,14 +182,22 @@ public class MainMenu : MonoBehaviour
             GameManager.player.GetComponent<SaveLoadController>().SetPlayerDefault();
             GameManager.player.GetComponent<PlayerInput>().enabled = true;
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
     public void Exit()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         GameManager.ExitGame();
 
+=======
+        GameManager.ClickPlay();
+        GameManager.ExitGame();
+>>>>>>> Stashed changes
 =======
         GameManager.ClickPlay();
         GameManager.ExitGame();

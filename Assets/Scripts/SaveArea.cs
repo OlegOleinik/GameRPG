@@ -11,7 +11,10 @@ public class SaveArea : MonoBehaviour
             GameManager.UI.GetComponent<UIScript>().SetSaveActive();
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -22,9 +25,13 @@ public class SaveArea : MonoBehaviour
         {
             GameManager.UI.GetComponent<UIScript>().SetSaveDisable();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         }
 
+=======
+        }
+>>>>>>> Stashed changes
 =======
         }
 >>>>>>> Stashed changes

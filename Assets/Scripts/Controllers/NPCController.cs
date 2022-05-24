@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 public class NPCController : MonoBehaviour/*, ISerializationCallbackReceiver*/
 {
     public NPCState[] nPCs;
@@ -26,10 +27,15 @@ public class NPCController : MonoBehaviour/*, ISerializationCallbackReceiver*/
     //     //   nPCs.Add(nPC[i], States[i]);
     //}
 =======
+=======
+>>>>>>> Stashed changes
 public class NPCController : MonoBehaviour
 {
     public NPCState[] nPCs;
     public DialogueController dialogueController;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     private void Start()
@@ -38,7 +44,10 @@ public class NPCController : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     public void StopDialog()
@@ -47,9 +56,15 @@ public class NPCController : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void StartDialogue(int i)
     {
         dialogueController.StartDialog(GetSentence(i));
+=======
+    public void StartDialogue(int i, Sprite interlocutorSprite)
+    {
+        dialogueController.StartDialog(GetSentence(i), interlocutorSprite);
+>>>>>>> Stashed changes
 =======
     public void StartDialogue(int i, Sprite interlocutorSprite)
     {
@@ -67,7 +82,10 @@ public class NPCController : MonoBehaviour
         return nPCs[i].startDialogueSentence;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
@@ -77,7 +95,10 @@ public class NPCState
     public bool isDead;
     public ADialogueSentence startDialogueSentence;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     [SerializeField] private ADialogueSentence defaultDialogueSentence;
 
     public void SetDefault()
@@ -85,5 +106,8 @@ public class NPCState
         isDead = false;
         startDialogueSentence = defaultDialogueSentence;
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

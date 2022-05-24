@@ -53,7 +53,10 @@ public class InteractionController : MonoBehaviour
             interactionPos = null;
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -64,10 +67,14 @@ public class InteractionController : MonoBehaviour
             interaction();
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
      }
 
 
+=======
+     }
+>>>>>>> Stashed changes
 =======
      }
 >>>>>>> Stashed changes

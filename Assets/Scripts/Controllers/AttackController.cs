@@ -12,7 +12,11 @@ public class AttackController : MonoBehaviour
     private float nextRegFire1; //Данная переменная для удобства ввода атаки
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     private bool isWeaponInHand = false;
+=======
+    private bool _isWeaponInHand = false;
+>>>>>>> Stashed changes
 =======
     private bool _isWeaponInHand = false;
 >>>>>>> Stashed changes
@@ -24,7 +28,10 @@ public class AttackController : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     public bool isWeaponInHand
     {
         get
@@ -32,6 +39,9 @@ public class AttackController : MonoBehaviour
             return _isWeaponInHand;
         }
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     public void MagicAttack(InputAction.CallbackContext inputValue)
@@ -39,10 +49,15 @@ public class AttackController : MonoBehaviour
         if (EnableToMagicAttck() && GameManager.isGamePaused == false)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             SetMagicCoolDown(MagicCellsPanel.CastSpell());
             playerAnimator.MagicCast();
 
 
+=======
+            SetMagicCoolDown(magicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+>>>>>>> Stashed changes
 =======
             SetMagicCoolDown(magicCellsPanel.CastSpell());
             playerAnimator.MagicCast();
@@ -62,6 +77,7 @@ public class AttackController : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject() || GameManager.isGamePaused)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (EnableToSwordAttck())
             {
                 sword.gameObject.SetActive(true);
@@ -71,6 +87,8 @@ public class AttackController : MonoBehaviour
                 StartCoroutine(CheckHoldLeftButton(inputValue.action));
             }
 =======
+=======
+>>>>>>> Stashed changes
             return;
         }
 
@@ -81,6 +99,9 @@ public class AttackController : MonoBehaviour
             nextRegFire1 = Time.time + 0.3f;
             StartCoroutine(CheckHoldLeftButton(inputValue.action));
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         }
@@ -124,6 +145,7 @@ public class AttackController : MonoBehaviour
     public void SwitchWeaponReady(InputAction.CallbackContext inputValue)
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if(swordCoolDownTime < Time.time)
         {
             sword.GetHideSword(isWeaponInHand);
@@ -131,6 +153,9 @@ public class AttackController : MonoBehaviour
             isWeaponInHand = !isWeaponInHand;
         }
 
+=======
+        SwitchWeaponReady(!_isWeaponInHand);
+>>>>>>> Stashed changes
 =======
         SwitchWeaponReady(!_isWeaponInHand);
 >>>>>>> Stashed changes

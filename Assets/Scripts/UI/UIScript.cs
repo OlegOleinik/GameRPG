@@ -5,10 +5,15 @@ using UnityEngine.InputSystem;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 using UnityEngine.UI;
 >>>>>>> Stashed changes
 =======
+using UnityEngine.UI;
+>>>>>>> Stashed changes
+=======
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 >>>>>>> Stashed changes
 =======
@@ -22,9 +27,12 @@ public class UIScript : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [SerializeField] public ShopController shopController;
     [SerializeField] private GameObject closeButton;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -36,8 +44,13 @@ public class UIScript : MonoBehaviour
     [SerializeField] private Button saveButton;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+    [SerializeField] private GameObject deathMessage;
+    private bool isOpenBlocked = false;
 >>>>>>> Stashed changes
 =======
     [SerializeField] private GameObject deathMessage;
@@ -51,6 +64,7 @@ public class UIScript : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         shopController.gameObject.SetActive(false);
         closeButton.SetActive(false);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -100,6 +114,19 @@ public class UIScript : MonoBehaviour
     {
         saveUnlocked.SetActive(true);
         saveButton.interactable = true;
+=======
+        StartCoroutine(SetPanelsNotActive());
+        deathMessage.SetActive(false);
+    }
+    IEnumerator SetPanelsNotActive()
+    {
+        yield return new WaitForEndOfFrame();
+        CloseAllPanels();
+    }
+    public MagicUpPanel GetMagicUpPanel()
+    {
+        return panels[3].GetComponent<MagicUpPanel>();
+>>>>>>> Stashed changes
     }
 >>>>>>> Stashed changes
 
@@ -115,6 +142,7 @@ public class UIScript : MonoBehaviour
     //    Time.timeScale = 0;
     //}
 
+<<<<<<< Updated upstream
     //Возобновить
     //public void ResumeGame()
     //{
@@ -211,6 +239,43 @@ public class UIScript : MonoBehaviour
     {
         GameManager.ClickPlay();
 >>>>>>> Stashed changes
+=======
+    public void SetDeathMessage(string enemy, int money, int lvl, string weapon)
+    {
+        CloseAllPanels();
+        isOpenBlocked = true;
+        deathMessage.SetActive(true);
+        string txt = $"End of the way\nHeroic death in battle with the enemy: {enemy}\n\nlvl: {lvl}\nMoney: {money}\nWeapon: {weapon}";
+        deathMessage.GetComponentInChildren<Text>().text = txt;
+    }
+
+    public void ExitToMenu()
+    {
+        Destroy(GameObject.Find("Global Light 2D(Clone)"));
+        CloseAllPanels();
+        deathMessage.SetActive(false);
+        GameManager.player.SetActive(false);
+        GameManager.UI.SetActive(false);
+        GameManager.ResumeGame();
+        isOpenBlocked = false;
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    public void SetSaveActive()
+    {
+        saveUnlocked.SetActive(true);
+        saveButton.interactable = true;
+    }
+    public void SetSaveDisable()
+    {
+        saveUnlocked.SetActive(false);
+        saveButton.interactable = false;
+    }
+
+    public void CloseAllPanels()
+    {
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
         foreach (var item in panels)
         {
             item.SetActive(false);
@@ -226,6 +291,7 @@ public class UIScript : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
     //public void ExitGame(InputAction.CallbackContext inputValue)
     //{
@@ -234,6 +300,8 @@ public class UIScript : MonoBehaviour
 
 
 <<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -255,7 +323,11 @@ public class UIScript : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 ResumeGame();
+=======
+                GameManager.ResumeGame();
+>>>>>>> Stashed changes
 =======
                 GameManager.ResumeGame();
 >>>>>>> Stashed changes
@@ -278,7 +350,11 @@ public class UIScript : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             PauseGame();
+=======
+            GameManager.PauseGame();
+>>>>>>> Stashed changes
 =======
             GameManager.PauseGame();
 >>>>>>> Stashed changes

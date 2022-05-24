@@ -14,7 +14,11 @@ GameObject:
   m_Layer: 0
   m_Name: Global Light 2D
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_TagString: Untagged
+=======
+  m_TagString: GlobalLight
+>>>>>>> Stashed changes
 =======
   m_TagString: GlobalLight
 >>>>>>> Stashed changes
@@ -54,17 +58,23 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
 =======
+=======
+>>>>>>> Stashed changes
   m_Color: {r: 0.56, g: 0.51, b: 0.44, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: b5dea4e5cf79577000000000935ee48e
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -136,6 +146,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  light2d: {fileID: 4034460344151179669}
+  cycle: 600
+>>>>>>> Stashed changes
 =======
   light2d: {fileID: 4034460344151179669}
   cycle: 600

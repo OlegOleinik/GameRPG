@@ -76,7 +76,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_SortingOrder: 11
+=======
+  m_SortingOrder: 12
+>>>>>>> Stashed changes
 =======
   m_SortingOrder: 12
 >>>>>>> Stashed changes
@@ -130,12 +134,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
   sheath: {fileID: 0}
   playerAnimator: {fileID: 0}
 =======
   _sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
   sheath: {fileID: 0}
+=======
+  _sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
+  sheath: {fileID: 0}
+>>>>>>> Stashed changes
   swordInHand: {fileID: 0}
   unsheathSword: {fileID: 8300000, guid: 4e6f9d07cb108334fb7d64f8fa8e97f0, type: 3}
   sheathSword: {fileID: 8300000, guid: b4ffb15034639b345bd94b4aed066f76, type: 3}
@@ -238,4 +247,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

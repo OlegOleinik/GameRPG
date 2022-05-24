@@ -13,7 +13,10 @@ public class Answer : MonoBehaviour
         text.text = dialogueChoise.answer;
         this.dialogueChoise = dialogueChoise;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         // Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         StartCoroutine(SetSize());
@@ -22,7 +25,10 @@ public class Answer : MonoBehaviour
     IEnumerator SetSize()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         // We should only read the screen buffer after rendering is complete
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         yield return new WaitForEndOfFrame();
@@ -32,6 +38,10 @@ public class Answer : MonoBehaviour
     public void OnClick()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
         GameManager.ClickPlay();
 >>>>>>> Stashed changes
@@ -45,7 +55,10 @@ public class Answer : MonoBehaviour
             dialogueController.StopDialog();
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         dialogueChoise.DoChoise();

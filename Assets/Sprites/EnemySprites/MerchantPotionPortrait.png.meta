@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
@@ -10,6 +11,10 @@ guid: 939e1f3507fe5834a9a747a8b8512674
 guid: dba924eed734cfb478776642099539b1
 >>>>>>> Stashed changes
 =======
+<<<<<<< Updated upstream:Assets/Sprites/SlimeParticle.png.meta
+guid: 37cd1320f73c7c641bc33ba833980f84
+>>>>>>> Stashed changes
+=======
 guid: b5cad7fde5cdc314aa08c141ad58f4cc
 >>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
 TextureImporter:
@@ -19,7 +24,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+<<<<<<< Updated upstream
     sRGBTexture: 0
+=======
+    sRGBTexture: 1
+>>>>>>> Stashed changes
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -45,7 +54,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< Updated upstream
     filterMode: 1
+=======
+    filterMode: 0
+>>>>>>> Stashed changes
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -88,8 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
 =======
+=======
+>>>>>>> Stashed changes
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -114,7 +130,10 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+=======
+>>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites: []

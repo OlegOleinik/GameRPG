@@ -5,6 +5,7 @@ using UnityEngine;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 public class Rooster : Enemy_1
 {
 
@@ -16,6 +17,8 @@ public class Rooster : AEnemy
     [SerializeField] private Animator roosterBodyAnimator;
     public override void AttackAnimation()
 =======
+=======
+>>>>>>> Stashed changes
 public class Rooster : AEnemy
 {
     [SerializeField] private Animator roosterBodyAnimator;
@@ -24,6 +27,9 @@ public class Rooster : AEnemy
     private float nextKokoko = 0;
 
     protected override void AttackAnimation()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     {
         roosterBodyAnimator.SetBool("isAttack", true);
@@ -31,7 +37,10 @@ public class Rooster : AEnemy
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -73,14 +82,22 @@ public class Rooster : AEnemy
         audioSource.Play();
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     IEnumerator SetNotAttack()
     {
         yield return new WaitForSeconds(0.1f);
         roosterBodyAnimator.SetBool("isAttack", false);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     }
+=======
+    }
+
+>>>>>>> Stashed changes
 =======
     }
 
@@ -91,10 +108,13 @@ public class Rooster : AEnemy
     }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 
     protected override void MoveToPos(Vector2 position)
     {
@@ -122,5 +142,8 @@ public class Rooster : AEnemy
             }
         }
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

@@ -17,6 +17,7 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +49,11 @@ public class InventoryPanel : MonoBehaviour
     public delegate void NewSelect();
     public event NewSelect onChangeSelected;
 >>>>>>> Stashed changes
+=======
+    [SerializeField] private Text statText;
+    public delegate void NewSelect();
+    public event NewSelect onChangeSelected;
+>>>>>>> Stashed changes
 
     public InventoryCellScript selectedCell
     {
@@ -64,6 +70,7 @@ public class InventoryPanel : MonoBehaviour
         inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
         gameObject.SetActive(false);
         ResetSlider();
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -121,6 +128,15 @@ public class InventoryPanel : MonoBehaviour
         ClearSelected();
     }
 
+=======
+    }
+
+    private void OnDisable()
+    {
+        ClearSelected();
+    }
+
+>>>>>>> Stashed changes
     private void SetSlider(int max)
     {
         dropItemCountSlider.minValue = 1;
@@ -151,10 +167,17 @@ public class InventoryPanel : MonoBehaviour
     public void ChangeSelected(InventoryCellScript newSelectedCell)
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         ClearSelected();
         if (newSelectedCell.item != null)
         {
+=======
+        ClearSelected();
+        if (newSelectedCell.item != null)
+        {
+            GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
         ClearSelected();
         if (newSelectedCell.item != null)
@@ -177,6 +200,10 @@ public class InventoryPanel : MonoBehaviour
         if (_selectedCell != null)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
             GameManager.ClickPlay();
 >>>>>>> Stashed changes
@@ -196,6 +223,10 @@ public class InventoryPanel : MonoBehaviour
         if(_selectedCell != null)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
             GameManager.ClickPlay();
 >>>>>>> Stashed changes
@@ -210,6 +241,7 @@ public class InventoryPanel : MonoBehaviour
                 side = new Vector2(1f, 0);
             }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -232,6 +264,8 @@ public class InventoryPanel : MonoBehaviour
 >>>>>>> Stashed changes
 =======
 
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -268,6 +302,7 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         DrawInventory();
 =======
         
@@ -279,6 +314,11 @@ public class InventoryPanel : MonoBehaviour
         GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
         DrawInventory();
 
+=======
+        ChangeSelectedActive(false);
+        GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
+        DrawInventory();
+>>>>>>> Stashed changes
 =======
         ChangeSelectedActive(false);
         GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
@@ -317,6 +357,7 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Player player = GameManager.player.GetComponent<Player>();
         statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
 =======
@@ -330,6 +371,10 @@ public class InventoryPanel : MonoBehaviour
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
+        swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
 >>>>>>> Stashed changes
 =======
         statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";

@@ -30,6 +30,7 @@ public class SpecsPanel : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (buttons[i].isUpdate)
             {
                 buttons[i].SetText($"{stats[i].Value}/{stats[i].maxValue}");
@@ -45,6 +46,8 @@ public class SpecsPanel : MonoBehaviour
             
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             if (stats[i].Value >= stats[i].maxValue)
             {
                 buttons[i].SetMax($"{stats[i].Value}");
@@ -55,6 +58,9 @@ public class SpecsPanel : MonoBehaviour
             }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

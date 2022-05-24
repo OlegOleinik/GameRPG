@@ -124,7 +124,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &18058863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,6 +414,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a71fda412ad0941ab44f1732ea4c1e, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1001 &182955204
 PrefabInstance:
@@ -2508,7 +2514,10 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 182955204}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &229083852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2787,6 +2796,9 @@ Mesh:
     offset: 0
     size: 0
     path: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &300157271
 GameObject:
@@ -2835,6 +2847,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 --- !u!1001 &785559088
 =======
@@ -7641,6 +7654,13 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952285317
 =======
+=======
+--- !u!1001 &309327765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+>>>>>>> Stashed changes
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2055102311959635369, guid: 4bd7b41600416b54395bf9936a05dc8e, type: 3}
@@ -58069,11 +58089,15 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 1952285317}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1992230363
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     m_TransformParent: {fileID: 300157273}
     m_Modifications:
@@ -58270,6 +58294,8 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 1952285317}
   m_PrefabAsset: {fileID: 0}
 =======
+=======
+>>>>>>> Stashed changes
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2055102311959635369, guid: 5b94bf9107369684a8153921f763da38, type: 3}
@@ -58379,4 +58405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b94bf9107369684a8153921f763da38, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

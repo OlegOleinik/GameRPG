@@ -86,17 +86,23 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 18
 =======
+=======
+>>>>>>> Stashed changes
   m_OverridePixelPerfect: 1
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 22
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_TargetDisplay: 0
 --- !u!114 &2150709925516113770

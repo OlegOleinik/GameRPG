@@ -20,6 +20,7 @@ public class ShopController : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -38,6 +39,10 @@ public class ShopController : MonoBehaviour
     private void Awake()
 >>>>>>> Stashed changes
 =======
+    private void Awake()
+>>>>>>> Stashed changes
+=======
+
     private void Awake()
 >>>>>>> Stashed changes
 =======
@@ -137,6 +142,7 @@ public class ShopController : MonoBehaviour
             description.SetDescription(text);
         }
     }
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 
@@ -145,6 +151,9 @@ public class ShopController : MonoBehaviour
     }
 
 =======
+>>>>>>> Stashed changes
+=======
+
 >>>>>>> Stashed changes
     private int GetBuyCost(ItemScriptableObject item)
     {
@@ -166,6 +175,7 @@ public class ShopController : MonoBehaviour
     public void ClickSellButton()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (inventoryPanel.selectedCell != null)
         {
             merchant.AddItem(inventoryPanel.selectedCell.item);
@@ -174,6 +184,9 @@ public class ShopController : MonoBehaviour
 
         
     }
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
         GameManager.ClickPlay();
 >>>>>>> Stashed changes
@@ -212,7 +225,10 @@ public class ShopController : MonoBehaviour
             selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -228,7 +244,10 @@ public class ShopController : MonoBehaviour
             buyButton.GetComponent<Button>().interactable = false;
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }

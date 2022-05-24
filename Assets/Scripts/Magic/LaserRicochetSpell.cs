@@ -23,6 +23,7 @@ public class LaserRicochetSpell : ASpell
     private void StartAIM()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         RaycastHit2D[] hit = Physics2D.RaycastAll(targetPosition, direction, length, layerMask);
         Debug.DrawRay(targetPosition, direction*length, Color.black, 10);
 
@@ -67,6 +68,11 @@ public class LaserRicochetSpell : ASpell
         StartCoroutine(ShootLine());
         aimLine.enabled = true;
 >>>>>>> Stashed changes
+=======
+        layerMask = LayerMask.GetMask("Wall");
+        StartCoroutine(ShootLine());
+        aimLine.enabled = true;
+>>>>>>> Stashed changes
     }
 
     public override void SetLvl(int lvl)
@@ -78,9 +84,13 @@ public class LaserRicochetSpell : ASpell
                 lvlMod = 1;
                 maxRicochetCount = 1;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
 =======
                 aimLine.enabled = false;
 >>>>>>> Stashed changes
@@ -89,9 +99,13 @@ public class LaserRicochetSpell : ASpell
                 lvlMod = 1.2f;
                 maxRicochetCount = 2;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 //  shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
 =======
                 aimLine.enabled = false;
 >>>>>>> Stashed changes
@@ -100,9 +114,13 @@ public class LaserRicochetSpell : ASpell
                 lvlMod = 1.5f;
                 maxRicochetCount = 3;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
 =======
                 aimLine.enabled = false;
 >>>>>>> Stashed changes

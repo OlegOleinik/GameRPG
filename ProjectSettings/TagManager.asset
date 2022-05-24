@@ -11,6 +11,7 @@ TagManager:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
   - Quest
 >>>>>>> Stashed changes
@@ -18,10 +19,15 @@ TagManager:
   - Quest
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
   - Quest
   - NPC
   - PlayerWeapon
   - GlobalLight
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   layers:
   - Default
@@ -39,6 +45,7 @@ TagManager:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - 
 =======
   - NonWaterEnemys
@@ -48,6 +55,11 @@ TagManager:
 >>>>>>> Stashed changes
   - 
   - 
+=======
+  - NonWaterEnemys
+  - SaveArea
+  - FieldOfView
+>>>>>>> Stashed changes
 =======
   - NonWaterEnemys
   - SaveArea

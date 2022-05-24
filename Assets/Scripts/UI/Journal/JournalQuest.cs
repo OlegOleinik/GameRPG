@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class JournalQuest : MonoBehaviour
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     // DialogueChoise dialogueChoise;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     public QuestScriptableObject quest;
@@ -19,10 +22,13 @@ public class JournalQuest : MonoBehaviour
         id = newId;
         StartCoroutine(SetSize());
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //text.text = dialogueChoise.answer;
         //this.dialogueChoise = dialogueChoise;
         //// Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
         //StartCoroutine(SetSize());
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -33,16 +39,20 @@ public class JournalQuest : MonoBehaviour
         isCompleted = true;
         StartCoroutine(SetSize());
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //text.text = dialogueChoise.answer;
         //this.dialogueChoise = dialogueChoise;
         //// Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
         //StartCoroutine(SetSize());
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     }
 
     IEnumerator SetSize()
     {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         // We should only read the screen buffer after rendering is complete
         //Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta.y);
@@ -58,15 +68,21 @@ public class JournalQuest : MonoBehaviour
     //}
 
 =======
+=======
+>>>>>>> Stashed changes
         yield return new WaitForFixedUpdate();
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(270, text.gameObject.GetComponent<RectTransform>().sizeDelta.y);
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public void OnClick()
     {
         GameManager.player.GetComponent<QuestsController>().journalPanel.SetDescription(id, isCompleted);
     }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     //IEnumerator SetSize()
     //{
@@ -79,6 +95,8 @@ public class JournalQuest : MonoBehaviour
     //{
 
     //}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerExperienceBar : ABar
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     private Player player;
@@ -14,7 +17,10 @@ public class PlayerExperienceBar : ABar
     {
         player = GameManager.player.GetComponent<Player>();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }

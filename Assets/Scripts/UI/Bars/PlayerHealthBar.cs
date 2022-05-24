@@ -10,7 +10,10 @@ public class PlayerHealthBar : ABar
     {
         player = GameManager.player.GetComponent<Player>();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
@@ -20,8 +23,11 @@ public class PlayerHealthBar : ABar
         return player.currentHP / player.maxHP;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }

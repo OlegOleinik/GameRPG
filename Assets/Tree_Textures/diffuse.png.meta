@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
 guid: 161f501c9b955cc43a1f431bd926861c
 =======
@@ -13,6 +14,9 @@ guid: 939e1f3507fe5834a9a747a8b8512674
 =======
 guid: 939e1f3507fe5834a9a747a8b8512674
 >>>>>>> Stashed changes
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -22,9 +26,13 @@ TextureImporter:
     enableMipMap: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     sRGBTexture: 1
 =======
     sRGBTexture: 0
+>>>>>>> Stashed changes
+=======
+    sRGBTexture: 1
 >>>>>>> Stashed changes
 =======
     sRGBTexture: 1
@@ -65,7 +73,11 @@ TextureImporter:
   compressionQuality: 50
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> Stashed changes
 =======
   spriteMode: 1
 >>>>>>> Stashed changes
@@ -99,6 +111,7 @@ TextureImporter:
     resizeAlgorithm: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
@@ -114,6 +127,8 @@ TextureImporter:
     resizeAlgorithm: 0
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -122,6 +137,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   - serializedVersion: 3
     buildTarget: Server
@@ -195,6 +211,11 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
 >>>>>>> Stashed changes
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
     outline: []
     physicsShape: []
     bones: []
@@ -207,6 +228,7 @@ TextureImporter:
     secondaryTextures: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
     nameFileIdTable:
       Leg_0: 702650399
@@ -214,6 +236,9 @@ TextureImporter:
 =======
     nameFileIdTable: {}
 >>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
 =======
     nameFileIdTable: {}
 >>>>>>> Stashed changes

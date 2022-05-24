@@ -8,6 +8,12 @@ public static class GameManager
     public static GameObject player = GameObject.FindGameObjectWithTag("Player");
     public static GameObject UI = GameObject.FindGameObjectWithTag("UI");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+    private static AudioSource clickSourse = GameObject.Find("ClickSound").GetComponent<AudioSource>();
+
+>>>>>>> Stashed changes
 =======
 
     private static AudioSource clickSourse = GameObject.Find("ClickSound").GetComponent<AudioSource>();
@@ -19,6 +25,7 @@ public static class GameManager
     public delegate void EndCorutine();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -27,6 +34,8 @@ public static class GameManager
 >>>>>>> Stashed changes
     public static void SetNewPlayer(GameObject newPlayer)
 =======
+=======
+>>>>>>> Stashed changes
     public delegate void GamePauseResume();
     public static event GamePauseResume OnGamePause;
     public static event GamePauseResume OnGameResume;
@@ -38,11 +47,15 @@ public static class GameManager
     //}
 
     public static void SetNewPlayerLink(GameObject newPlayer)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     {
         player = newPlayer;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
@@ -65,6 +78,8 @@ public static class GameManager
         isGamePaused = true;
         Time.timeScale = 0;
 =======
+=======
+>>>>>>> Stashed changes
     public static void SetNewUILink(GameObject newUI)
     {
         UI = newUI;
@@ -88,6 +103,9 @@ public static class GameManager
         isGamePaused = true;
         Time.timeScale = 0;
         OnGamePause?.Invoke();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
@@ -97,6 +115,10 @@ public static class GameManager
         isGamePaused = false;
         Time.timeScale = 1;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        OnGameResume?.Invoke();
+>>>>>>> Stashed changes
 =======
         OnGameResume?.Invoke();
 >>>>>>> Stashed changes
@@ -106,6 +128,9 @@ public static class GameManager
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -178,7 +203,10 @@ public static class GameManager
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -202,10 +230,13 @@ public static class GameManager
     }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 
 
     public static IEnumerator Tweeng(this float duration,
@@ -223,5 +254,8 @@ public static class GameManager
         vary(zz);
         end();
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

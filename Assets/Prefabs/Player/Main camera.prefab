@@ -197,6 +197,10 @@ GameObject:
   - component: {fileID: 8998370247667556500}
   - component: {fileID: 1361995739048153139}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 1516538763495970684}
+>>>>>>> Stashed changes
 =======
   - component: {fileID: 1516538763495970684}
 >>>>>>> Stashed changes
@@ -219,7 +223,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Children: []
+=======
+  m_Children:
+  - {fileID: 4564806687528350696}
+>>>>>>> Stashed changes
 =======
   m_Children:
   - {fileID: 4564806687528350696}
@@ -312,7 +321,10 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!82 &1516538763495970684
 AudioSource:
   m_ObjectHideFlags: 0
@@ -709,4 +721,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

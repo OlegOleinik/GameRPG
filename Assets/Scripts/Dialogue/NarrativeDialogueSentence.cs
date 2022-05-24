@@ -7,6 +7,11 @@ public class NarrativeDialogueSentence : ADialogueSentence
 {
     public ADialogueSentence nextSentence;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    public delegate void OnChoise();
+    public event OnChoise onChoise;
+>>>>>>> Stashed changes
 =======
     public delegate void OnChoise();
     public event OnChoise onChoise;
@@ -17,6 +22,7 @@ public class NarrativeDialogueSentence : ADialogueSentence
         type = "Narrative";
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 
@@ -32,6 +38,11 @@ public class NarrativeDialogueSentence : ADialogueSentence
         onChoise?.Invoke();
         //setStartSentence?.DynamicInvoke();
 
+=======
+    public void DoChoise()
+    {
+        onChoise?.Invoke();
+>>>>>>> Stashed changes
 =======
     public void DoChoise()
     {

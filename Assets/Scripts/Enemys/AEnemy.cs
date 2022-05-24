@@ -13,6 +13,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     [SerializeField] GameObject particlesOnDamage;
     [SerializeField] private DropedItem dropedItem;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     private Transform targetPlayer;
     public Vector2 targetPoint;
     public Vector2 spawnPosition;
@@ -22,12 +23,17 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     
 
 =======
+=======
+>>>>>>> Stashed changes
     public Vector2 targetPoint;
     public Vector2 spawnPosition;
     protected float _currentHP;
     protected float vaitTime=-1;
     public Rigidbody2D rb;
     public float seenDistance = 5;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     private LayerMask layerMask;
     [SerializeField] protected List<ItemScriptableObject> DropList;
@@ -40,6 +46,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     protected List<Transform> targetList = new List<Transform>();
     [SerializeField] protected AudioSource audioSource;
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
@@ -54,6 +61,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 =======
     [SerializeField] private Animator enemyLegAnimator;
 =======
+=======
+>>>>>>> Stashed changes
     public float nextDamage
     {
         get
@@ -61,6 +70,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             return _nextDamage;
         }
     }
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 
 >>>>>>> Stashed changes
@@ -75,6 +85,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
     private float _nextDamage = 0;
+=======
+>>>>>>> Stashed changes
 
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
 =======
@@ -111,6 +123,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     public float getAttack
+<<<<<<< Updated upstream
     {
         get
         {
@@ -127,6 +140,24 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
     public virtual void Start()
     {
+=======
+    {
+        get
+        {
+            return attack;
+        }
+    }
+
+    public float getRepulsion
+    {
+        get
+        {
+            return repulsion;
+        }
+    }
+    public virtual void Start()
+    {
+>>>>>>> Stashed changes
         if (fieldOfView != null)
         {
             fieldOfView.SetCircleRadius(seenDistance, this);
@@ -134,6 +165,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         spawnPosition = transform.position;
         targetPoint = spawnPosition;
         _currentHP = maxHP;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         layerMask = LayerMask.GetMask("Wall")+ LayerMask.GetMask("Player");
 
@@ -166,6 +198,18 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> Stashed changes
     }
 
+=======
+        layerMask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Player") + LayerMask.GetMask("Enemys");
+        GameManager.OnGamePause += PauseSound;
+        GameManager.OnGameResume += ResumeSound;
+    }
+
+    protected virtual void DamageParticles()
+    {
+        Instantiate(particlesOnDamage, gameObject.transform.position, Quaternion.identity);
+    }
+
+>>>>>>> Stashed changes
     //Выбросить предметы, согласну шансу выпадения
     protected void DropItems()
     {
@@ -195,7 +239,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //Умереть(( Добавить опыт игроку, уничтожиться, бросить предметы
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void Die()
+=======
+    public virtual void Disappear()
+>>>>>>> Stashed changes
 =======
     public virtual void Disappear()
 >>>>>>> Stashed changes
@@ -208,10 +256,16 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     public abstract void DieEvent();
     //Получить урон, если ХП меньше/равно 0-умереть
     public void GetDamage(float damage, Vector2 force)
+=======
+    public abstract void DieEvent();
+    //Получить урон, если ХП меньше/равно 0-умереть
+    public virtual void GetDamage(float damage, Vector2 force)
+>>>>>>> Stashed changes
 =======
     public abstract void DieEvent();
     //Получить урон, если ХП меньше/равно 0-умереть
@@ -229,10 +283,13 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             }
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     }
     public void GetDamage(float damage)
 =======
+=======
+>>>>>>> Stashed changes
     }
     public virtual void GetDamage(float damage)
     {
@@ -248,6 +305,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     public void LostHP(float damage)
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
     {
         if (nextDamage < Time.time)
@@ -262,12 +320,18 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     public void LostHP(float damage)
+=======
+>>>>>>> Stashed changes
     {
         _currentHP -= damage;
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void GetForce(Vector2 force)
+=======
+    public virtual void GetForce(Vector2 force)
+>>>>>>> Stashed changes
 =======
     public virtual void GetForce(Vector2 force)
 >>>>>>> Stashed changes
@@ -275,6 +339,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 
@@ -312,6 +377,20 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
 >>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
+=======
+    protected virtual void SetFlip(float x)
+    {
+        if (x > 0)
+        {
+            gameObject.transform.localScale = Vector3.one;
+            healthBar.transform.localScale = new Vector3(1, 0.13f, 1);
+            return;
+        }
+        else if (x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            healthBar.transform.localScale = new Vector3(-1, 0.13f, 1);
+>>>>>>> Stashed changes
         }
         else if (x < 0)
         {
@@ -385,6 +464,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         _nextDamage = Time.time + addCD;
     }
+
+    private void SetDamageCoolDown(float addCD)
+    {
+        _nextDamage = Time.time + addCD;
+    }
     //ЕСЛИ дистанция до точки спавна > 10, цель движения-точка спавна, иначе если виден игрок и целевая точка-не точка спавна-преследовать игрока, иначе свободно ходить
     protected virtual void FixedUpdate()
     {
@@ -392,6 +476,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     public virtual void Move()
+<<<<<<< Updated upstream
     {
         Move();
     }
@@ -405,6 +490,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 =======
     public virtual void Move()
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     {
         if ((Vector2.Distance(spawnPosition, transform.position) > 10))
         {
@@ -413,9 +500,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             MoveToPos(targetPoint);
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         else if (IsSeen() && targetPoint != spawnPosition)
         {
             targetPoint = targetPlayer.position;
+=======
+        else if (isSeen && IsSeen(targetList[0]) && targetPoint != spawnPosition)
+        {
+            targetPoint = targetList[0].position;
+>>>>>>> Stashed changes
 =======
         else if (isSeen && IsSeen(targetList[0]) && targetPoint != spawnPosition)
         {
@@ -429,6 +522,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     //Переместить врага к целевой точке
 <<<<<<< Updated upstream
@@ -451,6 +545,12 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         rb.position = Vector2.MoveTowards(transform.position, position, speed);
         SetFlip(position.x - transform.position.x);
         SetLegAnim(1);
+>>>>>>> Stashed changes
+=======
+    protected virtual void MoveToPos(Vector2 position)
+    {
+        rb.position = Vector2.MoveTowards(transform.position, position, speed);
+        SetFlip(position.x - transform.position.x);
 >>>>>>> Stashed changes
 =======
     protected virtual void MoveToPos(Vector2 position)
@@ -483,6 +583,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //Свободное хождение. Если целевая точне не равна текущей-двигаться к ней. ИНАЧЕ, ЕСЛИ время ожидания -1, задать время 1 сек, ИНАЧЕ ЕСЛИ время ожидания больше текущего, задать новую целевую точку.
     //Если время ожидания меньше текущего и не -1, ничего не происходит (противник стоит)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     public virtual void DefaultWalk()
     {
@@ -517,6 +618,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
 
 >>>>>>> Stashed changes
+=======
+    protected virtual void DefaultWalk()
+    {
+
+>>>>>>> Stashed changes
     }
     //Ставит рандомную целевую точку в круге радиуса 5 вокруг точки спавна
     public Vector2 SetRandomTargetPoint()
@@ -526,7 +632,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //При столкновении со стеной выбрать новую целевую точку. Используется именно Stay, т.к. при Enter все еще может застрять
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public virtual void OnCollisionStay2D(Collision2D collision)
+=======
+    protected virtual void OnCollisionStay2D(Collision2D collision)
+>>>>>>> Stashed changes
 =======
     protected virtual void OnCollisionStay2D(Collision2D collision)
 >>>>>>> Stashed changes
@@ -538,6 +648,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     //При столкновении с игроком вызывает его метод получения урона
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     public virtual void OnCollisionEnter2D(Collision2D collision)
 =======
@@ -569,6 +680,12 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> Stashed changes
 
 =======
+=======
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ((gameObject.tag != collision.gameObject.tag) && (targetList.Count > 0))
+        {
+>>>>>>> Stashed changes
             IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
             if (damagable != null)
             {
@@ -620,5 +737,8 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         GameManager.OnGamePause -= PauseSound;
         GameManager.OnGameResume -= ResumeSound;
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

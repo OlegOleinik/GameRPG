@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMagicBar : ABar
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     private Player player;
@@ -14,7 +17,10 @@ public class PlayerMagicBar : ABar
     {
         player = GameManager.player.GetComponent<Player>();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }

@@ -5,11 +5,14 @@ using UnityEngine;
 public class Slime : AEnemy
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
    // [SerializeField] private Rigidbody2D rb;
     [SerializeField] float maxJumpDistance = 1.5f;
     private float nextJumpCoolDown;
 
 =======
+=======
+>>>>>>> Stashed changes
     private float nextJumpCoolDown = 0;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer bottomRenderer;
@@ -17,11 +20,15 @@ public class Slime : AEnemy
     private int orderSave = 10;
     private Vector3 baseScale;
     private IEnumerator jump;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public override void DieEvent()
     {
         
     }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     public override void SetStart()
     {
@@ -65,6 +72,8 @@ public class Slime : AEnemy
 
         }
 =======
+=======
+>>>>>>> Stashed changes
 
     public override void Start()
     {
@@ -181,6 +190,9 @@ public class Slime : AEnemy
         Vector3 half = Vector3.one * 0.5f;
         Vector3 newScale = ((baseScale - half) * mod + half);
         transform.localScale = new Vector3 (newScale.x, newScale.y, 1);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

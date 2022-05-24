@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 public class GlobalLightController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GlobalLightController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 =======
+=======
+>>>>>>> Stashed changes
 using UnityEngine.Rendering.Universal;
 
 public class GlobalLightController : MonoBehaviour
@@ -150,6 +153,9 @@ public class GlobalLightController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         end();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

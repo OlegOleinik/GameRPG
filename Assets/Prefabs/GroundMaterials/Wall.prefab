@@ -200,8 +200,13 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_SortingLayerID: 0
   m_SortingLayer: 0
+=======
+  m_SortingLayerID: 1884781007
+  m_SortingLayer: -1
+>>>>>>> Stashed changes
 =======
   m_SortingLayerID: 1884781007
   m_SortingLayer: -1

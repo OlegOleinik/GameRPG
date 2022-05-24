@@ -6,7 +6,10 @@ using UnityEngine;
 public class BranchingDialogueSentence : ADialogueSentence
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     public DialogueChoise[] dialogueChoises;
@@ -14,9 +17,13 @@ public class BranchingDialogueSentence : ADialogueSentence
     {
         type = "Branching";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     }
 
+=======
+    }
+>>>>>>> Stashed changes
 =======
     }
 >>>>>>> Stashed changes
@@ -27,6 +34,7 @@ public class DialogueChoise
 {
     public string answer;
     public ADialogueSentence nextSentence;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
     public delegate void OnChoise();
@@ -42,12 +50,17 @@ public class DialogueChoise
         //setStartSentence?.DynamicInvoke();
 
 =======
+=======
+>>>>>>> Stashed changes
     public delegate void OnChoise();
     public event OnChoise onChoise;
 
     public void DoChoise()
     {
         onChoise?.Invoke();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

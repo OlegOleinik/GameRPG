@@ -26,6 +26,7 @@ public class TeleportSpell : ASpell
     public override void Start()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         end = ShowPlayer;
         DontDestroyOnLoad(gameObject);
         transform.SetParent(GameManager.player.transform);
@@ -39,6 +40,9 @@ public class TeleportSpell : ASpell
     private void HidePlayer()
     {
         GameManager.player.GetComponent<PlayerAnimator>().HidePlayer(true);
+=======
+        base.Start();
+>>>>>>> Stashed changes
 =======
         base.Start();
 >>>>>>> Stashed changes

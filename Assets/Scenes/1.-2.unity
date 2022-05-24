@@ -124,7 +124,11 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1001 &713500561
+=======
+--- !u!1001 &41351431
+>>>>>>> Stashed changes
 =======
 --- !u!1001 &41351431
 >>>>>>> Stashed changes
@@ -132,6 +136,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     m_TransformParent: {fileID: 1004024526}
     m_Modifications:
@@ -7269,6 +7274,8 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 1890976046}
   m_PrefabAsset: {fileID: 0}
 =======
+=======
+>>>>>>> Stashed changes
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2055102311959635369, guid: 9e7797bb065982d4497d030f065d6e2f, type: 3}
@@ -76796,4 +76803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd7b41600416b54395bf9936a05dc8e, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

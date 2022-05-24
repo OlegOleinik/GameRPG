@@ -14,6 +14,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] GameObject answersBox;
     [SerializeField] GameObject answerPrefab;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     private bool isInterlocutorActive = false;
     private bool isPlayerActive = false;
@@ -25,12 +26,20 @@ public class DialogueController : MonoBehaviour
     private bool isPlayerActive = false;
     ADialogueSentence currentDialogueSentence;
 >>>>>>> Stashed changes
+=======
+    private bool isInterlocutorActive = false;
+    private bool isPlayerActive = false;
+    ADialogueSentence currentDialogueSentence;
+>>>>>>> Stashed changes
     private bool isTalking = false;
 
     private void Start()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         nextButton.SetActive(false);
@@ -48,6 +57,7 @@ public class DialogueController : MonoBehaviour
     public void NextSentence()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (currentDialogueSentence!=null)
         {
             (currentDialogueSentence as NarrativeDialogueSentence).DoChoise();
@@ -62,6 +72,8 @@ public class DialogueController : MonoBehaviour
             SetActiveInterlocutor(!isBranching);
 
 =======
+=======
+>>>>>>> Stashed changes
         ADialogueSentence next = (currentDialogueSentence as NarrativeDialogueSentence).nextSentence;
         (currentDialogueSentence as NarrativeDialogueSentence).DoChoise();
         if (next != null)
@@ -76,6 +88,9 @@ public class DialogueController : MonoBehaviour
         else
         {
             StopDialog();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
     }
@@ -113,6 +128,7 @@ public class DialogueController : MonoBehaviour
             }
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         else
         {
             //ClearBranching();
@@ -123,10 +139,15 @@ public class DialogueController : MonoBehaviour
     {
         //GameManager.PauseGame();
 =======
+=======
+>>>>>>> Stashed changes
     }
 
     public void StartDialog(ADialogueSentence sentence, Sprite interlocutorSprite)
     {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         if (!isTalking)
         {
@@ -135,7 +156,11 @@ public class DialogueController : MonoBehaviour
             currentDialogueSentence = sentence;
             SetText();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+            interlocutorPic.sprite = interlocutorSprite;
+>>>>>>> Stashed changes
 =======
             interlocutorPic.sprite = interlocutorSprite;
 >>>>>>> Stashed changes
@@ -144,9 +169,13 @@ public class DialogueController : MonoBehaviour
             SetBranching(isBranching);
             SetActiveInterlocutor(!isBranching);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         }
 
+=======
+        }
+>>>>>>> Stashed changes
 =======
         }
 >>>>>>> Stashed changes
@@ -157,11 +186,16 @@ public class DialogueController : MonoBehaviour
         isTalking = false;
         currentDialogueSentence = null;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //ClearBranching();
         SetSpritesUnactive();
         gameObject.SetActive(false);
 
        // GameManager.ResumeGame();
+=======
+        SetSpritesUnactive();
+        gameObject.SetActive(false);
+>>>>>>> Stashed changes
 =======
         SetSpritesUnactive();
         gameObject.SetActive(false);
@@ -173,7 +207,10 @@ public class DialogueController : MonoBehaviour
         playerPic.color = Color.gray;
         playerPic.gameObject.transform.localScale = new Vector3(494, 494, 1);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         interlocutorPic.color = Color.gray;
@@ -190,9 +227,12 @@ public class DialogueController : MonoBehaviour
             StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.color = u, Color.gray, Color.white));
             StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.gameObject.transform.localScale = u, new Vector3(494, 494, 1), new Vector3(594, 594, 1)));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             if (isPlayerActive)
@@ -200,6 +240,7 @@ public class DialogueController : MonoBehaviour
                 StartCoroutine(0.2f.Tweeng((u) => playerPic.color = u, Color.white, Color.gray));
                 StartCoroutine(0.2f.Tweeng((u) => playerPic.gameObject.transform.localScale = u, new Vector3(594, 594, 1), new Vector3(494, 494, 1)));
             }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             
 
@@ -211,13 +252,18 @@ public class DialogueController : MonoBehaviour
             //interlocutorPic.gameObject.transform.localScale = new Vector3(594, 594, 1);
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             isInterlocutorActive = true;
             isPlayerActive = false;
         }
         else if(!setActive && !isPlayerActive)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             StartCoroutine(0.2f.Tweeng((u) => playerPic.color = u, Color.gray, Color.white));
@@ -230,6 +276,7 @@ public class DialogueController : MonoBehaviour
             isInterlocutorActive = false;
             isPlayerActive = true;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             //playerPic.color = Color.white;
             //playerPic.gameObject.transform.localScale = new Vector3(594, 594, 1);
 
@@ -237,6 +284,9 @@ public class DialogueController : MonoBehaviour
             //interlocutorPic.gameObject.transform.localScale = new Vector3(494, 494, 1);
         }
 
+=======
+        }
+>>>>>>> Stashed changes
 =======
         }
 >>>>>>> Stashed changes

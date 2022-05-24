@@ -6,9 +6,13 @@ public interface IDamagable
 {
     void GetDamage(float damage, Vector2 force);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     void GetDamage(float damage);
 
+=======
+    void GetDamage(float damage);
+>>>>>>> Stashed changes
 =======
     void GetDamage(float damage);
 >>>>>>> Stashed changes
