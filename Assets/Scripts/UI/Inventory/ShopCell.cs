@@ -9,5 +9,8 @@ public class ShopCell : InventoryCellScript
     {
          gameObject.GetComponentInParent<Transform>().gameObject.GetComponentInParent<ShopController>().ChangeSelected(this);
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

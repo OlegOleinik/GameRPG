@@ -6,7 +6,11 @@ public abstract class ADialogueSentence : ScriptableObject
 {
     public string interlocutorName;
     public string sentence;
+<<<<<<< Updated upstream
 
     public string type;
 
+=======
+    public string type;
+>>>>>>> Stashed changes
 }

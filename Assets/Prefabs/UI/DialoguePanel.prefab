@@ -500,7 +500,11 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 19
+=======
+  m_SortingOrder: 23
+>>>>>>> Stashed changes
   m_TargetDisplay: 0
 --- !u!114 &4949607266275160715
 MonoBehaviour:
@@ -715,7 +719,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5042708687069874239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -763.1677, y: 90.29028, z: 0}
+=======
+  m_LocalPosition: {x: -763.1677, y: -20, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 494.6225, y: 494.6225, z: 0.989245}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -760,10 +768,17 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 8da19753494475b43b82749da0a44512, type: 3}
+=======
+  m_SortingLayerID: -1897636205
+  m_SortingLayer: 1
+  m_SortingOrder: 24
+  m_Sprite: {fileID: 21300000, guid: 83464012d577d0b4e863efc7d529cf26, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -875,7 +890,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5808395902425214604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 761, y: 88, z: 0}
+=======
+  m_LocalPosition: {x: 761, y: -20, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 494.6225, y: 494.6225, z: 0.989245}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -920,10 +939,17 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 8da19753494475b43b82749da0a44512, type: 3}
+=======
+  m_SortingLayerID: -1897636205
+  m_SortingLayer: 1
+  m_SortingOrder: 24
+  m_Sprite: {fileID: 21300000, guid: 83464012d577d0b4e863efc7d529cf26, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

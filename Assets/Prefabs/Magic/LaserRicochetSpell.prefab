@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1331918081750308868}
   m_Layer: 7
   m_Name: LaserRicochetSpell
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b1b90993e0cbe4e8e519c4fe5d7f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aim: {fileID: 2115802469999395239, guid: 60643cd911f345e40809d49e3c411dac, type: 3}
+  laserBeam: {fileID: 4999953503383814302, guid: 7ac18d21f00f94a498d87c88b1d9fd52, type: 3}
+  aimLine: {fileID: 1331918081750308868}
 --- !u!120 &1331918081750308868
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -55,7 +56,7 @@ LineRenderer:
   m_GameObject: {fileID: 8454468848139401400}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 0
@@ -66,7 +67,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 23babf1ebaadc0a47a8e6a1e3811dd9c, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,12 +87,12 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 12
   m_Positions:
-  - {x: 7.6179185, y: -5.2537756, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.09941915
+    widthMultiplier: 0.029736707
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -109,8 +110,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

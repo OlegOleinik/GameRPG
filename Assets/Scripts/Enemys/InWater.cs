@@ -11,14 +11,25 @@ public class InWater : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         defSort = sprite.sortingOrder;
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     private void OnTriggerEnter2D(Collider2D collision)
     {
         sprite.sortingOrder = 1;
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     private void OnTriggerExit2D(Collider2D collision)
     {
         sprite.sortingOrder = defSort;
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }
 

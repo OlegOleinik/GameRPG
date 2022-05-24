@@ -10,7 +10,10 @@ public class SaveArea : MonoBehaviour
         {
             GameManager.UI.GetComponent<UIScript>().SetSaveActive();
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -18,8 +21,12 @@ public class SaveArea : MonoBehaviour
         if (collision.tag == "Player")
         {
             GameManager.UI.GetComponent<UIScript>().SetSaveDisable();
+<<<<<<< Updated upstream
 
         }
 
+=======
+        }
+>>>>>>> Stashed changes
     }
 }

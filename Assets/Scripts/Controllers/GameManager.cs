@@ -7,11 +7,18 @@ public static class GameManager
     public static bool isGamePaused;
     public static GameObject player = GameObject.FindGameObjectWithTag("Player");
     public static GameObject UI = GameObject.FindGameObjectWithTag("UI");
+<<<<<<< Updated upstream
+=======
+
+    private static AudioSource clickSourse = GameObject.Find("ClickSound").GetComponent<AudioSource>();
+
+>>>>>>> Stashed changes
     public static Color cellColorDefault = new Color(0.925f, 0.91f, 0.8f, 0.57f);
     public static Color cellColorOnMouse = new Color(0.59f, 0.29f, 0.29f, 0.57f);
 
     public delegate void EndCorutine();
 
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -19,10 +26,24 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
     public static void SetNewPlayer(GameObject newPlayer)
+=======
+    public delegate void GamePauseResume();
+    public static event GamePauseResume OnGamePause;
+    public static event GamePauseResume OnGameResume;
+
+    //public static void FindNewRefs()
+    //{
+    //    player = GameObject.FindGameObjectWithTag("Player");
+    //    UI = GameObject.FindGameObjectWithTag("UI");
+    //}
+
+    public static void SetNewPlayerLink(GameObject newPlayer)
+>>>>>>> Stashed changes
     {
         player = newPlayer;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
@@ -43,6 +64,31 @@ public static class GameManager
     {
         isGamePaused = true;
         Time.timeScale = 0;
+=======
+    public static void SetNewUILink(GameObject newUI)
+    {
+        UI = newUI;
+    }
+
+    public static void ClickPlay()
+    {
+        clickSourse.Play();
+    }
+
+
+    public static void ExitGame()
+    {
+        Application.Quit();
+    }
+
+
+    public static void PauseGame()
+    {
+        
+        isGamePaused = true;
+        Time.timeScale = 0;
+        OnGamePause?.Invoke();
+>>>>>>> Stashed changes
     }
 
     //Возобновить
@@ -50,11 +96,18 @@ public static class GameManager
     {
         isGamePaused = false;
         Time.timeScale = 1;
+<<<<<<< Updated upstream
+=======
+        OnGameResume?.Invoke();
+>>>>>>> Stashed changes
     }
 
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -124,7 +177,10 @@ public static class GameManager
     }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -145,7 +201,27 @@ public static class GameManager
         vary(zz);
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+
+
+    public static IEnumerator Tweeng(this float duration,
+ System.Action<Color> vary, Color aa, Color zz, EndCorutine end)
+    {
+        float sT = Time.time;
+        float eT = sT + duration;
+
+        while (Time.time < eT)
+        {
+            float t = (Time.time - sT) / duration;
+            vary(Color.Lerp(aa, zz, t));
+            yield return null;
+        }
+        vary(zz);
+        end();
+    }
 >>>>>>> Stashed changes
 }

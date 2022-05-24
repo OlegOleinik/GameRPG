@@ -4,48 +4,25 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class LaserRicochetSpell : ASpell
 {
-    private LayerMask layerMask;
-    private int ricochetCount = 0;
     private int maxRicochetCount;
     private float lvlMod;
-
+    private LayerMask layerMask;
+    private Transform castPoint;
     private LineRenderer laserLineRenderer;
+    private int ricochetCount = 0;
     private float laserMaxLength = 10f;
-    private GameManager.EndCorutine end;
-    private LineRenderer line;
-    [SerializeField] private GameObject aim;
-    private GameObject newAim;
-    //[SerializeField] private LineRenderer shootLine;
-    public override void Start()
+    [SerializeField] private GameObject laserBeam;
+    [SerializeField] private LineRenderer aimLine;
+
+    public override bool Spell()
     {
-        line = gameObject.GetComponent<LineRenderer>();
-        end = SetNoActive;
-        gameObject.SetActive(false);
+        GameObject newLaserBeam = Instantiate(laserBeam, GameManager.player.transform);
+        newLaserBeam.GetComponent<LaserBeam>().CastLaser(maxRicochetCount, lvlMod, castPoint);
+        return true;
     }
-    private void SetNoActive()
+    private void StartAIM()
     {
-        gameObject.SetActive(false);
-    }
-    public override void Spell()
-    {
-        gameObject.SetActive(true);
-        line.positionCount = 1;
-        line.startColor = new Color(0.64f, 0, 1f, 1f);
-        line.endColor = new Color(0.64f, 0, 1f, 1f);
-        ricochetCount = 0;
-
-        layerMask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemys");
-        laserLineRenderer = gameObject.GetComponent<LineRenderer>();
-
-        float x = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x - GameManager.player.transform.position.x;
-        float y = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).y - GameManager.player.transform.position.y;
-
-
-        laserLineRenderer.SetPosition(0, GameManager.player.transform.position);
-        ShootLaser(GameManager.player.transform.position, new Vector3(x, y, -1).normalized, laserMaxLength);
-    }
-    void ShootLaser(Vector3 targetPosition, Vector3 direction, float length)
-    {
+<<<<<<< Updated upstream
         RaycastHit2D[] hit = Physics2D.RaycastAll(targetPosition, direction, length, layerMask);
         Debug.DrawRay(targetPosition, direction*length, Color.black, 10);
 
@@ -85,63 +62,106 @@ public class LaserRicochetSpell : ASpell
             StartCoroutine(1f.Tweeng((u) => line.endColor = new Color(1f, 1f, 1f, u), 1f, 0f, end));
         }
 
+=======
+        layerMask = LayerMask.GetMask("Wall");
+        StartCoroutine(ShootLine());
+        aimLine.enabled = true;
+>>>>>>> Stashed changes
     }
 
     public override void SetLvl(int lvl)
     {
+        castPoint = GameManager.player.GetComponent<Player>().spellCastPoint;
         switch (lvl)
         {
             case 1:
                 lvlMod = 1;
                 maxRicochetCount = 1;
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 2:
                 lvlMod = 1.2f;
                 maxRicochetCount = 2;
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 //  shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 3:
                 lvlMod = 1.5f;
                 maxRicochetCount = 3;
+<<<<<<< Updated upstream
                 newAim = Instantiate(aim);
                 newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
                 // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 4:
                 lvlMod = 1.6f;
                 maxRicochetCount = 4;
-                newAim = Instantiate(aim);
-                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
-                // shootLine.enabled = true;
-                //StartCoroutine(ShootLine());
+                StartAIM();
                 break;
             case 5:
                 lvlMod = 2;
                 maxRicochetCount = 4;
-                newAim = Instantiate(aim);
-                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
-                // shootLine.enabled = true;
-                //StartCoroutine(ShootLine());
+                StartAIM();
                 break;
             default:
                 break;
         }
     }
 
-    private void OnDestroy()
+    void ShootLaser(Vector2 targetPosition, Vector2 direction, float length)
     {
-        if (newAim!=null)
+        RaycastHit2D hit = Physics2D.Raycast(targetPosition, direction, length, layerMask);
+        Debug.DrawRay(targetPosition, direction * length, Color.black, 10);
+        Vector2 endPosition = targetPosition + (length * direction);
+        bool isRicochet = false;
+        Vector2 newDir = new Vector2(0, 0);
+        if (hit.collider != null && hit.collider.tag == "Wall")
         {
-            Destroy(newAim);
+            if (ricochetCount < maxRicochetCount)
+            {
+                isRicochet = true;
+                ricochetCount++;
+                newDir = Vector2.Reflect(direction, hit.normal);
+                endPosition = hit.point + (newDir.normalized / 100);
+            }
+            else
+            {
+                endPosition = hit.point;
+            }
         }
-
+        aimLine.SetPosition(++aimLine.positionCount - 1, endPosition);
+        if (isRicochet)
+        {
+            ShootLaser(endPosition, newDir, length);
+        }
     }
 
-
+    private IEnumerator ShootLine()
+    {
+        while (true)
+        {
+            ricochetCount = 0;
+            aimLine.positionCount = 1;
+            float x = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x - castPoint.position.x;
+            float y = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).y - castPoint.position.y;
+            aimLine.SetPosition(0, castPoint.position);
+            ShootLaser(castPoint.position, new Vector2(x, y).normalized, laserMaxLength);
+            yield return null;
+        }
+    }
 }
 

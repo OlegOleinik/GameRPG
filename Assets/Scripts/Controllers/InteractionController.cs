@@ -52,7 +52,10 @@ public class InteractionController : MonoBehaviour
             this.interaction = null;
             interactionPos = null;
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
     public void Interact(InputAction.CallbackContext inputValue)
     {
@@ -60,8 +63,12 @@ public class InteractionController : MonoBehaviour
         {
             interaction();
         }
+<<<<<<< Updated upstream
 
      }
 
 
+=======
+     }
+>>>>>>> Stashed changes
 }

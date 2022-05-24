@@ -10,4 +10,13 @@ public class ItemScriptableObject : ScriptableObject
     public int cost;
     public string itemName;
     public int maxItems;
+
+    private void Awake()
+    {
+        type = "Useless";
+    }
 }
+
+
+
+

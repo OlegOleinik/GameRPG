@@ -305,7 +305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Dodge Chance
+      value: Repulsion
       objectReference: {fileID: 0}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
@@ -398,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 8189985636349222183, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: id
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189985636349222183, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: up
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}

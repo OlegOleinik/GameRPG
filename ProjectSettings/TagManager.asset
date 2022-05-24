@@ -10,11 +10,18 @@ TagManager:
   - UI
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
   - Quest
 >>>>>>> Stashed changes
 =======
   - Quest
+>>>>>>> Stashed changes
+=======
+  - Quest
+  - NPC
+  - PlayerWeapon
+  - GlobalLight
 >>>>>>> Stashed changes
   layers:
   - Default
@@ -31,6 +38,7 @@ TagManager:
   - WaterCollider
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - 
 =======
   - NonWaterEnemys
@@ -40,6 +48,11 @@ TagManager:
 >>>>>>> Stashed changes
   - 
   - 
+=======
+  - NonWaterEnemys
+  - SaveArea
+  - FieldOfView
+>>>>>>> Stashed changes
   - 
   - 
   - 
@@ -58,6 +71,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3852787381
+    locked: 0
+  - name: BottomNoLight
+    uniqueID: 1884781007
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UpNoLight
+    uniqueID: 2397331091
     locked: 0

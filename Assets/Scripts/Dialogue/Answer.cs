@@ -12,19 +12,29 @@ public class Answer : MonoBehaviour
     {
         text.text = dialogueChoise.answer;
         this.dialogueChoise = dialogueChoise;
+<<<<<<< Updated upstream
         // Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
+=======
+>>>>>>> Stashed changes
         StartCoroutine(SetSize());
     }
 
     IEnumerator SetSize()
     {
+<<<<<<< Updated upstream
         // We should only read the screen buffer after rendering is complete
+=======
+>>>>>>> Stashed changes
         yield return new WaitForEndOfFrame();
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 (text.gameObject.GetComponent<RectTransform>().sizeDelta.x + 20, 30);
     }
 
     public void OnClick()
     {
+<<<<<<< Updated upstream
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
         DialogueController dialogueController = GameManager.UI.GetComponent<UIScript>().dialogueController;
         if (dialogueChoise.nextSentence != null)
         {
@@ -34,7 +44,10 @@ public class Answer : MonoBehaviour
         {
             dialogueController.StopDialog();
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         dialogueChoise.DoChoise();
     }
 }

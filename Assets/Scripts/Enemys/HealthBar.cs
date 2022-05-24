@@ -23,6 +23,15 @@ public class HealthBar : ABar
         GetComponent<MeshRenderer>().sortingOrder = 20;
     }
 
+<<<<<<< Updated upstream
+=======
+    public override void SetLocalParams()
+    {
+        enemy = GetComponentInParent<AEnemy>();
+        GetComponent<MeshRenderer>().sortingOrder = 20;
+    }
+
+>>>>>>> Stashed changes
     public override float UpdateCount()
     {
         return enemy.currentHP / (float)enemy.maxHP;

@@ -7,6 +7,7 @@ public abstract class AQuest : MonoBehaviour
     public int stage;
     public QuestScriptableObject quest;
     public QuestsController questsController;
+<<<<<<< Updated upstream
 
     [SerializeField] private int rewardEP;
     [SerializeField] private int rewardCoin;
@@ -15,18 +16,38 @@ public abstract class AQuest : MonoBehaviour
 
     public delegate string GetTaskDesc();
     public GetTaskDesc taskDesc;
+=======
+    [SerializeField] private int rewardEP;
+    [SerializeField] private int rewardCoin;
+    [SerializeField] private ItemScriptableObject[] rewardItems;
+    public delegate string GetTaskDesc();
+    public GetTaskDesc taskDesc;
+
+    private GameObject questObject;
+
+>>>>>>> Stashed changes
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
         questsController = GameManager.player.GetComponent<QuestsController>();
     }
 
+<<<<<<< Updated upstream
+=======
+    private void Start()
+    {
+        questObject = gameObject;
+    }
+>>>>>>> Stashed changes
     public void SetStage(int stage)
     {
         StartCoroutine(SetStageOnLoad(stage));
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public abstract IEnumerator SetStageOnLoad(int stage);
     public string GetDescription()
     {
@@ -50,10 +71,16 @@ public abstract class AQuest : MonoBehaviour
 
     public void SetQuestCompleted()
     {
+<<<<<<< Updated upstream
         
         GetReward();
         questsController.SetQuestCompleted(this, new CompletedQuest(this));
         Destroy(gameObject);
+=======
+        GetReward();
+        questsController.SetQuestCompleted(this, new CompletedQuest(this));
+        Destroy(questObject);
+>>>>>>> Stashed changes
     }
 
     public void GetReward()
@@ -61,6 +88,7 @@ public abstract class AQuest : MonoBehaviour
         Player player = GameManager.player.GetComponent<Player>();
         player.money += rewardCoin;
         player.AddExperience(rewardEP);
+<<<<<<< Updated upstream
       //  Debug.Log(rewardItems);
         foreach (var item in rewardItems)
         {
@@ -68,12 +96,19 @@ public abstract class AQuest : MonoBehaviour
             //Debug.Log(item);
             //Debug.Log(player.transform.position);
             //player.GetComponent<InventoryPanel>().dropedItem.DropItem(item, player.transform.position);
+=======
+        foreach (var item in rewardItems)
+        {
+>>>>>>> Stashed changes
             questsController.dropedItem.DropItem(item, player.transform.position);
         }
     }
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 public class CompletedQuest
 {
     public QuestScriptableObject quest;
@@ -82,6 +117,9 @@ public class CompletedQuest
     {
         this.quest = quest.quest;
         type = quest.GetType();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 }

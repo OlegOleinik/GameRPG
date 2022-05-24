@@ -9,13 +9,23 @@ public class SavedGamesPanel : MonoBehaviour
     [SerializeField] GameObject savedGame;
     private void Start()
     {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         gameObject.SetActive(false);
     }
 
     public void ShowResaveGames()
     {
         gameObject.SetActive(true);
+<<<<<<< Updated upstream
+=======
+        if (!Directory.Exists(Application.persistentDataPath + "/Saves"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
+        }
+>>>>>>> Stashed changes
         DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath + "/Saves/");
         FileInfo[] files = di.GetFiles("*.json");
         ClearGames();
@@ -29,7 +39,14 @@ public class SavedGamesPanel : MonoBehaviour
     public void ShowLoadGames()
     {
         gameObject.SetActive(true);
+<<<<<<< Updated upstream
 
+=======
+        if (!Directory.Exists(Application.persistentDataPath + "/Saves"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
+        }
+>>>>>>> Stashed changes
         DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath + "/Saves/");
         FileInfo[] files = di.GetFiles("*.json");
         ClearGames();
@@ -43,7 +60,11 @@ public class SavedGamesPanel : MonoBehaviour
     {
         foreach (var item in content.GetComponentsInChildren<SavedGameButton>())
         {
+<<<<<<< Updated upstream
             GameObject.Destroy(item.gameObject);
+=======
+            Destroy(item.gameObject);
+>>>>>>> Stashed changes
         }
     }
 }

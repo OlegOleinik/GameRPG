@@ -9,13 +9,19 @@ public class PlayerHealthBar : ABar
     public override void SetLocalParams()
     {
         player = GameManager.player.GetComponent<Player>();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     public override float UpdateCount()
     {
         return player.currentHP / player.maxHP;
     }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 }

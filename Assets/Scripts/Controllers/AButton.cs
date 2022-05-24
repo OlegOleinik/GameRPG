@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public abstract class AButton : MonoBehaviour
 {
+    public virtual void OnAction(InputAction.CallbackContext inputValue)
+    {
+        
+        if (inputValue.started)
+        {
 
+<<<<<<< Updated upstream
     // [SerializeField] private string buttonName;
     //public void CheckKeyboardPress()
     //{
@@ -19,4 +25,13 @@ public abstract class AButton : MonoBehaviour
     // Start is called before the first frame update
 
 
+=======
+            OpenClosePanel();
+        }
+    }
+    public virtual void OpenClosePanel()
+    {
+        GameManager.ClickPlay();
+    }
+>>>>>>> Stashed changes
 }

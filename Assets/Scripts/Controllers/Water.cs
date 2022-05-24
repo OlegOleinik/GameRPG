@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class Water : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -16,8 +17,7 @@ public class Water : MonoBehaviour
         else if (collision.tag == "Enemy")
         {
             AEnemy enemy = collision.GetComponent<AEnemy>();
-            enemy.speed /= 2;
-            collision.GetComponent<Rigidbody2D>().mass *= 5;
+            enemy.WaterCollisionEnter();
         }
     }
     //Конец касания воды
@@ -32,8 +32,7 @@ public class Water : MonoBehaviour
         else if (collision.tag == "Enemy")
         {
             AEnemy enemy = collision.GetComponent<AEnemy>();
-            enemy.speed *= 2;
-            collision.GetComponent<Rigidbody2D>().mass /= 5;
+            enemy.WaterCollisionExit();
         }
     }
 }

@@ -14,11 +14,10 @@ public class ShopController : MonoBehaviour
     [SerializeField] GameObject buyButton;
     [SerializeField] private Text money;
     public ItemDescription description;
-
     private ShopCell selectedCell;
-
     private Merchant merchant;
     private ShopCell[] shopCells;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
@@ -39,6 +38,10 @@ public class ShopController : MonoBehaviour
     private void Awake()
 >>>>>>> Stashed changes
 =======
+    private void Awake()
+>>>>>>> Stashed changes
+=======
+
     private void Awake()
 >>>>>>> Stashed changes
     {
@@ -105,6 +108,17 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    private void SetSellButtonActive()
+    {
+        if (inventoryPanel.selectedCell != null)
+        {
+            sellButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            sellButton.GetComponent<Button>().interactable = false;
+        }
+    }
 
     public void SetDescription(AItemCell cell)
     {
@@ -122,12 +136,16 @@ public class ShopController : MonoBehaviour
             }
             description.SetDescription(text);
         }
+    }
 
+<<<<<<< Updated upstream
 
 
 
     }
 
+=======
+>>>>>>> Stashed changes
     private int GetBuyCost(ItemScriptableObject item)
     {
         return System.Convert.ToInt32(item.cost + (item.cost * (0.5 / GameManager.player.GetComponent<Player>().speech)));
@@ -138,8 +156,6 @@ public class ShopController : MonoBehaviour
         description.ClearDescription();
     }
 
-
-
     public void OpenShop(Merchant merchant)
     {
         this.merchant = merchant;
@@ -147,9 +163,9 @@ public class ShopController : MonoBehaviour
         inventoryPanel.DrawInventory();
     }
 
-
     public void ClickSellButton()
     {
+<<<<<<< Updated upstream
         if (inventoryPanel.selectedCell != null)
         {
             merchant.AddItem(inventoryPanel.selectedCell.item);
@@ -158,11 +174,20 @@ public class ShopController : MonoBehaviour
 
         
     }
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
 
+        if (inventoryPanel.selectedCell != null)
+        {
+            merchant.AddItem(inventoryPanel.selectedCell.item);
+            inventoryPanel.SellItem();
+        }
+    }
 
     public void ClickBuyButton()
     {
-  
+        GameManager.ClickPlay();
         Player player = GameManager.player.GetComponent<Player>();
         int cost = GetBuyCost(selectedCell.item);
         if ((selectedCell != null) && (player.money >= cost && (GameManager.player.GetComponent<Inventory>().AddItem(selectedCell.item))))
@@ -176,8 +201,6 @@ public class ShopController : MonoBehaviour
         }
     }
 
-
-
     public void ChangeSelected(ShopCell newSelectedCell)
     {
         ClearSelected();
@@ -188,7 +211,10 @@ public class ShopController : MonoBehaviour
             selectedCell.selected = true;
             selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     //Очистка клетки от выделения
@@ -201,16 +227,16 @@ public class ShopController : MonoBehaviour
             selectedCell = null;
             buyButton.GetComponent<Button>().interactable = false;
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
-
-
 
     private void ChangeActive(bool isActive)
     {
         merchantPanel.SetActive(isActive);
         inventoryPanel.gameObject.SetActive(!isActive);
-
         openInventoryButton.interactable = isActive;
         openShopButton.interactable = !isActive;
         buyButton.SetActive(isActive);
@@ -219,18 +245,15 @@ public class ShopController : MonoBehaviour
 
     public void OpenPlayerInventory()
     {
-
+        GameManager.ClickPlay();
         ChangeActive(false);
-
         inventoryPanel.DrawInventory();
-
     }
 
     public void OpenMerchantInventory()
     {
-
+        GameManager.ClickPlay();
         ChangeActive(true);
-
         ClearShop();
         money.text = $"{GameManager.player.GetComponent<Player>().money}";
         for (int i=0; i< Mathf.Min(merchant.onSaleItems.Count, shopCells.Length-1); i++)

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 {
-
+    public string enemyName;
     public float speed;
     public int maxHP;
-    //public float viewDistance;
     public float dropedExperience;
-    [SerializeField] private float attack;
-
-
+    [SerializeField] protected float attack;
+    [SerializeField] protected float repulsion = 1;
+    [SerializeField] GameObject particlesOnDamage;
     [SerializeField] private DropedItem dropedItem;
+<<<<<<< Updated upstream
     private Transform targetPlayer;
     public Vector2 targetPoint;
     public Vector2 spawnPosition;
@@ -21,8 +21,26 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     public Rigidbody2D rb;
     
 
+=======
+    public Vector2 targetPoint;
+    public Vector2 spawnPosition;
+    protected float _currentHP;
+    protected float vaitTime=-1;
+    public Rigidbody2D rb;
+    public float seenDistance = 5;
+>>>>>>> Stashed changes
     private LayerMask layerMask;
+    [SerializeField] protected List<ItemScriptableObject> DropList;
+    [SerializeField] protected List<float> DropChanceList;
+    [SerializeField] protected Animator enemyLegAnimator;
+    [SerializeField] protected GameObject healthBar;
+    private float _nextDamage = 0;
+    [SerializeField] private FieldOfView fieldOfView;
+    protected bool isSeen = false;
+    protected List<Transform> targetList = new List<Transform>();
+    [SerializeField] protected AudioSource audioSource;
 
+<<<<<<< Updated upstream
     [SerializeField] private List<ItemScriptableObject> DropList;
     [SerializeField] private List<float> DropChanceList;
 <<<<<<< Updated upstream
@@ -35,6 +53,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 <<<<<<< HEAD
 =======
     [SerializeField] private Animator enemyLegAnimator;
+=======
+    public float nextDamage
+    {
+        get
+        {
+            return _nextDamage;
+        }
+    }
+>>>>>>> Stashed changes
 
 >>>>>>> Stashed changes
     private GameObject healthBar;
@@ -82,14 +109,32 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             return _currentHP;
         }
     }
-    //Ищет игрока, сохраняет позицию спавна, маски для Raycast, задает текущее здоровье максимальным.
-    private void Start()
+
+    public float getAttack
     {
-        targetPlayer = GameManager.player.transform;
-        rb = GetComponent<Rigidbody2D>();
-        spawnPosition = rb.position;
+        get
+        {
+            return attack;
+        }
+    }
+
+    public float getRepulsion
+    {
+        get
+        {
+            return repulsion;
+        }
+    }
+    public virtual void Start()
+    {
+        if (fieldOfView != null)
+        {
+            fieldOfView.SetCircleRadius(seenDistance, this);
+        }
+        spawnPosition = transform.position;
         targetPoint = spawnPosition;
         _currentHP = maxHP;
+<<<<<<< Updated upstream
         layerMask = LayerMask.GetMask("Wall")+ LayerMask.GetMask("Player");
 
         healthBar = GetComponentInChildren<HealthBar>().gameObject;
@@ -109,9 +154,20 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+        layerMask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Player") + LayerMask.GetMask("Enemys");
+        GameManager.OnGamePause += PauseSound;
+        GameManager.OnGameResume += ResumeSound;
     }
+
+    protected virtual void DamageParticles()
+    {
+        Instantiate(particlesOnDamage, gameObject.transform.position, Quaternion.identity);
+>>>>>>> Stashed changes
+    }
+
     //Выбросить предметы, согласну шансу выпадения
-    private void DropItems()
+    protected void DropItems()
     {
         for (int i=0; i<DropList.Count && i< DropChanceList.Count; i++)
         {
@@ -121,19 +177,46 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             }
         }
     }
-    //Умереть(( Добавить опыт игроку, уничтожиться, бросить предметы
-    public void Die()
+
+    private void PauseSound()
     {
-        targetPlayer.gameObject.GetComponent<Player>().AddExperience(dropedExperience);
+        audioSource.Pause();
+    }
+
+    private void ResumeSound()
+    {
+        audioSource.UnPause();
+    }
+   
+    public virtual void Die()
+    {
+        Disappear();
+    }
+
+    //Умереть(( Добавить опыт игроку, уничтожиться, бросить предметы
+<<<<<<< Updated upstream
+    public void Die()
+=======
+    public virtual void Disappear()
+>>>>>>> Stashed changes
+    {
+        GameManager.player.GetComponent<Player>().AddExperience(dropedExperience);
+
         Destroy(gameObject);
         DieEvent();
         DropItems();
     }
 
+<<<<<<< Updated upstream
 
     public abstract void DieEvent();
     //Получить урон, если ХП меньше/равно 0-умереть
     public void GetDamage(float damage, Vector2 force)
+=======
+    public abstract void DieEvent();
+    //Получить урон, если ХП меньше/равно 0-умереть
+    public virtual void GetDamage(float damage, Vector2 force)
+>>>>>>> Stashed changes
     {
         if (nextDamage < Time.time)
         {
@@ -145,9 +228,27 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
                 Die();
             }
         }
+<<<<<<< Updated upstream
 
     }
     public void GetDamage(float damage)
+=======
+    }
+    public virtual void GetDamage(float damage)
+    {
+        if (nextDamage < Time.time)
+        {
+            LostHP(damage);
+            SetDamageCoolDown(0.5f);
+            if (_currentHP <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    public void LostHP(float damage)
+>>>>>>> Stashed changes
     {
         if (nextDamage < Time.time)
         {
@@ -165,11 +266,16 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         _currentHP -= damage;
     }
 
+<<<<<<< Updated upstream
     public void GetForce(Vector2 force)
+=======
+    public virtual void GetForce(Vector2 force)
+>>>>>>> Stashed changes
     {
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
+<<<<<<< Updated upstream
 
 
     private void SetFlip(float x)
@@ -225,6 +331,20 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         else if (x < 0)
         {
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+=======
+    protected virtual void SetFlip(float x)
+    {
+        if (x > 0)
+        {
+            gameObject.transform.localScale = Vector3.one;
+            healthBar.transform.localScale = new Vector3(1, 0.13f, 1);
+            return;
+        }
+        else if (x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            healthBar.transform.localScale = new Vector3(-1, 0.13f, 1);
+>>>>>>> Stashed changes
         }
 >>>>>>> Stashed changes
         healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -260,8 +380,18 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 =======
 >>>>>>> Stashed changes
     }
+
+    private void SetDamageCoolDown(float addCD)
+    {
+        _nextDamage = Time.time + addCD;
+    }
     //ЕСЛИ дистанция до точки спавна > 10, цель движения-точка спавна, иначе если виден игрок и целевая точка-не точка спавна-преследовать игрока, иначе свободно ходить
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
+    {
+        Move();
+    }
+
+    public virtual void Move()
     {
         Move();
     }
@@ -282,9 +412,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             targetPoint = spawnPosition;
             MoveToPos(targetPoint);
         }
+<<<<<<< Updated upstream
         else if (IsSeen() && targetPoint != spawnPosition)
         {
             targetPoint = targetPlayer.position;
+=======
+        else if (isSeen && IsSeen(targetList[0]) && targetPoint != spawnPosition)
+        {
+            targetPoint = targetList[0].position;
+>>>>>>> Stashed changes
             MoveToPos(targetPoint);
         }
         else
@@ -293,6 +429,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         }
     }
 
+<<<<<<< Updated upstream
     //Переместить врага к целевой точке
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -315,6 +452,12 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         SetFlip(position.x - transform.position.x);
         SetLegAnim(1);
 >>>>>>> Stashed changes
+=======
+    protected virtual void MoveToPos(Vector2 position)
+    {
+        rb.position = Vector2.MoveTowards(transform.position, position, speed);
+        SetFlip(position.x - transform.position.x);
+>>>>>>> Stashed changes
     }
     public virtual void SetLegAnim(int i)
     {
@@ -322,10 +465,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     }
     //Проверка видимости игрока, противник видит слой стен и игрока (заданы в Start), но true, только когда виден игрок
-    private bool IsSeen()
+    protected virtual bool IsSeen(Transform target)
     {
-        Debug.DrawRay(transform.position, (targetPlayer.position - transform.position).normalized *5, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, (targetPlayer.position - transform.position).normalized, 5, layerMask);
+        if (target == null)
+        {
+            targetList.RemoveAt(0);
+            return false;
+        }
+        Debug.DrawRay(transform.position, (target.position - transform.position).normalized * seenDistance, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, (target.position - transform.position).normalized, seenDistance, layerMask);
         if ((hit) && (hit.collider.tag != "Wall"))
         {
             return true;
@@ -335,6 +483,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 
     //Свободное хождение. Если целевая точне не равна текущей-двигаться к ней. ИНАЧЕ, ЕСЛИ время ожидания -1, задать время 1 сек, ИНАЧЕ ЕСЛИ время ожидания больше текущего, задать новую целевую точку.
     //Если время ожидания меньше текущего и не -1, ничего не происходит (противник стоит)
+<<<<<<< Updated upstream
     public virtual void DefaultWalk()
     {
         if (rb.position!=targetPoint)
@@ -363,6 +512,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
             }
             
         }
+=======
+    protected virtual void DefaultWalk()
+    {
+
+>>>>>>> Stashed changes
     }
     //Ставит рандомную целевую точку в круге радиуса 5 вокруг точки спавна
     public Vector2 SetRandomTargetPoint()
@@ -371,7 +525,11 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     //При столкновении со стеной выбрать новую целевую точку. Используется именно Stay, т.к. при Enter все еще может застрять
+<<<<<<< Updated upstream
     public virtual void OnCollisionStay2D(Collision2D collision)
+=======
+    protected virtual void OnCollisionStay2D(Collision2D collision)
+>>>>>>> Stashed changes
     {
         if (collision.gameObject.tag == "Wall")
         {
@@ -380,11 +538,15 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     }
 
     //При столкновении с игроком вызывает его метод получения урона
+<<<<<<< Updated upstream
     public virtual void OnCollisionEnter2D(Collision2D collision)
+=======
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+>>>>>>> Stashed changes
     {
-        GameObject collisionWith = collision.gameObject;
-        if (collisionWith.tag == "Player")
+        if ((gameObject.tag != collision.gameObject.tag) && (targetList.Count > 0))
         {
+<<<<<<< Updated upstream
             collisionWith.GetComponent<Player>().GetDamage(attack);
             targetPoint = targetPlayer.position;
             AttackAnimation();
@@ -406,4 +568,57 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
 =======
 >>>>>>> Stashed changes
 
+=======
+            IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
+            if (damagable != null)
+            {
+                damagable.GetDamage(attack, repulsion * 100 * (collision.transform.position - transform.position).normalized);
+                AttackAnimation();
+            }
+        }
+    }
+
+    public virtual void AddTarget(GameObject newTarget)
+    {
+        if(newTarget.tag == "Player" || newTarget.tag == "NPC")
+        {
+            targetList.Add(newTarget.transform);
+            isSeen = true;
+        }
+    }
+
+    public virtual void RemoveTarget(GameObject lostTarget)
+    {
+        if (lostTarget.tag == "Player" || lostTarget.tag == "NPC")
+        {
+            targetList.Remove(lostTarget.transform);
+            if (targetList.Count < 1)
+            {
+                isSeen = false;
+            }
+        }
+    }
+
+    public virtual void WaterCollisionEnter()
+    {
+        speed /= 2;
+        GetComponent<Rigidbody2D>().mass *= 5;
+    }
+
+    public virtual void WaterCollisionExit()
+    {
+        speed *= 2;
+        GetComponent<Rigidbody2D>().mass /= 5;
+    }
+    protected virtual void AttackAnimation()
+    {
+
+    }
+
+    protected virtual void OnDestroy()
+    {
+        GameManager.OnGamePause -= PauseSound;
+        GameManager.OnGameResume -= ResumeSound;
+    }
+>>>>>>> Stashed changes
 }

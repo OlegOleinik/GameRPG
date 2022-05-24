@@ -11,6 +11,7 @@ public class IncreaseButton : MonoBehaviour
     private Button button;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public bool isUpdate = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -56,10 +57,16 @@ public class IncreaseButton : MonoBehaviour
         gameObject.GetComponentInChildren<Text>().text = text + $": max({stat})";
     }
     public void OnClick()
+=======
+
+    private void Awake()
+>>>>>>> Stashed changes
     {
-        GetComponentInParent<SpecsPanel>().IncreaseSpec(id, up);
+        text = gameObject.GetComponentInChildren<Text>().text;
+        button = GetComponent<Button>();
     }
 
+<<<<<<< Updated upstream
 
     public void SetText(string stat)
     {
@@ -87,6 +94,23 @@ public class IncreaseButton : MonoBehaviour
         gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
 >>>>>>> Stashed changes
 =======
+        button.interactable = true;
+        gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
+>>>>>>> Stashed changes
+=======
+    public void SetMax(string stat)
+    {
+        button.interactable = false;
+        gameObject.GetComponentInChildren<Text>().text = text + $": max({stat})";
+    }
+
+    public void OnClick()
+    {
+        GetComponentInParent<SpecsPanel>().IncreaseSpec(id, up);
+    }
+
+    public void SetText(string stat)
+    {
         button.interactable = true;
         gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
 >>>>>>> Stashed changes

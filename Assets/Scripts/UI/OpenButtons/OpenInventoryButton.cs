@@ -6,23 +6,23 @@ using UnityEngine.InputSystem;
 
 public class OpenInventoryButton : AButton
 {
-
-
     public InventoryPanel inventory;
-
-
-    //Проверка нажатия на клавиатуре клавиши инвентаря
 
     //Открытие/закрытие инвентаря
     public override void OpenClosePanel()
     {
+<<<<<<< Updated upstream:Assets/Scripts/UI/OpenButtons/OpenInventoryButton.cs
 
+=======
+        base.OpenClosePanel();
+>>>>>>> Stashed changes:Assets/Scripts/UI/OpenInventoryButton.cs
         UIScript uIScript = GetComponentInParent<UIScript>();
         if (uIScript.CheckNotOpen(inventory.gameObject))
         {
             inventory.gameObject.SetActive(true);
             inventory.DrawInventory();
             uIScript.ExpandPanel(inventory.gameObject, transform.localPosition);
+<<<<<<< Updated upstream:Assets/Scripts/UI/OpenButtons/OpenInventoryButton.cs
         }
     }
 
@@ -31,6 +31,8 @@ public class OpenInventoryButton : AButton
         if (inputValue.started)
         {
             OpenClosePanel();
+=======
+>>>>>>> Stashed changes:Assets/Scripts/UI/OpenInventoryButton.cs
         }
     }
 }

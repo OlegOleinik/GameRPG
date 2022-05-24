@@ -8,17 +8,16 @@ public class SpecsPanel : MonoBehaviour
     Player player;
     private IncreaseButton[] buttons;
     [SerializeField] Text specspoints;
-    // Start is called before the first frame update
     void Start()
     {
         player = GameManager.player.GetComponent<Player>();
         gameObject.SetActive(false);
-
         buttons = gameObject.GetComponentsInChildren<IncreaseButton>();
     }
 
     public void IncreaseSpec(int id, float up)
     {
+        GameManager.ClickPlay();
         player.IncreaseSpec(id, up);
         SetButtons();
     }
@@ -28,6 +27,7 @@ public class SpecsPanel : MonoBehaviour
         Stat[] stats = player.GetStats();
         for (int i = 0; i < stats.Length && i < buttons.Length; i++)
         {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             if (buttons[i].isUpdate)
@@ -43,6 +43,8 @@ public class SpecsPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
             
+=======
+>>>>>>> Stashed changes
             if (stats[i].Value >= stats[i].maxValue)
             {
                 buttons[i].SetMax($"{stats[i].Value}");
@@ -52,6 +54,9 @@ public class SpecsPanel : MonoBehaviour
                 buttons[i].SetText($"{stats[i].Value}/{stats[i].maxValue}");
             }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

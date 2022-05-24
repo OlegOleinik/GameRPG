@@ -7,10 +7,8 @@ using System.Linq;
 public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
 {
     private Dictionary<MagicScriptableObject, int> magicLevels;
-
     [SerializeField] private List<MagicScriptableObject> _keys;
     [SerializeField] private List<int> _values;
-
     private MagicUpCell[] magicUpCells;
 
     public List<int> GetLvls()
@@ -28,6 +26,17 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
         OnAfterDeserialize();
     }
 
+<<<<<<< Updated upstream
+=======
+    public void SetDefaultLvls()
+    {
+        for (int i = 0; i < _values.Count; i++)
+        {
+            _values[i] = 1;
+        }
+        OnAfterDeserialize();
+    }
+>>>>>>> Stashed changes
 
     public void OnBeforeSerialize()
     {
@@ -39,7 +48,9 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
         magicLevels = new Dictionary<MagicScriptableObject, int>();
 
         for (int i = 0; i != System.Math.Min(_keys.Count, _values.Count); i++)
+        {
             magicLevels.Add(_keys[i], _values[i]);
+        }
     }
     private void Start()
     {
@@ -57,7 +68,6 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
 
     public int GetSpellLvl(MagicScriptableObject spell)
     {
-       // Debug.Log(magicLevels[spell]);
         return magicLevels[spell];
     }
 
@@ -65,6 +75,7 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
     {
         if (magicLevels[spell]<5 && magicLevels[spell]*70<GameManager.player.GetComponent<Player>().money)
         {
+            GameManager.ClickPlay();
             GameManager.player.GetComponent<Player>().money -= magicLevels[spell] * 70;
             magicLevels[spell]++;
             DrawPanel();

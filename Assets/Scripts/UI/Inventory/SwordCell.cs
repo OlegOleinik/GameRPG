@@ -9,12 +9,14 @@ public class SwordCell : AItemCell
     {
         Image.color = new Color(1, 1, 1, 0);
     }
+
     public void DrawCell(ItemScriptableObject item)
     {
         this.item = item;
         Image.sprite = item.itemSprite;
         Image.color = new Color(1, 1, 1, 1);
     }
+
     public override void ClearCell()
     {
         this.item = null;
@@ -27,17 +29,9 @@ public class SwordCell : AItemCell
         SetEnterColor();
 
     }
+
     public override void OnMouseExit()
     {
         SetDefaultColor();
     }
-
-    //public void OnMouseClick()
-    //{
-    //    if (item != null)
-    //    {
-    //        gameObject.GetComponentInParent<InventoryPanel>().ChangeSelected(this);
-    //    }
-
-    //}
 }

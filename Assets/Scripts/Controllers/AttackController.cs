@@ -1,44 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 public class AttackController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Sword sword;
-    private MagicCellsPanel MagicCellsPanel;
+    private MagicCellsPanel magicCellsPanel;
     private float swordCoolDownTime;
     private float magicCoolDownTime;
     private float nextRegFire1; //ƒанна€ переменна€ дл€ удобства ввода атаки
 
+<<<<<<< Updated upstream
     private bool isWeaponInHand = false;
+=======
+    private bool _isWeaponInHand = false;
+>>>>>>> Stashed changes
     [SerializeField] private PlayerAnimator playerAnimator;
 
     void Start()
     {
-        //sword.gameObject.SetActive(false);
-        MagicCellsPanel = GameObject.Find("MagicCells").GetComponent<MagicCellsPanel>();
+        magicCellsPanel = GameManager.UI.GetComponentInChildren<MagicCellsPanel>();
     }
 
+<<<<<<< Updated upstream
+=======
+    public bool isWeaponInHand
+    {
+        get
+        {
+            return _isWeaponInHand;
+        }
+    }
+>>>>>>> Stashed changes
 
     public void MagicAttack(InputAction.CallbackContext inputValue)
     {
-        if (/*inputValue.phase == InputActionPhase.Started && */EnableToMagicAttck() && GameManager.isGamePaused == false)
+        if (EnableToMagicAttck() && GameManager.isGamePaused == false)
         {
+<<<<<<< Updated upstream
             SetMagicCoolDown(MagicCellsPanel.CastSpell());
             playerAnimator.MagicCast();
 
 
+=======
+            SetMagicCoolDown(magicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+>>>>>>> Stashed changes
             playerAnimator.FlipPlayer(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x - transform.position.x);
             playerAnimator.BlockFlip(0.19f);
         }
     }
 
+    public SwordScriptableObject GetSword()
+    {
+        return sword.sword;
+    }
 
     public void SwordAttack(InputAction.CallbackContext inputValue)
     {
-        if (/*inputValue.phase == InputActionPhase.Started &&*/ GameManager.isGamePaused == false && nextRegFire1 < Time.time)
+        if (EventSystem.current.IsPointerOverGameObject() || GameManager.isGamePaused)
         {
+<<<<<<< Updated upstream
             if (EnableToSwordAttck())
             {
                 sword.gameObject.SetActive(true);
@@ -47,6 +70,18 @@ public class AttackController : MonoBehaviour
                 nextRegFire1 = Time.time + 0.3f;
                 StartCoroutine(CheckHoldLeftButton(inputValue.action));
             }
+=======
+            return;
+        }
+
+        if (nextRegFire1 < Time.time && EnableToSwordAttck())
+        {
+            sword.gameObject.SetActive(true);
+            sword.Strike1();
+            nextRegFire1 = Time.time + 0.3f;
+            StartCoroutine(CheckHoldLeftButton(inputValue.action));
+
+>>>>>>> Stashed changes
 
         }
     }
@@ -55,18 +90,40 @@ public class AttackController : MonoBehaviour
     {
         while (sword.isActiveAndEnabled)
         {
-            if (inputValue.IsPressed() && !sword.isNextStrike && nextRegFire1 < Time.time)
+            if (inputValue.IsPressed())
             {
-                sword.isNextStrike = true;
-                nextRegFire1 = Time.time + 0.2f;
+                if (EventSystem.current.IsPointerOverGameObject() || sword.isNextStrike)
+                {
+                    yield return null;
+                }
+                if (nextRegFire1 < Time.time)
+                {
+                    sword.isNextStrike = true;
+                    nextRegFire1 = Time.time + 0.2f;
+                }
             }
             yield return null;
         }
 
     }
 
+
+    public void SwitchWeaponReady(bool isReady)
+    {
+        if (swordCoolDownTime < Time.time)
+        {
+            sword.GetHideSword(!isReady);
+            SetSwordCoolDown(0.7f * (0.1f / GameManager.player.GetComponent<Player>().attackCooldown));
+            _isWeaponInHand = isReady;
+            magicCellsPanel.SetSpellActivity(isReady);
+        }
+    }
+
+
+
     public void SwitchWeaponReady(InputAction.CallbackContext inputValue)
     {
+<<<<<<< Updated upstream
         if(swordCoolDownTime < Time.time)
         {
             sword.GetHideSword(isWeaponInHand);
@@ -74,6 +131,9 @@ public class AttackController : MonoBehaviour
             isWeaponInHand = !isWeaponInHand;
         }
 
+=======
+        SwitchWeaponReady(!_isWeaponInHand);
+>>>>>>> Stashed changes
     }
 
 
@@ -82,12 +142,12 @@ public class AttackController : MonoBehaviour
     //¬ данном случае провер€етс€ меч, чтобы не кастовать при ударе мечем
     public bool EnableToMagicAttck()
     {
-        return (isWeaponInHand && sword.ableToAttack && magicCoolDownTime < Time.time);
+        return (_isWeaponInHand && sword.ableToAttack && magicCoolDownTime < Time.time);
     }
     //¬озвращает TRUE, если возможна атака и прошло достаточно времени с предыдущей
     public bool EnableToSwordAttck()
     {
-        return (isWeaponInHand && sword.ableToAttack && swordCoolDownTime < Time.time);
+        return (_isWeaponInHand && sword.ableToAttack && swordCoolDownTime < Time.time);
     }
 
     public void SetSwordCoolDown(float addTime)

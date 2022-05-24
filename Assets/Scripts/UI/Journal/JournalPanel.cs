@@ -7,8 +7,11 @@ public class JournalPanel : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private GameObject questList;
     [SerializeField] private GameObject journalQuestPrefab;
+<<<<<<< Updated upstream
     //[SerializeField] private GameObject completedQuestPrefab;
 
+=======
+>>>>>>> Stashed changes
     private QuestsController questsController;
 
     private void Start()
@@ -26,6 +29,7 @@ public class JournalPanel : MonoBehaviour
         text.text = "No active quests";
     }
 
+<<<<<<< Updated upstream
 
     public void AddNewQuest()
     {
@@ -56,6 +60,16 @@ public class JournalPanel : MonoBehaviour
 
     public void SetDescription(int id, bool isCompleted)
     {
+=======
+    public void AddNewQuest()
+    {
+        Instantiate(journalQuestPrefab, questList.transform);
+    }
+
+    public void SetDescription(int id, bool isCompleted)
+    {
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
         if (isCompleted)
         {
             CompletedQuest completedQuest = questsController.completedQuests[id];
@@ -66,13 +80,17 @@ public class JournalPanel : MonoBehaviour
             AQuest quest = questsController.activeQuests[id];
             text.text = $"{quest.GetQuestName()}\n\n{quest.GetDescription()}\n\n{quest.GetTask()}";
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     public void DrawQuestPanel()
     {
         JournalQuest[] journalQuests = questList.GetComponentsInChildren<JournalQuest>();
         int count = 0;
+<<<<<<< Updated upstream
 
         //for (int i = journalQuests.Length; i < (questsController.activeQuests.Count + questsController.completedQuests.Count); i++)
         //{
@@ -83,16 +101,25 @@ public class JournalPanel : MonoBehaviour
         {
             journalQuests[count++].DrawActiveQuest(questsController.activeQuests[i], i);
 
+=======
+        for (int i = 0; i < questsController.activeQuests.Count; i++)
+        {
+            journalQuests[count++].DrawActiveQuest(questsController.activeQuests[i], i);
+>>>>>>> Stashed changes
         }
         for (int i = 0; i < questsController.completedQuests.Count; i++)
         {
             journalQuests[count++].DrawCompletedQuest(questsController.completedQuests[i], i);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         }
         if (journalQuests.Length > 0)
         {
             journalQuests[0].OnClick();
         }
+<<<<<<< Updated upstream
 
        // SetDescription(journalQuests[0].id)
 
@@ -104,5 +131,7 @@ public class JournalPanel : MonoBehaviour
         //    journalQuests[count++].DrawCompletedQuest(item, );
         //}
 
+=======
+>>>>>>> Stashed changes
     }
 }

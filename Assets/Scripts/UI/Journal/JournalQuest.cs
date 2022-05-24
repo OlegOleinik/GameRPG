@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class JournalQuest : MonoBehaviour
 {
+<<<<<<< Updated upstream
     // DialogueChoise dialogueChoise;
+=======
+>>>>>>> Stashed changes
     public QuestScriptableObject quest;
     [SerializeField] Text text;
     private int id;
@@ -15,10 +18,13 @@ public class JournalQuest : MonoBehaviour
         text.text = quest.quest.questName;
         id = newId;
         StartCoroutine(SetSize());
+<<<<<<< Updated upstream
         //text.text = dialogueChoise.answer;
         //this.dialogueChoise = dialogueChoise;
         //// Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
         //StartCoroutine(SetSize());
+=======
+>>>>>>> Stashed changes
     }
     public void DrawCompletedQuest(CompletedQuest quest, int newId)
     {
@@ -26,14 +32,18 @@ public class JournalQuest : MonoBehaviour
         id = newId;
         isCompleted = true;
         StartCoroutine(SetSize());
+<<<<<<< Updated upstream
         //text.text = dialogueChoise.answer;
         //this.dialogueChoise = dialogueChoise;
         //// Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta);
         //StartCoroutine(SetSize());
+=======
+>>>>>>> Stashed changes
     }
 
     IEnumerator SetSize()
     {
+<<<<<<< Updated upstream
         // We should only read the screen buffer after rendering is complete
         //Debug.Log(text.gameObject.GetComponent<RectTransform>().sizeDelta.y);
         yield return new WaitForFixedUpdate();
@@ -47,10 +57,17 @@ public class JournalQuest : MonoBehaviour
     //    GetComponent<Image>().color = Color.red;
     //}
 
+=======
+        yield return new WaitForFixedUpdate();
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(270, text.gameObject.GetComponent<RectTransform>().sizeDelta.y);
+    }
+
+>>>>>>> Stashed changes
     public void OnClick()
     {
         GameManager.player.GetComponent<QuestsController>().journalPanel.SetDescription(id, isCompleted);
     }
+<<<<<<< Updated upstream
     //IEnumerator SetSize()
     //{
     //    // We should only read the screen buffer after rendering is complete
@@ -62,4 +79,6 @@ public class JournalQuest : MonoBehaviour
     //{
 
     //}
+=======
+>>>>>>> Stashed changes
 }

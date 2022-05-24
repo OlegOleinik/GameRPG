@@ -6,12 +6,18 @@ using UnityEngine;
 public class NarrativeDialogueSentence : ADialogueSentence
 {
     public ADialogueSentence nextSentence;
+<<<<<<< Updated upstream
+=======
+    public delegate void OnChoise();
+    public event OnChoise onChoise;
+>>>>>>> Stashed changes
 
     private void Awake()
     {
         type = "Narrative";
     }
 
+<<<<<<< Updated upstream
 
 
     public delegate void OnChoise();
@@ -26,5 +32,10 @@ public class NarrativeDialogueSentence : ADialogueSentence
         onChoise?.Invoke();
         //setStartSentence?.DynamicInvoke();
 
+=======
+    public void DoChoise()
+    {
+        onChoise?.Invoke();
+>>>>>>> Stashed changes
     }
 }

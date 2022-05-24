@@ -111,6 +111,7 @@ TextureImporter:
         y: 10
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 24
       alignment: 0
@@ -118,11 +119,16 @@ TextureImporter:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -145,6 +151,7 @@ TextureImporter:
         y: 5
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 5
       alignment: 0
@@ -152,11 +159,16 @@ TextureImporter:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -179,6 +191,7 @@ TextureImporter:
         y: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         width: 30
         height: 5
       alignment: 0
@@ -186,11 +199,16 @@ TextureImporter:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -207,7 +225,10 @@ TextureImporter:
       weights: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     - serializedVersion: 2
@@ -232,6 +253,9 @@ TextureImporter:
       edges: []
       weights: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -249,6 +273,10 @@ TextureImporter:
       Rooster_1: 133314621
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
 =======
       Rooster_3: -2059575148
 >>>>>>> Stashed changes

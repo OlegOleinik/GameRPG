@@ -119,12 +119,12 @@ TextureImporter:
       name: WaterTemporarily_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 145
+        y: 4
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: WaterTemporarily_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 81
+        y: 96
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,22 +158,232 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterTemporarily_2
+      name: WaterTemporarily_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 4
+        y: 60
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2afb347640e2d934ea97efc5f80fdb63
-      internalID: 179267431
+      spriteID: c004371b489f89a42ac7d8655eff06c1
+      internalID: -447477449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 95
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0b873136655f94a85889ce61e1b3da
+      internalID: 1373731776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07be4ca5371b7bb4c8a4efccbfc0b9c0
+      internalID: -1268119148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 95
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f09476b8f6d85f40903cdb1ef85e7f8
+      internalID: -1992110107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_14
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 92
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6581c6f17508a894abb31f3ea2e17779
+      internalID: 1003023785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b182b0b4f690f541b6fa65883e0dee1
+      internalID: 298646033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224d1da3488c26e4fa737fab452ae75a
+      internalID: 1819258145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649d2aeca3bcd3f4b8db6558f5525535
+      internalID: 1545404709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f78805de288544885b4cfa027f4c36
+      internalID: 626322382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_24
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 60
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12715b68e4e3994e89228e78e9b7acc
+      internalID: 1184948250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterTemporarily_26
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56293b3b091392447a6152f2e790838d
+      internalID: -1117519124
       vertices: []
       indices: 
       edges: []
@@ -189,9 +399,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      WaterTemporarily_17: 543105028
+      WaterTemporarily_25: 1549379220
       WaterTemporarily_2: 179267431
+      WaterTemporarily_23: -1332029016
+      WaterTemporarily_7: 1835383887
+      WaterTemporarily_16: 298646033
+      WaterTemporarily_13: 181762002
+      WaterTemporarily_12: 626322382
+      WaterTemporarily_26: -1117519124
+      WaterTemporarily_18: 1819258145
+      WaterTemporarily_15: -1911607677
       WaterTemporarily_0: 1482318229
+      WaterTemporarily_5: 1373731776
+      WaterTemporarily_6: -1268119148
+      WaterTemporarily_11: -2022580393
+      WaterTemporarily_10: -1693394247
+      WaterTemporarily_14: 1003023785
+      WaterTemporarily_21: 5465578
+      WaterTemporarily_19: 1640455039
+      WaterTemporarily_27: -765308030
       WaterTemporarily_1: -1918817483
+      WaterTemporarily_24: 1184948250
+      WaterTemporarily_3: 1545404709
+      WaterTemporarily_4: -447477449
+      WaterTemporarily_8: -1992110107
+      WaterTemporarily_20: 1118174170
+      WaterTemporarily_9: -1479467421
+      WaterTemporarily_22: 300242366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
