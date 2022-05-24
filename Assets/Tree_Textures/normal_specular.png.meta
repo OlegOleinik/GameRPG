@@ -1,5 +1,29 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dba924eed734cfb478776642099539b1
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+guid: dba924eed734cfb478776642099539b1
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
+=======
+guid: b5cad7fde5cdc314aa08c141ad58f4cc
+>>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+=======
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
+=======
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -68,6 +92,25 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+=======
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -76,6 +119,32 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   spriteSheet:
     serializedVersion: 2
     sprites: []

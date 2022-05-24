@@ -1,5 +1,26 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 939e1f3507fe5834a9a747a8b8512674
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
+guid: 161f501c9b955cc43a1f431bd926861c
+=======
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +28,23 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+<<<<<<< HEAD
     sRGBTexture: 1
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    sRGBTexture: 1
+=======
+    sRGBTexture: 0
+>>>>>>> Stashed changes
+=======
+    sRGBTexture: 1
+>>>>>>> Stashed changes
+=======
+    sRGBTexture: 1
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -42,7 +79,23 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 1
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> Stashed changes
+=======
+  spriteMode: 1
+>>>>>>> Stashed changes
+=======
+  spriteMode: 1
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,6 +121,29 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -76,9 +152,91 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   spriteSheet:
     serializedVersion: 2
     sprites: []
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+=======
+>>>>>>> Stashed changes
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Leg_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 14
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed29683f1083c6f4382d78fc7adab0de
+      internalID: 702650399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 14
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e39b47cbdfdc3a4c8f843b920b28f70
+      internalID: 972338430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +247,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
     nameFileIdTable: {}
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
+    nameFileIdTable:
+      Leg_0: 702650399
+      Leg_1: 972338430
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

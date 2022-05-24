@@ -53,4 +53,24 @@ Physics2DSettings:
   m_ColliderAsleepColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.36078432}
   m_ColliderContactColor: {r: 1, g: 0, b: 1, a: 0.6862745}
   m_ColliderAABBColor: {r: 1, g: 1, b: 0, a: 0.2509804}
+<<<<<<< HEAD
   m_LayerCollisionMatrix: 5f97ffff5f97ffff5f97ffffffffffff5f8fffff4890ffffffd7ffff4894ffff5f97ffff5ff7ffffdf97ffff1880ffffefd7ffff0882ffff4892ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_LayerCollisionMatrix: 5ff7ffff5ff7ffff5ff7ffffffffffff5fffffff48f0fffffff7ffff48f4ffff5ff7ffff5ff7ffffdff7ffff18f0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+=======
+  m_LayerCollisionMatrix: 5ff7ffff5ff7ffff5ff7ffffffffffff5fefffff48f0fffffff7ffff48f4ffff5ff7ffff5ff7ffffdff7ffff18e0ffffeff7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+>>>>>>> Stashed changes
+=======
+  m_LayerCollisionMatrix: 5ff7ffff5ff7ffff5ff7ffffffffffff5fefffff48f0fffffff7ffff48f4ffff5ff7ffff5ff7ffffdff7ffff18e0ffffeff7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+>>>>>>> Stashed changes
+=======
+  m_LayerCollisionMatrix: 5f97ffff5f97ffff5f97ffffffffffff5f8fffff4890ffffffd7ffff4894ffff5f97ffff5ff7ffffdf97ffff1880ffffefd7ffff0882ffff4892ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+>>>>>>> Stashed changes
+=======
+  m_LayerCollisionMatrix: 5f97ffff5f97ffff5f97ffffffffffff5f8fffff4890ffffffd7ffff4894ffff5f97ffff5ff7ffffdf97ffff1880ffffefd7ffff0882ffff4892ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76

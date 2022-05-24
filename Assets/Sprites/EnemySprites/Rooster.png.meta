@@ -109,10 +109,41 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 10
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
         width: 37
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,10 +161,41 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 5
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        width: 30
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,10 +213,41 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        width: 30
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,6 +259,20 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     - serializedVersion: 2
       name: Rooster_3
       rect:
@@ -187,6 +294,19 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     outline: []
     physicsShape: []
     bones: []
@@ -199,7 +319,26 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Rooster_1: 133314621
+<<<<<<< HEAD
       Rooster_3: -2059575148
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
       Rooster_0: 163693428
       Rooster_2: -1947913938
   spritePackingTag: 

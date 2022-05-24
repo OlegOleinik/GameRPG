@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 40ad5a8ae287cb948bce0aee16f64c3a
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Scripts/Controllers/APathController.cs.meta
+guid: 40ad5a8ae287cb948bce0aee16f64c3a
+=======
+guid: be07da676ed0cdb4a92b85affdd8788f
+>>>>>>> Stashed changes:Assets/Editor/GUIController.cs.meta
+=======
+guid: 40ad5a8ae287cb948bce0aee16f64c3a
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

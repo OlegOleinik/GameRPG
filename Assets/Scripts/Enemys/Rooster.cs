@@ -2,6 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+public class Rooster : Enemy_1
+{
+
+=======
+=======
+>>>>>>> Stashed changes
+public class Rooster : AEnemy
+{
+    [SerializeField] private Animator roosterBodyAnimator;
+    public override void AttackAnimation()
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 public class Rooster : AEnemy
 {
     [SerializeField] private Animator roosterBodyAnimator;
@@ -10,11 +30,26 @@ public class Rooster : AEnemy
     private float nextKokoko = 0;
 
     protected override void AttackAnimation()
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     {
         roosterBodyAnimator.SetBool("isAttack", true);
         StartCoroutine(SetNotAttack());
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -56,16 +91,50 @@ public class Rooster : AEnemy
         audioSource.Play();
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     IEnumerator SetNotAttack()
     {
         yield return new WaitForSeconds(0.1f);
         roosterBodyAnimator.SetBool("isAttack", false);
+<<<<<<< HEAD
     }
 
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+    }
+=======
+    }
+
+>>>>>>> Stashed changes
+=======
+    }
+
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     public override void DieEvent()
     {
         GameManager.player.GetComponent<QuestsController>().onRoosterKilled?.Invoke();
     }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 
     protected override void MoveToPos(Vector2 position)
     {
@@ -93,4 +162,11 @@ public class Rooster : AEnemy
             }
         }
     }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ed3f24824afd74fa24eb36a55d010c, type: 3}
+  m_Name: Kill3Roosters
+  m_EditorClassIdentifier: 
+  quest: {fileID: 7633008908506939022, guid: 95cc4ae59d32b5b418c2704c3c0682ba, type: 3}
+  questName: Hunt for roosters
+  stagesDescription:
+  - I need to kill 3 roosters
+  - I need to talk with merchant
+  - I completed quest!

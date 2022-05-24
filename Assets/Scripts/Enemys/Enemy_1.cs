@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class Enemy_1 : AEnemy
 {
+<<<<<<< HEAD
     protected override void AttackAnimation()
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    public override void AttackAnimation()
+=======
+    protected override void AttackAnimation()
+>>>>>>> Stashed changes
+=======
+    protected override void AttackAnimation()
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     {
         throw new System.NotImplementedException();
     }

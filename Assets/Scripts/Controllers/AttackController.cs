@@ -11,7 +11,19 @@ public class AttackController : MonoBehaviour
     private float magicCoolDownTime;
     private float nextRegFire1; //Данная переменная для удобства ввода атаки
 
+<<<<<<< HEAD
     private bool _isWeaponInHand = false;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    private bool isWeaponInHand = false;
+=======
+    private bool _isWeaponInHand = false;
+>>>>>>> Stashed changes
+=======
+    private bool _isWeaponInHand = false;
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     [SerializeField] private PlayerAnimator playerAnimator;
 
     void Start()
@@ -19,6 +31,7 @@ public class AttackController : MonoBehaviour
         magicCellsPanel = GameManager.UI.GetComponentInChildren<MagicCellsPanel>();
     }
 
+<<<<<<< HEAD
     public bool isWeaponInHand
     {
         get
@@ -38,6 +51,48 @@ public class AttackController : MonoBehaviour
         }
     }
 
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+    public bool isWeaponInHand
+    {
+        get
+        {
+            return _isWeaponInHand;
+        }
+    }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+
+    public void MagicAttack(InputAction.CallbackContext inputValue)
+    {
+        if (EnableToMagicAttck() && GameManager.isGamePaused == false)
+        {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+            SetMagicCoolDown(MagicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+
+
+=======
+            SetMagicCoolDown(magicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+>>>>>>> Stashed changes
+=======
+            SetMagicCoolDown(magicCellsPanel.CastSpell());
+            playerAnimator.MagicCast();
+>>>>>>> Stashed changes
+            playerAnimator.FlipPlayer(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x - transform.position.x);
+            playerAnimator.BlockFlip(0.19f);
+        }
+    }
+
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     public SwordScriptableObject GetSword()
     {
         return sword.sword;
@@ -47,6 +102,22 @@ public class AttackController : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject() || GameManager.isGamePaused)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+            if (EnableToSwordAttck())
+            {
+                sword.gameObject.SetActive(true);
+                sword.Strike1();
+
+                nextRegFire1 = Time.time + 0.3f;
+                StartCoroutine(CheckHoldLeftButton(inputValue.action));
+            }
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
             return;
         }
 
@@ -57,6 +128,13 @@ public class AttackController : MonoBehaviour
             nextRegFire1 = Time.time + 0.3f;
             StartCoroutine(CheckHoldLeftButton(inputValue.action));
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 
         }
     }
@@ -98,7 +176,25 @@ public class AttackController : MonoBehaviour
 
     public void SwitchWeaponReady(InputAction.CallbackContext inputValue)
     {
+<<<<<<< HEAD
         SwitchWeaponReady(!_isWeaponInHand);
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        if(swordCoolDownTime < Time.time)
+        {
+            sword.GetHideSword(isWeaponInHand);
+            SetSwordCoolDown(0.7f * (0.1f / GameManager.player.GetComponent<Player>().attackCooldown));
+            isWeaponInHand = !isWeaponInHand;
+        }
+
+=======
+        SwitchWeaponReady(!_isWeaponInHand);
+>>>>>>> Stashed changes
+=======
+        SwitchWeaponReady(!_isWeaponInHand);
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     }
 
 

@@ -75,7 +75,19 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
   m_SortingOrder: 12
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_SortingOrder: 11
+=======
+  m_SortingOrder: 12
+>>>>>>> Stashed changes
+=======
+  m_SortingOrder: 12
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   m_Sprite: {fileID: 21300000, guid: 22270da62c8c83f41b0dfac0d206ef0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,8 +137,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216a8af0881c3844baa2b02bf999cb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
   sheath: {fileID: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
+  sheath: {fileID: 0}
+  playerAnimator: {fileID: 0}
+=======
+  _sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
+  sheath: {fileID: 0}
+=======
+  _sword: {fileID: 11400000, guid: 85de212ff9fa36141bb01d2d6805c192, type: 2}
+  sheath: {fileID: 0}
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   swordInHand: {fileID: 0}
   unsheathSword: {fileID: 8300000, guid: 4e6f9d07cb108334fb7d64f8fa8e97f0, type: 3}
   sheathSword: {fileID: 8300000, guid: b4ffb15034639b345bd94b4aed066f76, type: 3}
@@ -229,3 +256,10 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76

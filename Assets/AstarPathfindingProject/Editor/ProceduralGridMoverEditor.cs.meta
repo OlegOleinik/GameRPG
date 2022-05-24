@@ -1,5 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/AstarPathfindingProject/Editor/ProceduralGridMoverEditor.cs.meta
 guid: b50f1b778f5176f18b2305552cc4639c
+========
+guid: 44ed09cef30e0d440892e34be020cd3f
+>>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76:Assets/Scripts/Controllers/ClickSound.cs.meta
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Scripts/Dialogue/BranchingDialogueSentence.cs.meta
+guid: 377eba0d86f25fd4baa0a367aa6a70dc
+=======
+<<<<<<< Updated upstream:Assets/Scripts/Background/Background.cs.meta
+guid: 906ca80e3adf94940aa4f07c1f1df474
+>>>>>>> Stashed changes
+=======
+guid: b50f1b778f5176f18b2305552cc4639c
+>>>>>>> Stashed changes:Assets/AstarPathfindingProject/Editor/ProceduralGridMoverEditor.cs.meta
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

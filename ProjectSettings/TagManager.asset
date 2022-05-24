@@ -8,10 +8,33 @@ TagManager:
   - Wall
   - InventoryCell
   - UI
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - Quest
+>>>>>>> Stashed changes
+=======
+  - Quest
+>>>>>>> Stashed changes
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   - Quest
   - NPC
   - PlayerWeapon
   - GlobalLight
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   layers:
   - Default
   - TransparentFX
@@ -25,9 +48,35 @@ TagManager:
   - Player
   - Wall
   - WaterCollider
+<<<<<<< HEAD
   - NonWaterEnemys
   - SaveArea
   - FieldOfView
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  - 
+=======
+  - NonWaterEnemys
+>>>>>>> Stashed changes
+=======
+  - NonWaterEnemys
+>>>>>>> Stashed changes
+  - 
+  - 
+=======
+  - NonWaterEnemys
+  - SaveArea
+  - FieldOfView
+>>>>>>> Stashed changes
+=======
+  - NonWaterEnemys
+  - SaveArea
+  - FieldOfView
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   - 
   - 
   - 

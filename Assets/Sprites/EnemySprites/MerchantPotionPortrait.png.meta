@@ -1,5 +1,30 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
 guid: b5cad7fde5cdc314aa08c141ad58f4cc
+========
+guid: b41f1c92532596a478fc542fbcc756d8
+>>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76:Assets/Sprites/EnemySprites/PlantBullerTrail.png.meta
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+guid: dba924eed734cfb478776642099539b1
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
+=======
+guid: dba924eed734cfb478776642099539b1
+>>>>>>> Stashed changes
+=======
+<<<<<<< Updated upstream:Assets/Sprites/SlimeParticle.png.meta
+guid: 37cd1320f73c7c641bc33ba833980f84
+>>>>>>> Stashed changes
+=======
+guid: b5cad7fde5cdc314aa08c141ad58f4cc
+>>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +32,15 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+<<<<<<< HEAD
     sRGBTexture: 1
+=======
+<<<<<<< Updated upstream
+    sRGBTexture: 0
+=======
+    sRGBTexture: 1
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -33,7 +66,15 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: 0
+=======
+<<<<<<< Updated upstream
+    filterMode: 1
+=======
+    filterMode: 0
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +88,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,6 +117,14 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Tree_Textures/normal_specular.png.meta
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -100,6 +149,13 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   spriteSheet:
     serializedVersion: 2
     sprites: []

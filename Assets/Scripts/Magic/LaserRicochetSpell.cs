@@ -22,9 +22,63 @@ public class LaserRicochetSpell : ASpell
     }
     private void StartAIM()
     {
+<<<<<<< HEAD
         layerMask = LayerMask.GetMask("Wall");
         StartCoroutine(ShootLine());
         aimLine.enabled = true;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        RaycastHit2D[] hit = Physics2D.RaycastAll(targetPosition, direction, length, layerMask);
+        Debug.DrawRay(targetPosition, direction*length, Color.black, 10);
+
+        Vector3 endPosition = targetPosition + (length * direction);
+        bool isRicochet = false;
+        Vector2 newDir = new Vector2(0, 0);
+        foreach (var item in hit)
+        {
+            if (item.collider.tag == "Enemy")
+            {
+                item.collider.GetComponent<AEnemy>().GetDamage((0.5f * GameManager.player.GetComponent<Player>().magicDamage) + (0.5f * lvlMod));
+            }
+            else if (item.collider.tag == "Wall")
+            {
+                if (ricochetCount < maxRicochetCount)
+                {
+                    isRicochet = true;
+                    ricochetCount++;
+                    newDir = Vector2.Reflect(direction, item.normal);
+                    endPosition = item.point + (newDir.normalized / 100);
+                }
+                else
+                {
+                    endPosition = item.point;
+                }
+                break;
+            }
+        }
+        laserLineRenderer.SetPosition(++laserLineRenderer.positionCount - 1, endPosition);
+        if (isRicochet)
+        {
+            ShootLaser(endPosition, newDir, length);
+        }
+        else
+        {
+            StartCoroutine(1f.Tweeng((u) => line.startColor = new Color(1f, 1f, 1f, u), 1f, 0f));
+            StartCoroutine(1f.Tweeng((u) => line.endColor = new Color(1f, 1f, 1f, u), 1f, 0f, end));
+        }
+
+=======
+        layerMask = LayerMask.GetMask("Wall");
+        StartCoroutine(ShootLine());
+        aimLine.enabled = true;
+>>>>>>> Stashed changes
+=======
+        layerMask = LayerMask.GetMask("Wall");
+        StartCoroutine(ShootLine());
+        aimLine.enabled = true;
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     }
 
     public override void SetLvl(int lvl)
@@ -35,17 +89,59 @@ public class LaserRicochetSpell : ASpell
             case 1:
                 lvlMod = 1;
                 maxRicochetCount = 1;
+<<<<<<< HEAD
                 aimLine.enabled = false;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
                 break;
             case 2:
                 lvlMod = 1.2f;
                 maxRicochetCount = 2;
+<<<<<<< HEAD
                 aimLine.enabled = false;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                //  shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
                 break;
             case 3:
                 lvlMod = 1.5f;
                 maxRicochetCount = 3;
+<<<<<<< HEAD
                 aimLine.enabled = false;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+                newAim = Instantiate(aim);
+                newAim.GetComponent<LaserRicochetAim>().StartAim(maxRicochetCount);
+                // shootLine.enabled = false;
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
                 break;
             case 4:
                 lvlMod = 1.6f;

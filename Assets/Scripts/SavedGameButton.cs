@@ -20,6 +20,17 @@ public class SavedGameButton : MonoBehaviour
     {
         GameManager.player.GetComponent<SaveLoadController>().Save("Save1_" + System.DateTime.Now.ToString("yyyy/MM/dd_HH-mm-ss") + ".json");
         savedGamesPanel.ShowResaveGames();
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+        //{ System.DateTime.Now.ToString("yyyy/MM/dd_HH:mm:ss")}
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     }
     public void LoadGame()
     {
@@ -44,5 +55,15 @@ public class SavedGameButton : MonoBehaviour
         this.savedGamesPanel = savedGamesPanel;
         text.text = txt;
         button.onClick.AddListener(ResaveGame);
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
     }
 }

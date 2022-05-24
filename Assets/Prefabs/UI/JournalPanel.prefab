@@ -389,8 +389,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_HorizontalFit: 2
   m_VerticalFit: 2
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
+=======
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+>>>>>>> Stashed changes
+=======
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 --- !u!1 &4700793946147535739
 GameObject:
   m_ObjectHideFlags: 0

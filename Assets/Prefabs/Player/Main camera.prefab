@@ -196,7 +196,18 @@ GameObject:
   - component: {fileID: 3264083108008672469}
   - component: {fileID: 8998370247667556500}
   - component: {fileID: 1361995739048153139}
+<<<<<<< HEAD
   - component: {fileID: 1516538763495970684}
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 1516538763495970684}
+>>>>>>> Stashed changes
+=======
+  - component: {fileID: 1516538763495970684}
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   m_Layer: 0
   m_Name: Main camera
   m_TagString: MainCamera
@@ -215,8 +226,22 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 4564806687528350696}
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_Children: []
+=======
+  m_Children:
+  - {fileID: 4564806687528350696}
+>>>>>>> Stashed changes
+=======
+  m_Children:
+  - {fileID: 4564806687528350696}
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,6 +329,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
 --- !u!82 &1516538763495970684
 AudioSource:
   m_ObjectHideFlags: 0
@@ -700,3 +733,10 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
