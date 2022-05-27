@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fab4f8c1e0bde4697e08326273f4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Rooster
+  enemyName: "\u041F\u0435\u0442\u0443\u0445"
   speed: 0.05
   maxHP: 3
   dropedExperience: 1

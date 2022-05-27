@@ -13,34 +13,8 @@ GameObject:
   - component: {fileID: 1106883302966527046}
   - component: {fileID: 5211795763347570138}
   - component: {fileID: 4566599155515370903}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   - component: {fileID: 3124778904383235236}
   - component: {fileID: 8332861598542464940}
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-  - component: {fileID: 3124778904383235236}
->>>>>>> Stashed changes
-=======
-  - component: {fileID: 3124778904383235236}
->>>>>>> Stashed changes
-=======
-  - component: {fileID: 3124778904383235236}
-  - component: {fileID: 8332861598542464940}
->>>>>>> Stashed changes
-=======
-  - component: {fileID: 3124778904383235236}
-  - component: {fileID: 8332861598542464940}
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  - component: {fileID: 3124778904383235236}
-  - component: {fileID: 8332861598542464940}
->>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Rooster
   m_TagString: Enemy
@@ -62,22 +36,7 @@ Transform:
   m_Children:
   - {fileID: 3013664443899488073}
   - {fileID: 846394398916865268}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   - {fileID: 7799555660969819045}
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-  - {fileID: 7799555660969819045}
->>>>>>> Stashed changes
-=======
-  - {fileID: 7799555660969819045}
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  - {fileID: 7799555660969819045}
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,28 +104,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   m_Mass: 5
   m_LinearDrag: 3
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_Mass: 1
-  m_LinearDrag: 1
-=======
-  m_Mass: 5
-  m_LinearDrag: 3
->>>>>>> Stashed changes
-=======
-  m_Mass: 5
-  m_LinearDrag: 3
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  m_Mass: 5
-  m_LinearDrag: 3
->>>>>>> Stashed changes
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -202,35 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3034f35db78941947a358400b94d82e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  speed: 0.05
-  maxHP: 3
-  dropedExperience: 7
-  attack: 1
-  dropedItem: {fileID: 8303699136908332037, guid: 41764958550dc564eb1f340e2f2d9aef, type: 3}
-  DropList:
-  - {fileID: 11400000, guid: e8c6188e99056cf4286bf35ae5829d85, type: 2}
-  DropChanceList:
-  - 1
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  enemyAnimator: {fileID: 2556581147024812700}
-=======
-=======
->>>>>>> Stashed changes
-  enemyLegAnimator: {fileID: 2556581147024812700}
-  roosterBodyAnimator: {fileID: 3124778904383235236}
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
-  enemyName: Rooster
+  enemyName: "\u041F\u0435\u0442\u0443\u0445"
   speed: 0.05
   maxHP: 3
   dropedExperience: 1
@@ -257,16 +168,6 @@ MonoBehaviour:
   roosterBodyAnimator: {fileID: 3124778904383235236}
   roosterDefault: {fileID: 8300000, guid: 206e4d3cbf9f1ba4ba61f2f91297af28, type: 3}
   roosterAtc: {fileID: 8300000, guid: 68fabebf6132b1f469fc30b70c835efa, type: 3}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!95 &3124778904383235236
 Animator:
   serializedVersion: 4
@@ -287,21 +188,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!82 &8332861598542464940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -407,16 +293,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!1 &6413007625135701914
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,49 +341,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_Offset: {x: 0.08754563, y: 0.002244711}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.16666667}
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
   m_Offset: {x: 0.03, y: 0.002244711}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2333333, y: 0.16666667}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
     newSize: {x: 1, y: 0.16666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -556,23 +394,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   m_SortingOrder: 5
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_SortingOrder: 10
-=======
-  m_SortingOrder: 5
->>>>>>> Stashed changes
-=======
-  m_SortingOrder: 5
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  m_SortingOrder: 5
->>>>>>> Stashed changes
   m_Sprite: {fileID: 133314621, guid: 23ccb0118220ecb459af2957ee2926a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -661,48 +483,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b7ee56725d4d040ab1e3936f32bcd1, type: 3}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!1 &3013664443899488072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5516697264119400979, guid: 52b7ee56725d4d040ab1e3936f32bcd1, type: 3}
   m_PrefabInstance: {fileID: 7304153835603127643}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!224 &3013664443899488073 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5516697264119400978, guid: 52b7ee56725d4d040ab1e3936f32bcd1, type: 3}
   m_PrefabInstance: {fileID: 7304153835603127643}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 --- !u!1001 &8196798794468806249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,13 +566,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f768fdb2a3135488ad38ee26b56ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes

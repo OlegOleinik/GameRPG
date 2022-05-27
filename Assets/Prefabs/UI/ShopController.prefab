@@ -353,19 +353,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 56
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy
+  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C"
 --- !u!1 &1181411138464678814
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,19 +433,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 56
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: "\u041F\u0440\u043E\u0434\u0430\u0442\u044C"
 --- !u!1 &1311181858458130298
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ MonoBehaviour:
   sellButton: {fileID: 8161305308818573825}
   buyButton: {fileID: 4801027208525907607}
   money: {fileID: 5762016840693766162}
-  description: {fileID: 7208496115575994730}
+  description: {fileID: 0}
 --- !u!1 &3698433159436470549
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,19 +650,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     m_FontSize: 52
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 56
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: "\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C"
 --- !u!1 &4801027208525907607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,19 +1250,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     m_FontSize: 52
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 52
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shop
+  m_Text: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
 --- !u!1001 &704908547519188886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3568,23 +3568,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}
---- !u!1 &2369136144730842135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8258190995586688708, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}
-  m_PrefabInstance: {fileID: 5943098055518470867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7208496115575994730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369136144730842135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a9f1353fae091468d72a2925073c0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5088370954990735371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1506355518906372824, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27d6a2b4320fd74fa5a200262435ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Slime
+  enemyName: "\u0421\u043B\u0438\u0437\u0435\u043D\u044C"
   speed: 200
   maxHP: 3
   dropedExperience: 2

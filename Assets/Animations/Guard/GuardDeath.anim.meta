@@ -1,30 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Animations/Guard/GuardDeath.anim.meta
 guid: 6d7f8c84c12b00a4097fda0381bd117c
-========
-guid: 3c7cd4636d4626949bd00d485a6cc605
->>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76:Assets/Animations/Guard/GuardIdle.anim.meta
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Animations/BodyMagicCast.anim.meta
-guid: ec5130046b849c2458c357891a102276
-=======
-<<<<<<< Updated upstream:Assets/Animations/BodyStrikeUp.anim.meta
-guid: b9d66401063ff1f4f9d082ebd0f0ff6a
->>>>>>> Stashed changes
-=======
-guid: 6d7f8c84c12b00a4097fda0381bd117c
->>>>>>> Stashed changes:Assets/Animations/Guard/GuardDeath.anim.meta
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-<<<<<<< Updated upstream:Assets/Animations/Guard/GuardIdle.anim.meta
-guid: 3c7cd4636d4626949bd00d485a6cc605
-=======
-guid: 6d7f8c84c12b00a4097fda0381bd117c
->>>>>>> Stashed changes:Assets/Animations/Guard/GuardDeath.anim.meta
->>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

@@ -51,23 +51,6 @@
                     "initialStateCheck": true
                 },
                 {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
                     "name": "Journal",
                     "type": "Button",
                     "id": "3bbc18a0-bc31-45f7-a95e-2397a4ae8f1d",
@@ -77,22 +60,6 @@
                     "initialStateCheck": true
                 },
                 {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
                     "name": "Exit",
                     "type": "Button",
                     "id": "891abfd8-18f4-4055-ab1f-176c58fd3e37",
@@ -256,23 +223,6 @@
                     "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
                 },
                 {
                     "name": "",
@@ -284,22 +234,6 @@
                     "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
                 }
             ]
         }

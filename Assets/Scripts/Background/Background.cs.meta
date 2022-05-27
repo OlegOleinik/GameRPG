@@ -1,21 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 guid: 906ca80e3adf94940aa4f07c1f1df474
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Scripts/Background/Background.cs.meta
-guid: 906ca80e3adf94940aa4f07c1f1df474
-=======
-guid: b50f1b778f5176f18b2305552cc4639c
->>>>>>> Stashed changes:Assets/AstarPathfindingProject/Editor/ProceduralGridMoverEditor.cs.meta
-=======
-guid: 906ca80e3adf94940aa4f07c1f1df474
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-guid: 906ca80e3adf94940aa4f07c1f1df474
->>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

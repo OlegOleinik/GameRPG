@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: TeleportSpell
   m_EditorClassIdentifier: 
   spellSprite: {fileID: 21300000, guid: 54ad2a610aa055d49b79f2bcc500a27b, type: 3}
-  description: Teleport to mouse point
+  description: "\u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442\u0438\u0440\u0443\u0435\u0442
+    \u043A \u043F\u043E\u0437\u0438\u0446\u0438\u0438 \u043A\u0443\u0440\u0441\u043E\u0440\u0430
+    \u043C\u044B\u0448\u0438"
   magicCost: 3
-  spellName: Teleport
+  spellName: "\u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442"
   coolDownTime: 3
   spell: {fileID: -4617055750606681419, guid: f127cb349bd95a14f97bf55519d2bfb2, type: 3}

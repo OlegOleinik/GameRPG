@@ -26,17 +26,6 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
         OnAfterDeserialize();
     }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
     public void SetDefaultLvls()
     {
         for (int i = 0; i < _values.Count; i++)
@@ -45,16 +34,6 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
         }
         OnAfterDeserialize();
     }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
 
     public void OnBeforeSerialize()
     {

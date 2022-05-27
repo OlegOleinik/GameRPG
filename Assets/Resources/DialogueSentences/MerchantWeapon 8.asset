@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b454a8573675b247a4326ce96ff6bb3, type: 3}
   m_Name: MerchantWeapon 8
   m_EditorClassIdentifier: 
-  interlocutorName: Merchant
-  sentence: Done? Good.
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u043E\u0440\u0443\u0436\u0438\u0435\u043C"
+  sentence: "\u0421\u0434\u0435\u043B\u0430\u043D\u043E? \u0425\u043E\u0440\u043E\u0448\u043E."
   type: Narrative
   nextSentence: {fileID: 11400000, guid: c594ffb37498b9b43a166b11ff01a82c, type: 2}

@@ -1,30 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Editor/GUIController.cs.meta
 guid: be07da676ed0cdb4a92b85affdd8788f
-========
-guid: 93a5e311f035c2a4aa6cc363600e7a04
->>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76:Assets/Scripts/Controllers/InitGame.cs.meta
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Scripts/Dialogue/Answer.cs.meta
-guid: 7cc4142572841d5498ed990af91d7abd
-=======
-<<<<<<< Updated upstream:Assets/Scripts/Controllers/APathController.cs.meta
-guid: 40ad5a8ae287cb948bce0aee16f64c3a
->>>>>>> Stashed changes
-=======
-guid: be07da676ed0cdb4a92b85affdd8788f
->>>>>>> Stashed changes:Assets/Editor/GUIController.cs.meta
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-<<<<<<< Updated upstream:Assets/Scripts/Controllers/InitGame.cs.meta
-guid: 93a5e311f035c2a4aa6cc363600e7a04
-=======
-guid: be07da676ed0cdb4a92b85affdd8788f
->>>>>>> Stashed changes:Assets/Editor/GUIController.cs.meta
->>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

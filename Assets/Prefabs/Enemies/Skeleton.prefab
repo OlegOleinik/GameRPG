@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9823b682dab672148ac1816bee0e321a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Skeleton
+  enemyName: "\u0421\u043A\u0435\u043B\u0435\u0442"
   speed: 2.8
   maxHP: 10
   dropedExperience: 15

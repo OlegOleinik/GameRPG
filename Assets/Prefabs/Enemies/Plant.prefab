@@ -5323,7 +5323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69e5e95b70b3e04b80f840345ba5eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Plant
+  enemyName: "\u0420\u0430\u0441\u0442\u0435\u043D\u0438\u0435"
   speed: 0
   maxHP: 4
   dropedExperience: 5

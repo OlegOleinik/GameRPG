@@ -84,17 +84,17 @@ public class RoosterRevenge : AQuest
 
     private string GetStage0Task()
     {
-        return $"Collected {currentCount}/3 roosters feathers.\nGotta keep working.";
+        return $"Собрано {currentCount}/3 перьев петуха.\nНужно продолжать работу.";
     }
 
     private string GetStage1Task()
     {
-        return $"Collected {currentCount}/3 roosters feathers.\nIt's time to go back.";
+        return $"Собрано {currentCount}/3 перьев петуха.\nВремя возвращаться назад.";
     }
 
     private string GetStage2Task()
     {
-        return $"Completed";
+        return $"Выполнено";
     }
     public override IEnumerator SetStageOnLoad(int stage)
     {

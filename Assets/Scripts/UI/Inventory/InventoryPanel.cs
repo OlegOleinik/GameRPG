@@ -14,58 +14,9 @@ public class InventoryPanel : MonoBehaviour
     [SerializeField] private Slider dropItemCountSlider;
     [SerializeField] private SwordCell swordCell;
     [SerializeField] private Text money;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     [SerializeField] private Text statText;
     public delegate void NewSelect();
     public event NewSelect onChangeSelected;
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    [SerializeField] private Text statText;
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-    public delegate void NewSelect();
-    public event NewSelect onChangeSelected;
-=======
-=======
->>>>>>> Stashed changes
-    [SerializeField] private Text statText;
-    public delegate void NewSelect();
-    public event NewSelect onChangeSelected;
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-    [SerializeField] private Text statText;
-    public delegate void NewSelect();
-    public event NewSelect onChangeSelected;
->>>>>>> Stashed changes
-=======
-    [SerializeField] private Text statText;
-    public delegate void NewSelect();
-    public event NewSelect onChangeSelected;
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-    [SerializeField] private Text statText;
-    public delegate void NewSelect();
-    public event NewSelect onChangeSelected;
->>>>>>> Stashed changes
 
     public InventoryCellScript selectedCell
     {
@@ -82,70 +33,6 @@ public class InventoryPanel : MonoBehaviour
         inventoryCellScripts = gameObject.GetComponentsInChildren<InventoryCellScript>();
         gameObject.SetActive(false);
         ResetSlider();
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-    }
-
-    private void OnDisable()
-    {
-        ClearSelected();
-    }
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    }
-    private void OnDisable()
-    {
-        ClearSelected();
-    }
-
-    private void SetSlider(int max)
-    {
-        dropItemCountSlider.minValue = 1;
-        dropItemCountSlider.interactable = true;
-        dropItemCountSlider.maxValue = max;
-    }
-    private void ResetSlider()
-    {
-        dropItemCountSlider.minValue = 0;
-        dropItemCountSlider.value = 0;
-        dropItemCountSlider.interactable = false;
-    }
-    private void ChangeSelectedActive(bool isItemInCell)
-    {
-        if (isItemInCell)
-        {
-            SetSlider(System.Convert.ToInt32(_selectedCell.text.text));
-        }
-        else
-        {
-            ClearSelected();
-        }
-=======
->>>>>>> Stashed changes
     }
 
     private void OnDisable()
@@ -153,19 +40,6 @@ public class InventoryPanel : MonoBehaviour
         ClearSelected();
     }
 
-=======
-    }
-
-    private void OnDisable()
-    {
-        ClearSelected();
-    }
-
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-
->>>>>>> Stashed changes
     private void SetSlider(int max)
     {
         dropItemCountSlider.minValue = 1;
@@ -195,37 +69,10 @@ public class InventoryPanel : MonoBehaviour
     //Смена выбранной клетки инвентаря, ее цвета и отмена выделения предыдущей, если она имеется
     public void ChangeSelected(InventoryCellScript newSelectedCell)
     {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
         ClearSelected();
         if (newSelectedCell.item != null)
         {
             GameManager.ClickPlay();
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-        ClearSelected();
-        if (newSelectedCell.item != null)
-        {
-=======
-        ClearSelected();
-        if (newSelectedCell.item != null)
-        {
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
-=======
-        ClearSelected();
-        if (newSelectedCell.item != null)
-        {
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
             _selectedCell = newSelectedCell;
             _selectedCell.selected = true;
             _selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
@@ -241,22 +88,7 @@ public class InventoryPanel : MonoBehaviour
     {
         if (_selectedCell != null)
         {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
             GameManager.ClickPlay();
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
             _selectedCell.GetComponent<Image>().color = GameManager.cellColorDefault;
             _selectedCell.selected = false;
             _selectedCell = null;
@@ -272,22 +104,7 @@ public class InventoryPanel : MonoBehaviour
     {
         if(_selectedCell != null)
         {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
             GameManager.ClickPlay();
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-            GameManager.ClickPlay();
->>>>>>> Stashed changes
             bool isItemInCell = true;
             Vector2 side;
             if (GameManager.player.GetComponent<PlayerAnimator>().isFlip)
@@ -298,41 +115,6 @@ public class InventoryPanel : MonoBehaviour
             {
                 side = new Vector2(1f, 0);
             }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
->>>>>>> 8ce4fe0d612e05eb15dae5fa935cfca087edf203
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
             if (dropItemCountSlider.value >= System.Convert.ToInt32(_selectedCell.text.text))
             {
                 isItemInCell = false;
@@ -347,9 +129,6 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
-
-
-
     public void SetSword()
     {
         if (swordCell.item!=null)
@@ -363,43 +142,9 @@ public class InventoryPanel : MonoBehaviour
             swordCell.DrawCell(_selectedCell.item);
             playerInventory.DeliteItem(_selectedCell.id);
         }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
         ChangeSelectedActive(false);
         GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
         DrawInventory();
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        DrawInventory();
-=======
-        
->>>>>>> Stashed changes
-=======
-        
->>>>>>> Stashed changes
-        ChangeSelectedActive(false);
-        GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
-        DrawInventory();
-
-=======
-        ChangeSelectedActive(false);
-        GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
-        DrawInventory();
->>>>>>> Stashed changes
-=======
-        ChangeSelectedActive(false);
-        GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
-        DrawInventory();
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-        ChangeSelectedActive(false);
-        GameManager.player.GetComponent<AttackController>().sword.SetSword(swordCell.item as SwordScriptableObject);
-        DrawInventory();
->>>>>>> Stashed changes
     }
 
     public void UsePotion()
@@ -430,42 +175,8 @@ public class InventoryPanel : MonoBehaviour
         {
             inventoryCellScripts[i].DrawCell(playerInventory.inventorySlots[i].ItemScriptableObject, playerInventory.inventorySlots[i].count, i);
         }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
+        statText.text = $"Атака: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
         swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        Player player = GameManager.player.GetComponent<Player>();
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
-=======
-=======
->>>>>>> Stashed changes
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
-
-
-        swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
-        swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
->>>>>>> Stashed changes
-=======
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
-        swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-        statText.text = $"Atc: {(swordCell.item as SwordScriptableObject).damage * player.attack}\n";
-        swordCell.DrawCell(GameManager.player.GetComponent<AttackController>().sword.GetSword());
->>>>>>> Stashed changes
     }
 
     //Очистка инвентаря (визуальная)
@@ -485,14 +196,14 @@ public class InventoryPanel : MonoBehaviour
         if(cell.item!=null)
         {
             ItemScriptableObject item = cell.item;
-            string text = $"{item.itemName}\n\n{item.description}\n\nBase cost: {item.cost}\nSell cost: {GetSellCost(item)}";
+            string text = $"{item.itemName}\n\n{item.description}\n\nЦена: {item.cost}\nСтоимость продажи: {GetSellCost(item)}";
             if (cell.item.type=="Sword")
             {
-                text += $"\nDamage: {(item as SwordScriptableObject).damage}";
+                text += $"\nУрон: {(item as SwordScriptableObject).damage}";
             }
             else if (cell.item.type == "Potion")
             {
-                text += $"\nRecover: {(item as PotionScriprableObject).recoveryHP} HP";
+                text += $"\nЛечит: {(item as PotionScriprableObject).recoveryHP} HP";
             }
             description.SetDescription(text);
         }

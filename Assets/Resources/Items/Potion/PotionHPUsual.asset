@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Potion
   itemSprite: {fileID: 21300000, guid: ee327679ec6b0674382eafe79ff05dd6, type: 3}
-  description: Just healing potion
+  description: "\u041E\u0431\u044B\u0447\u043D\u043E\u0435 \u0437\u0435\u043B\u044C\u0435
+    \u043B\u0435\u0447\u0435\u043D\u0438\u044F"
   cost: 5
-  itemName: HP potion
+  itemName: "\u0417\u0435\u043B\u044C\u0435 \u043B\u0435\u0447\u0435\u043D\u0438\u044F"
   maxItems: 16
   recoveryHP: 5

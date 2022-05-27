@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b454a8573675b247a4326ce96ff6bb3, type: 3}
   m_Name: MerchantPotion 7
   m_EditorClassIdentifier: 
-  interlocutorName: Potion merchant
-  sentence: This thing  is from one of my patients.
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u0437\u0435\u043B\u044C\u044F\u043C\u0438"
+  sentence: "\u042D\u0442\u0430 \u0432\u0435\u0449\u044C \u043E\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
+    \u0438\u0437 \u043C\u043E\u0438\u0445 \u043F\u0430\u0446\u0438\u0435\u043D\u0442\u043E\u0432."
   type: Narrative
   nextSentence: {fileID: 11400000, guid: d29693f88c3910943a317122564fe360, type: 2}

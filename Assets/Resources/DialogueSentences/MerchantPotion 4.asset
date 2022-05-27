@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b454a8573675b247a4326ce96ff6bb3, type: 3}
   m_Name: MerchantPotion 4
   m_EditorClassIdentifier: 
-  interlocutorName: Potion merchant
-  sentence: Look, you won't get far with this stick.
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u0437\u0435\u043B\u044C\u044F\u043C\u0438"
+  sentence: "\u0421\u043B\u0443\u0448\u0430\u0439, \u0441 \u044D\u0442\u043E\u0439
+    \u043F\u0430\u043B\u043A\u043E\u0439 \u0434\u0430\u043B\u0435\u043A\u043E \u043D\u0435
+    \u0443\u0439\u0434\u0435\u0448\u044C."
   type: Narrative
   nextSentence: {fileID: 11400000, guid: af140cff79c2d6c48991578e81757aa4, type: 2}

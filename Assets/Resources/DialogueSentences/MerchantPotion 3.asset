@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b454a8573675b247a4326ce96ff6bb3, type: 3}
   m_Name: MerchantPotion 3
   m_EditorClassIdentifier: 
-  interlocutorName: Potion merchant
-  sentence: You look shabby again.
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u0437\u0435\u043B\u044C\u044F\u043C\u0438"
+  sentence: "\u0422\u044B \u0441\u043D\u043E\u0432\u0430 \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0448\u044C
+    \u043F\u043E\u0442\u0440\u0435\u043F\u0430\u043D\u043D\u043E\u0439."
   type: Narrative
   nextSentence: {fileID: 11400000, guid: 6ead27f73a4d27b41a4ee2b6bc2b99c5, type: 2}

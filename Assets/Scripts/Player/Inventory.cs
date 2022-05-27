@@ -69,17 +69,4 @@ public class InventorySlot
         this.ItemScriptableObject = item;
         this.count = count;
     }
-<<<<<<< Updated upstream:Assets/Scripts/Player/Inventory.cs
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream:Assets/Scripts/Player/Inventory.cs
-<<<<<<< Updated upstream:Assets/Scripts/Inventory.cs
-
-=======
->>>>>>> Stashed changes:Assets/Scripts/Player/Inventory.cs
-=======
->>>>>>> Stashed changes:Assets/Scripts/Inventory.cs
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes:Assets/Scripts/Inventory.cs
 }

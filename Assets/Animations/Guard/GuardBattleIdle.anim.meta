@@ -1,30 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Animations/Guard/GuardBattleIdle.anim.meta
 guid: 9680f6f366ed8694c97bd6c324a60eba
-========
-guid: 4dfff5e8e5173904b8079e27e721f50f
->>>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76:Assets/Animations/Guard/GuardHit.anim.meta
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Animations/BodyIdle.anim.meta
-guid: f63dadf9ce8a335478d6a5c44f2a5b10
-=======
-<<<<<<< Updated upstream:Assets/Animations/BodyReady.anim.meta
-guid: 0dc2b19c3b173e64db152cd2a572e439
->>>>>>> Stashed changes
-=======
-guid: 9680f6f366ed8694c97bd6c324a60eba
->>>>>>> Stashed changes:Assets/Animations/Guard/GuardBattleIdle.anim.meta
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-<<<<<<< Updated upstream:Assets/Animations/Guard/GuardHit.anim.meta
-guid: 4dfff5e8e5173904b8079e27e721f50f
-=======
-guid: 9680f6f366ed8694c97bd6c324a60eba
->>>>>>> Stashed changes:Assets/Animations/Guard/GuardBattleIdle.anim.meta
->>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

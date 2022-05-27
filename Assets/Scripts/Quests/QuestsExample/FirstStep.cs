@@ -13,17 +13,17 @@ public class FirstStep : AQuest
     }
     private string GetStage0Task()
     {
-        return $"This rooster doesn't look very strong. Today I will have dinner!";
+        return $"Этот петух не выглядит очень сильным. Сегодня у меня будет ужин!";
     }
 
     private string GetStage1Task()
     {
-        return $"This rooster is stronger. On my way back, I met my friend. Worth talking to her.";
+        return $"Этот петух оказался сильнее. На обратном пути мне встретилась торговка зельями. Стоит поговорить с ней.";
     }
 
     private string GetStage2Task()
     {
-        return $"Completed";
+        return $"Выполнено";
     }
 
     private void Stage0()

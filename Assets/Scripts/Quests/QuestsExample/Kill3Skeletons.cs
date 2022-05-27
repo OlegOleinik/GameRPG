@@ -37,17 +37,17 @@ public class Kill3Skeletons : AQuest
     }
     private string GetStage0Task()
     {
-        return $"Completed {skeletonCount}/3 skeletons";
+        return $"Выполнено {skeletonCount}/3 Скелетов";
     }
 
     private string GetStage1Task()
     {
-        return "Talk with merchant";
+        return "Поговорить с торговцем оружием";
     }
 
     private string GetStage2Task()
     {
-        return "Task completed!";
+        return "Выполнено";
     }
 
     private void Stage0()

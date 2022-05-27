@@ -93,31 +93,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   m_SortingOrder: 10
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_SortingOrder: 3
-=======
-  m_SortingOrder: 6
->>>>>>> Stashed changes
-=======
-  m_SortingOrder: 6
->>>>>>> Stashed changes
-=======
-  m_SortingOrder: 10
->>>>>>> Stashed changes
-=======
-  m_SortingOrder: 10
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  m_SortingOrder: 10
->>>>>>> Stashed changes
   m_Sprite: {fileID: -659229712, guid: ebfc2a24e01522b49ac3178dbdbcf63f, type: 3}
   m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.6156863}
   m_FlipX: 0

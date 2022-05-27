@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377eba0d86f25fd4baa0a367aa6a70dc, type: 3}
   m_Name: MerchantWeapon 5
   m_EditorClassIdentifier: 
-  interlocutorName: Merchant
-  sentence: Are you looking for a job?
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u043E\u0440\u0443\u0436\u0438\u0435\u043C"
+  sentence: "\u0418\u0449\u0435\u0448\u044C \u0440\u0430\u0431\u043E\u0442\u0443?"
   type: Branching
   dialogueChoises:
-  - answer: What do you need?
+  - answer: "\u0427\u0442\u043E \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u043E?"
     nextSentence: {fileID: 11400000, guid: 8c9b6bb7a00d4884ca11f8182ac14e0e, type: 2}
-  - answer: No
+  - answer: "\u041D\u0435\u0442"
     nextSentence: {fileID: 0}

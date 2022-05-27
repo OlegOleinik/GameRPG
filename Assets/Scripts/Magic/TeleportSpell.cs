@@ -25,35 +25,7 @@ public class TeleportSpell : ASpell
 
     public override void Start()
     {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
         base.Start();
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        end = ShowPlayer;
-        DontDestroyOnLoad(gameObject);
-        transform.SetParent(GameManager.player.transform);
-    }
-    private void ShowPlayer()
-    {
-        GameManager.player.GetComponent<PlayerAnimator>().HidePlayer(false);
-
-    }
-
-    private void HidePlayer()
-    {
-        GameManager.player.GetComponent<PlayerAnimator>().HidePlayer(true);
-=======
-        base.Start();
->>>>>>> Stashed changes
-=======
-        base.Start();
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-        base.Start();
->>>>>>> Stashed changes
     }
 
     public override void SetLvl(int lvl)

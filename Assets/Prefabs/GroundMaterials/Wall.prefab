@@ -199,28 +199,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   m_SortingLayerID: 1884781007
   m_SortingLayer: -1
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: 1884781007
-  m_SortingLayer: -1
->>>>>>> Stashed changes
-=======
-  m_SortingLayerID: 1884781007
-  m_SortingLayer: -1
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  m_SortingLayerID: 1884781007
-  m_SortingLayer: -1
->>>>>>> Stashed changes
   m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

@@ -1,21 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 guid: 37cd1320f73c7c641bc33ba833980f84
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Sprites/SlimeParticle.png.meta
-guid: 37cd1320f73c7c641bc33ba833980f84
-=======
-guid: b5cad7fde5cdc314aa08c141ad58f4cc
->>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
-=======
-guid: 37cd1320f73c7c641bc33ba833980f84
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-guid: 37cd1320f73c7c641bc33ba833980f84
->>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -84,19 +68,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     textureFormat: -1
-=======
-<<<<<<< Updated upstream
-    textureFormat: 4
-=======
-    textureFormat: -1
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-    textureFormat: -1
->>>>>>> Stashed changes
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0

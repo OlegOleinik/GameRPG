@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b454a8573675b247a4326ce96ff6bb3, type: 3}
   m_Name: MerchantPotion 11
   m_EditorClassIdentifier: 
-  interlocutorName: Potion merchant
-  sentence: Do you know where these roosters come from around here?
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u0437\u0435\u043B\u044C\u044F\u043C\u0438"
+  sentence: "\u0422\u044B \u0437\u043D\u0430\u0435\u0448\u044C, \u043E\u0442\u043A\u0443\u0434\u0430
+    \u0437\u0434\u0435\u0441\u044C \u0431\u0435\u0440\u0443\u0442\u0441\u044F \u044D\u0442\u0438
+    \u043F\u0435\u0442\u0443\u0445\u0438?"
   type: Narrative
   nextSentence: {fileID: 11400000, guid: be4881662625c2647b8ca0e748391718, type: 2}

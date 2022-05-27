@@ -6,20 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    path: Assets/Scenes/StartMenu.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
     path: Assets/Scenes/InitGame.unity
     guid: 2fe339d3720d8974fbc33c5d756e47ad
   - enabled: 1
@@ -29,16 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NGStartScene.unity
     guid: 70861607dd0d90f4d95b320a7f99fa66
   - enabled: 1
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
     path: Assets/Scenes/0.0.unity
     guid: 5f5a68f1abf47114987ecca059be3541
   - enabled: 1

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Sword
   itemSprite: {fileID: 21300000, guid: 583c2315bc93d844ca4cc4e72dea88e1, type: 3}
-  description: Hey buddy I think you got the wrong game
+  description: "\u042D\u0439, \u043F\u0440\u0438\u044F\u0442\u0435\u043B\u044C, \u044F
+    \u0434\u0443\u043C\u0430\u044E, \u0442\u044B \u043E\u0448\u0438\u0431\u0441\u044F
+    \u0438\u0433\u0440\u043E\u0439"
   cost: 10
-  itemName: Silver sword
+  itemName: "\u0421\u0435\u0440\u0435\u0431\u0440\u044F\u043D\u044B\u0439 \u043C\u0435\u0447"
   maxItems: 1
   damage: 3

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377eba0d86f25fd4baa0a367aa6a70dc, type: 3}
   m_Name: MerchantPotion20
   m_EditorClassIdentifier: 
-  interlocutorName: Potion merchant
-  sentence: Hello, how are you today?
+  interlocutorName: "\u0422\u043E\u0440\u0433\u043E\u0432\u0435\u0446 \u0437\u0435\u043B\u044C\u044F\u043C\u0438"
+  sentence: "\u041F\u0440\u0438\u0432\u0435\u0442, \u043A\u0430\u043A \u0442\u044B
+    \u0441\u0435\u0433\u043E\u0434\u043D\u044F?"
   type: Branching
   dialogueChoises:
-  - answer: What are you selling?
+  - answer: "\u0427\u0442\u043E \u0442\u044B \u043F\u0440\u043E\u0434\u0430\u0435\u0448\u044C?"
     nextSentence: {fileID: 0}
-  - answer: Will you give me a discount?
+  - answer: "\u0421\u0434\u0435\u043B\u0430\u0435\u0448\u044C \u043C\u043D\u0435
+      \u0441\u043A\u0438\u0434\u043A\u0443?"
     nextSentence: {fileID: 11400000, guid: 8252695fd7034e145be28bee6cfde169, type: 2}
-  - answer: See you later
+  - answer: "\u0423\u0432\u0438\u0434\u0438\u043C\u0441\u044F \u043F\u043E\u0437\u0436\u0435"
     nextSentence: {fileID: 0}

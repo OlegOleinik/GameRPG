@@ -1,33 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 guid: 161f501c9b955cc43a1f431bd926861c
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
-guid: 161f501c9b955cc43a1f431bd926861c
-=======
-guid: 939e1f3507fe5834a9a747a8b8512674
->>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
-=======
-guid: 161f501c9b955cc43a1f431bd926861c
->>>>>>> Stashed changes
-=======
-guid: 161f501c9b955cc43a1f431bd926861c
->>>>>>> Stashed changes
-=======
-guid: 161f501c9b955cc43a1f431bd926861c
->>>>>>> Stashed changes
-=======
-guid: 161f501c9b955cc43a1f431bd926861c
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-guid: 161f501c9b955cc43a1f431bd926861c
->>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -61,31 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     filterMode: 0
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    filterMode: 1
-=======
-    filterMode: 0
->>>>>>> Stashed changes
-=======
-    filterMode: 0
->>>>>>> Stashed changes
-=======
-    filterMode: 0
->>>>>>> Stashed changes
-=======
-    filterMode: 0
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-    filterMode: 0
->>>>>>> Stashed changes
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,31 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
   spritePixelsToUnits: 30
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  spritePixelsToUnits: 100
-=======
-  spritePixelsToUnits: 30
->>>>>>> Stashed changes
-=======
-  spritePixelsToUnits: 30
->>>>>>> Stashed changes
-=======
-  spritePixelsToUnits: 30
->>>>>>> Stashed changes
-=======
-  spritePixelsToUnits: 30
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-  spritePixelsToUnits: 30
->>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -152,25 +76,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -195,26 +100,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
->>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -270,49 +155,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     nameFileIdTable:
       Leg_0: 702650399
       Leg_1: 972338430
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Sprites/PlayerSprites/Leg.png.meta
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
-=======
-    nameFileIdTable: {}
->>>>>>> Stashed changes:Assets/Tree_Textures/diffuse.png.meta
-=======
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
->>>>>>> Stashed changes
-=======
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
->>>>>>> Stashed changes
-=======
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
->>>>>>> Stashed changes
-=======
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
->>>>>>> Stashed changes
->>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
-=======
-    nameFileIdTable:
-      Leg_0: 702650399
-      Leg_1: 972338430
->>>>>>> Stashed changes
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

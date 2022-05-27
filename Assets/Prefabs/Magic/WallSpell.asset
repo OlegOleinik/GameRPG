@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WallSpell
   m_EditorClassIdentifier: 
   spellSprite: {fileID: 21300000, guid: 02f707fbd12bde54ea9dd73b3920413c, type: 3}
-  description: Build a wall
+  description: "\u0421\u0442\u0440\u043E\u0438\u0442 \u0441\u0442\u0435\u043D\u0443"
   magicCost: 2
-  spellName: Wall
+  spellName: "\u0421\u0442\u0435\u043D\u0430"
   coolDownTime: 1
   spell: {fileID: -3958033786184171657, guid: 1e7160c847f3a8e4980f4e6c39b70b1e, type: 3}

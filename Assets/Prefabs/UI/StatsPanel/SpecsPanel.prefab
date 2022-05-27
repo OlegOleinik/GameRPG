@@ -169,19 +169,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 70
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SpecPoints
+  m_Text: "\u041E\u0447\u043A\u0438 \u043D\u0430\u0432\u044B\u043A\u043E\u0432"
 --- !u!1001 &1564454929772668938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,8 +191,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Magic regen
+      value: "\u0412\u043E\u0441\u0441\u0442. \u043C\u0430\u0433\u0438\u0438"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -305,8 +309,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Repulsion
+      value: "\u041E\u0442\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u043D\u0438\u0435"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -419,8 +427,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Stamina
+      value: "\u041E\u0412"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -533,8 +545,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Attack
+      value: "\u0410\u0442\u0430\u043A\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -647,8 +663,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Block Chance
+      value: "\u0428\u0430\u043D\u0441 \u0431\u043B\u043E\u043A\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -715,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 280
+      value: 443
       objectReference: {fileID: 0}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -761,8 +781,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Defence
+      value: "\u0417\u0430\u0449\u0438\u0442\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -871,8 +895,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Max magic
+      value: "\u041C\u0430\u043A\u0441. \u043C\u0430\u0433\u0438\u0438"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1099,8 +1127,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Magic dmg
+      value: "\u041C\u0430\u0433. \u0443\u0440\u043E\u043D"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1213,8 +1245,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: Speech
+      value: "\u041A\u0440\u0430\u0441\u043D\u043E\u0440\u0435\u0447\u0438\u0435"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1327,8 +1363,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Text
-      value: HP
+      value: "\u041E\u0417"
       objectReference: {fileID: 0}
+    - target: {fileID: 2142920203875489719, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: be5513509a07eee4e9e73e8e1104232a, type: 3}
     - target: {fileID: 6750399345663341402, guid: 6111acfe0ea7c24468ac3b0720adaac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

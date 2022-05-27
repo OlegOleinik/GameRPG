@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Sword
   itemSprite: {fileID: 21300000, guid: da89b5cd929b15e419a294ee4767cac0, type: 3}
-  description: You take the sword and hear a disgruntled buzz. The sword clearly
-    does not intend to obey you
+  description: "\u0412\u044B \u0431\u0435\u0440\u0435\u0442\u0435 \u043C\u0435\u0447
+    \u0438 \u0441\u043B\u044B\u0448\u0438\u0442\u0435 \u043D\u0435\u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E\u0435
+    \u0433\u0443\u0434\u0435\u043D\u0438\u0435. \u041C\u0435\u0447 \u044F\u0432\u043D\u043E
+    \u043D\u0435 \u043D\u0430\u043C\u0435\u0440\u0435\u043D \u0432\u0430\u043C \u043F\u043E\u0434\u0447\u0438\u043D\u044F\u0442\u044C\u0441\u044F"
   cost: 20
-  itemName: Enchanted sword
+  itemName: "\u0417\u0430\u0447\u0430\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439
+    \u043C\u0435\u0447"
   maxItems: 1
   damage: 6
