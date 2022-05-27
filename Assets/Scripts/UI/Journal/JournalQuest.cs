@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class JournalQuest : MonoBehaviour
 {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -15,6 +16,8 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public QuestScriptableObject quest;
     [SerializeField] Text text;
     private int id;
@@ -24,6 +27,7 @@ public class JournalQuest : MonoBehaviour
         text.text = quest.quest.questName;
         id = newId;
         StartCoroutine(SetSize());
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -37,6 +41,8 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
     public void DrawCompletedQuest(CompletedQuest quest, int newId)
     {
@@ -44,6 +50,7 @@ public class JournalQuest : MonoBehaviour
         id = newId;
         isCompleted = true;
         StartCoroutine(SetSize());
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -57,10 +64,13 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     IEnumerator SetSize()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -82,10 +92,13 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         yield return new WaitForFixedUpdate();
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(270, text.gameObject.GetComponent<RectTransform>().sizeDelta.y);
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -93,10 +106,13 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public void OnClick()
     {
         GameManager.player.GetComponent<QuestsController>().journalPanel.SetDescription(id, isCompleted);
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -117,4 +133,6 @@ public class JournalQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Slime : AEnemy
 {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -16,6 +17,8 @@ public class Slime : AEnemy
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     private float nextJumpCoolDown = 0;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer bottomRenderer;
@@ -23,6 +26,7 @@ public class Slime : AEnemy
     private int orderSave = 10;
     private Vector3 baseScale;
     private IEnumerator jump;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -30,10 +34,13 @@ public class Slime : AEnemy
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public override void DieEvent()
     {
         
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -83,6 +90,8 @@ public class Slime : AEnemy
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
     public override void Start()
     {
@@ -199,6 +208,7 @@ public class Slime : AEnemy
         Vector3 half = Vector3.one * 0.5f;
         Vector3 newScale = ((baseScale - half) * mod + half);
         transform.localScale = new Vector3 (newScale.x, newScale.y, 1);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -206,5 +216,7 @@ public class Slime : AEnemy
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 }

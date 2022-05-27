@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Sprites/EnemySprites/PlantBullerTrail.png.meta
 guid: b41f1c92532596a478fc542fbcc756d8
+=======
+guid: b5cad7fde5cdc314aa08c141ad58f4cc
+>>>>>>> Stashed changes:Assets/Sprites/EnemySprites/MerchantPotionPortrait.png.meta
+=======
+guid: b41f1c92532596a478fc542fbcc756d8
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

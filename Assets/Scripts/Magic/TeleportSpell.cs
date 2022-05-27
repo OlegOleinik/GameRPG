@@ -25,6 +25,7 @@ public class TeleportSpell : ASpell
 
     public override void Start()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         base.Start();
 =======
@@ -50,6 +51,9 @@ public class TeleportSpell : ASpell
         base.Start();
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        base.Start();
+>>>>>>> Stashed changes
     }
 
     public override void SetLvl(int lvl)

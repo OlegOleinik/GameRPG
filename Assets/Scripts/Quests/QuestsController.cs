@@ -6,6 +6,7 @@ public class QuestsController : MonoBehaviour
 {
     public List<AQuest> activeQuests = new List<AQuest>();
     public List<CompletedQuest> completedQuests = new List<CompletedQuest>();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -19,6 +20,8 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public delegate void OnQuestEdit();
     public OnQuestEdit onRoosterKilled;
     public OnQuestEdit onSkeletonKilled;
@@ -27,6 +30,7 @@ public class QuestsController : MonoBehaviour
     public OnQuestEdit onMerchantFinishQuest;
     public OnQuestEdit onFirstTalkWithPotionMerchant;
     public OnQuestEdit onFinishRoosterRevenge;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -34,6 +38,8 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public DropedItem dropedItem;
     public JournalPanel journalPanel;
 
@@ -69,6 +75,7 @@ public class QuestsController : MonoBehaviour
 
     public void SetQuestCompleted(AQuest quest, CompletedQuest completed)
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         activeQuests.Remove(quest);
         completedQuests.Add(completed);
@@ -92,12 +99,17 @@ public class QuestsController : MonoBehaviour
         completedQuests.Add(completed);
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        activeQuests.Remove(quest);
+        completedQuests.Add(completed);
+>>>>>>> Stashed changes
     }
 
     private bool IsQuestStarted(GameObject quest)
     {
         foreach (var item in activeQuests)
         {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -109,10 +121,13 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
             if (item.GetType() == quest.GetComponent<AQuest>().GetType())
             {
                 return true;
             }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -123,6 +138,8 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         }
         foreach (var item in completedQuests)
         {
@@ -130,6 +147,7 @@ public class QuestsController : MonoBehaviour
             {
                 return true;
             }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -140,10 +158,13 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         }
         return false;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -156,10 +177,13 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public void OnFirstTalkWithPotionMerchant()
     {
         onFirstTalkWithPotionMerchant?.Invoke();
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -167,11 +191,14 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
     public void OnMerchantFinishQuest()
     {
         onMerchantFinishQuest?.Invoke();
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -180,11 +207,14 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
     public void OnFinishRoosterRevenge()
     {
         onFinishRoosterRevenge?.Invoke();
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -192,4 +222,6 @@ public class QuestsController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }

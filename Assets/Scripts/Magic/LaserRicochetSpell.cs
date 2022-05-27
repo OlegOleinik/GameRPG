@@ -22,6 +22,7 @@ public class LaserRicochetSpell : ASpell
     }
     private void StartAIM()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         layerMask = LayerMask.GetMask("Wall");
         StartCoroutine(ShootLine());
@@ -79,6 +80,11 @@ public class LaserRicochetSpell : ASpell
         aimLine.enabled = true;
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        layerMask = LayerMask.GetMask("Wall");
+        StartCoroutine(ShootLine());
+        aimLine.enabled = true;
+>>>>>>> Stashed changes
     }
 
     public override void SetLvl(int lvl)
@@ -89,6 +95,7 @@ public class LaserRicochetSpell : ASpell
             case 1:
                 lvlMod = 1;
                 maxRicochetCount = 1;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 aimLine.enabled = false;
 =======
@@ -104,10 +111,14 @@ public class LaserRicochetSpell : ASpell
                 aimLine.enabled = false;
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 2:
                 lvlMod = 1.2f;
                 maxRicochetCount = 2;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 aimLine.enabled = false;
 =======
@@ -123,10 +134,14 @@ public class LaserRicochetSpell : ASpell
                 aimLine.enabled = false;
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 3:
                 lvlMod = 1.5f;
                 maxRicochetCount = 3;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 aimLine.enabled = false;
 =======
@@ -142,6 +157,9 @@ public class LaserRicochetSpell : ASpell
                 aimLine.enabled = false;
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+                aimLine.enabled = false;
+>>>>>>> Stashed changes
                 break;
             case 4:
                 lvlMod = 1.6f;

@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject UIPrefab;
     [SerializeField] private GameObject globalLightPrefab;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     [SerializeField] private GameObject currentGlobalLight;
     [SerializeField] private GameObject loadGamePanel;
@@ -50,18 +51,29 @@ public class MainMenu : MonoBehaviour
 
 =======
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    [SerializeField] private GameObject currentGlobalLight;
+    [SerializeField] private GameObject loadGamePanel;
+
+    public void NewGame()
+    {
+>>>>>>> Stashed changes
         SpawnPlayer();
         SceneManager.LoadScene("NGStartScene");
         Destroy(currentGlobalLight);
         Instantiate(globalLightPrefab);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     public void LoadGame(string txt)
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -69,6 +81,10 @@ public class MainMenu : MonoBehaviour
         GameObject ui = Instantiate(UIPrefab);
         Destroy(currentGlobalLight);
         ui.GetComponent<Canvas>().worldCamera = player.GetComponentInChildren<Camera>();
+=======
+        SpawnPlayer();
+        Destroy(currentGlobalLight);
+>>>>>>> Stashed changes
 =======
         SpawnPlayer();
         Destroy(currentGlobalLight);
@@ -82,8 +98,11 @@ public class MainMenu : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Debug.Log("Load");
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -95,6 +114,10 @@ public class MainMenu : MonoBehaviour
     public void LoadGameButton()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
 =======
         GameManager.ClickPlay();
 >>>>>>> Stashed changes
@@ -103,6 +126,7 @@ public class MainMenu : MonoBehaviour
         {
             loadGamePanel.GetComponent<MenuLoadPanel>().ShowLoadGames();
         }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     }
 
@@ -120,6 +144,8 @@ public class MainMenu : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
     }
 
     public void StartTestLocation()
@@ -128,6 +154,7 @@ public class MainMenu : MonoBehaviour
         Destroy(currentGlobalLight);
         SceneManager.LoadScene("TestLocation");
         Instantiate(globalLightPrefab);
+<<<<<<< Updated upstream
     }
 
     private void SpawnPlayer()
@@ -183,6 +210,12 @@ public class MainMenu : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    }
+
+    private void SpawnPlayer()
+    {
+>>>>>>> Stashed changes
         if (GameManager.player == null)
         {
             GameObject player = Instantiate(playerPrefab);
@@ -199,6 +232,7 @@ public class MainMenu : MonoBehaviour
             GameManager.player.GetComponent<SaveLoadController>().SetPlayerDefault();
             GameManager.player.GetComponent<PlayerInput>().enabled = true;
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -206,10 +240,13 @@ public class MainMenu : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     public void Exit()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         GameManager.ClickPlay();
         GameManager.ExitGame();
@@ -227,5 +264,9 @@ public class MainMenu : MonoBehaviour
         GameManager.ExitGame();
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        GameManager.ClickPlay();
+        GameManager.ExitGame();
+>>>>>>> Stashed changes
     }
 }

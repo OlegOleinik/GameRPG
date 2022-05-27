@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4034460344151179667}
   m_Layer: 0
   m_Name: Global Light 2D
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   m_TagString: GlobalLight
 =======
@@ -26,6 +27,9 @@ GameObject:
   m_TagString: GlobalLight
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+  m_TagString: GlobalLight
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +65,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -74,11 +79,14 @@ MonoBehaviour:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
   m_Color: {r: 0.56, g: 0.51, b: 0.44, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: b5dea4e5cf79577000000000935ee48e
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -86,6 +94,8 @@ MonoBehaviour:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -155,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb599b05509e643ac226145d9b0c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   light2d: {fileID: 4034460344151179669}
   cycle: 600
@@ -170,3 +181,7 @@ MonoBehaviour:
   cycle: 600
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+  light2d: {fileID: 4034460344151179669}
+  cycle: 600
+>>>>>>> Stashed changes

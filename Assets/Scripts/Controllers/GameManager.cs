@@ -7,6 +7,7 @@ public static class GameManager
     public static bool isGamePaused;
     public static GameObject player = GameObject.FindGameObjectWithTag("Player");
     public static GameObject UI = GameObject.FindGameObjectWithTag("UI");
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
     private static AudioSource clickSourse = GameObject.Find("ClickSound").GetComponent<AudioSource>();
@@ -25,11 +26,17 @@ public static class GameManager
 
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+
+    private static AudioSource clickSourse = GameObject.Find("ClickSound").GetComponent<AudioSource>();
+
+>>>>>>> Stashed changes
     public static Color cellColorDefault = new Color(0.925f, 0.91f, 0.8f, 0.57f);
     public static Color cellColorOnMouse = new Color(0.59f, 0.29f, 0.29f, 0.57f);
 
     public delegate void EndCorutine();
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -45,6 +52,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public delegate void GamePauseResume();
     public static event GamePauseResume OnGamePause;
     public static event GamePauseResume OnGameResume;
@@ -56,6 +65,7 @@ public static class GameManager
     //}
 
     public static void SetNewPlayerLink(GameObject newPlayer)
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -63,10 +73,13 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     {
         player = newPlayer;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -95,6 +108,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public static void SetNewUILink(GameObject newUI)
     {
         UI = newUI;
@@ -118,6 +133,7 @@ public static class GameManager
         isGamePaused = true;
         Time.timeScale = 0;
         OnGamePause?.Invoke();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -125,6 +141,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     //Возобновить
@@ -132,6 +150,7 @@ public static class GameManager
     {
         isGamePaused = false;
         Time.timeScale = 1;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         OnGameResume?.Invoke();
 =======
@@ -144,10 +163,14 @@ public static class GameManager
         OnGameResume?.Invoke();
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        OnGameResume?.Invoke();
+>>>>>>> Stashed changes
     }
 
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -161,6 +184,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public static IEnumerator Tweeng(this float duration,
     System.Action<float> vary, float aa, float zz, EndCorutine end)
     {
@@ -225,6 +250,7 @@ public static class GameManager
         }
         vary(zz);
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -239,6 +265,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
 
 
@@ -256,6 +284,7 @@ public static class GameManager
         }
         vary(zz);
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -268,6 +297,8 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
 
     public static IEnumerator Tweeng(this float duration,
@@ -285,6 +316,7 @@ public static class GameManager
         vary(zz);
         end();
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -292,4 +324,6 @@ public static class GameManager
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }

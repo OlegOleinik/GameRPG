@@ -7,6 +7,7 @@ public abstract class AQuest : MonoBehaviour
     public int stage;
     public QuestScriptableObject quest;
     public QuestsController questsController;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -23,6 +24,8 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     [SerializeField] private int rewardEP;
     [SerializeField] private int rewardCoin;
     [SerializeField] private ItemScriptableObject[] rewardItems;
@@ -31,6 +34,7 @@ public abstract class AQuest : MonoBehaviour
 
     private GameObject questObject;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -38,12 +42,15 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
         questsController = GameManager.player.GetComponent<QuestsController>();
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -52,10 +59,13 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     private void Start()
     {
         questObject = gameObject;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -63,11 +73,14 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public void SetStage(int stage)
     {
         StartCoroutine(SetStageOnLoad(stage));
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -78,6 +91,8 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public abstract IEnumerator SetStageOnLoad(int stage);
     public string GetDescription()
     {
@@ -101,6 +116,7 @@ public abstract class AQuest : MonoBehaviour
 
     public void SetQuestCompleted()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         GetReward();
         questsController.SetQuestCompleted(this, new CompletedQuest(this));
@@ -123,6 +139,11 @@ public abstract class AQuest : MonoBehaviour
         Destroy(questObject);
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        GetReward();
+        questsController.SetQuestCompleted(this, new CompletedQuest(this));
+        Destroy(questObject);
+>>>>>>> Stashed changes
     }
 
     public void GetReward()
@@ -130,6 +151,7 @@ public abstract class AQuest : MonoBehaviour
         Player player = GameManager.player.GetComponent<Player>();
         player.money += rewardCoin;
         player.AddExperience(rewardEP);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         foreach (var item in rewardItems)
         {
@@ -152,11 +174,16 @@ public abstract class AQuest : MonoBehaviour
         {
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        foreach (var item in rewardItems)
+        {
+>>>>>>> Stashed changes
             questsController.dropedItem.DropItem(item, player.transform.position);
         }
     }
 }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -167,6 +194,8 @@ public abstract class AQuest : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 public class CompletedQuest
 {
     public QuestScriptableObject quest;
@@ -175,6 +204,7 @@ public class CompletedQuest
     {
         this.quest = quest.quest;
         type = quest.GetType();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -185,5 +215,7 @@ public class CompletedQuest
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 }

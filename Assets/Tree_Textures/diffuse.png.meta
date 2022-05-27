@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 939e1f3507fe5834a9a747a8b8512674
 =======
@@ -21,6 +22,9 @@ guid: 939e1f3507fe5834a9a747a8b8512674
 guid: 939e1f3507fe5834a9a747a8b8512674
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+guid: 939e1f3507fe5834a9a747a8b8512674
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -28,6 +32,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     sRGBTexture: 1
 =======
@@ -45,6 +50,9 @@ TextureImporter:
     sRGBTexture: 1
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    sRGBTexture: 1
+>>>>>>> Stashed changes
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -79,6 +87,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   spriteMode: 1
 =======
@@ -96,6 +105,9 @@ TextureImporter:
   spriteMode: 1
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+  spriteMode: 1
+>>>>>>> Stashed changes
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,6 +133,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -144,6 +157,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -152,6 +167,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   spriteSheet:
     serializedVersion: 2
@@ -237,6 +253,11 @@ TextureImporter:
     sprites: []
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
     outline: []
     physicsShape: []
     bones: []
@@ -247,6 +268,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     nameFileIdTable: {}
 =======
@@ -270,6 +292,9 @@ TextureImporter:
     nameFileIdTable: {}
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

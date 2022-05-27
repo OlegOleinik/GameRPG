@@ -9,6 +9,7 @@ public class IncreaseButton : MonoBehaviour
     [SerializeField] private float up;
     private string text;
     private Button button;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -132,6 +133,21 @@ public class IncreaseButton : MonoBehaviour
 
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+
+    private void Awake()
+    {
+        text = gameObject.GetComponentInChildren<Text>().text;
+        button = GetComponent<Button>();
+    }
+
+    public void SetMax(string stat)
+    {
+        button.interactable = false;
+        gameObject.GetComponentInChildren<Text>().text = text + $": max({stat})";
+    }
+
+>>>>>>> Stashed changes
     public void OnClick()
     {
         GetComponentInParent<SpecsPanel>().IncreaseSpec(id, up);
@@ -141,6 +157,7 @@ public class IncreaseButton : MonoBehaviour
     {
         button.interactable = true;
         gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -148,5 +165,7 @@ public class IncreaseButton : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 }

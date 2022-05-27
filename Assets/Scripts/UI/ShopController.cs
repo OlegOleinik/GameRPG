@@ -17,6 +17,7 @@ public class ShopController : MonoBehaviour
     private ShopCell selectedCell;
     private Merchant merchant;
     private ShopCell[] shopCells;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
     private void Awake()
@@ -54,6 +55,10 @@ public class ShopController : MonoBehaviour
     private void Awake()
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+
+    private void Awake()
+>>>>>>> Stashed changes
     {
         shopCells = GetComponentsInChildren<ShopCell>();
         inventoryPanel.onChangeSelected += SetSellButtonActive;
@@ -130,7 +135,10 @@ public class ShopController : MonoBehaviour
         {
             sellButton.GetComponent<Button>().interactable = false;
         }
+<<<<<<< Updated upstream
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     public void SetDescription(AItemCell cell)
@@ -150,6 +158,7 @@ public class ShopController : MonoBehaviour
             description.SetDescription(text);
         }
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 =======
@@ -167,6 +176,9 @@ public class ShopController : MonoBehaviour
 
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+
+>>>>>>> Stashed changes
     private int GetBuyCost(ItemScriptableObject item)
     {
         return System.Convert.ToInt32(item.cost + (item.cost * (0.5 / GameManager.player.GetComponent<Player>().speech)));
@@ -186,6 +198,7 @@ public class ShopController : MonoBehaviour
 
     public void ClickSellButton()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         GameManager.ClickPlay();
 =======
@@ -206,6 +219,9 @@ public class ShopController : MonoBehaviour
         GameManager.ClickPlay();
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+        GameManager.ClickPlay();
+>>>>>>> Stashed changes
 
         if (inventoryPanel.selectedCell != null)
         {
@@ -240,6 +256,7 @@ public class ShopController : MonoBehaviour
             selectedCell.selected = true;
             selectedCell.GetComponent<Image>().color = new Color(0.59f, 0.29f, 0.29f, 0.9f);
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -250,6 +267,8 @@ public class ShopController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     //Очистка клетки от выделения
@@ -262,6 +281,7 @@ public class ShopController : MonoBehaviour
             selectedCell = null;
             buyButton.GetComponent<Button>().interactable = false;
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -272,6 +292,8 @@ public class ShopController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
 
     private void ChangeActive(bool isActive)

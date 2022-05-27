@@ -9,6 +9,7 @@ public class SavedGamesPanel : MonoBehaviour
     [SerializeField] GameObject savedGame;
     private void Start()
     {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -19,12 +20,15 @@ public class SavedGamesPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         gameObject.SetActive(false);
     }
 
     public void ShowResaveGames()
     {
         gameObject.SetActive(true);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -33,10 +37,13 @@ public class SavedGamesPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         if (!Directory.Exists(Application.persistentDataPath + "/Saves"))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -44,6 +51,8 @@ public class SavedGamesPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath + "/Saves/");
         FileInfo[] files = di.GetFiles("*.json");
         ClearGames();
@@ -57,6 +66,7 @@ public class SavedGamesPanel : MonoBehaviour
     public void ShowLoadGames()
     {
         gameObject.SetActive(true);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -66,10 +76,13 @@ public class SavedGamesPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         if (!Directory.Exists(Application.persistentDataPath + "/Saves"))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -77,6 +90,8 @@ public class SavedGamesPanel : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath + "/Saves/");
         FileInfo[] files = di.GetFiles("*.json");
         ClearGames();
@@ -90,6 +105,7 @@ public class SavedGamesPanel : MonoBehaviour
     {
         foreach (var item in content.GetComponentsInChildren<SavedGameButton>())
         {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             Destroy(item.gameObject);
 =======
@@ -103,6 +119,9 @@ public class SavedGamesPanel : MonoBehaviour
             Destroy(item.gameObject);
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+            Destroy(item.gameObject);
+>>>>>>> Stashed changes
         }
     }
 }

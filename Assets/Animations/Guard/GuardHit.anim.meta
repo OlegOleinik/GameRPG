@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Animations/Guard/GuardHit.anim.meta
 guid: 4dfff5e8e5173904b8079e27e721f50f
+=======
+guid: 9680f6f366ed8694c97bd6c324a60eba
+>>>>>>> Stashed changes:Assets/Animations/Guard/GuardBattleIdle.anim.meta
+=======
+guid: 4dfff5e8e5173904b8079e27e721f50f
+>>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

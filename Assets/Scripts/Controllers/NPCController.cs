@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -32,10 +33,13 @@ public class NPCController : MonoBehaviour/*, ISerializationCallbackReceiver*/
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 public class NPCController : MonoBehaviour
 {
     public NPCState[] nPCs;
     public DialogueController dialogueController;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -43,12 +47,15 @@ public class NPCController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 
     private void Start()
     {
         dialogueController = GameManager.UI.GetComponentInChildren<DialogueController>();
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -59,11 +66,14 @@ public class NPCController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public void StopDialog()
     {
         dialogueController.StopDialog();
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     public void StartDialogue(int i, Sprite interlocutorSprite)
     {
@@ -85,6 +95,11 @@ public class NPCController : MonoBehaviour
         dialogueController.StartDialog(GetSentence(i), interlocutorSprite);
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    public void StartDialogue(int i, Sprite interlocutorSprite)
+    {
+        dialogueController.StartDialog(GetSentence(i), interlocutorSprite);
+>>>>>>> Stashed changes
     }
 
     public void SetStartSentence(int i, ADialogueSentence sentence)
@@ -96,6 +111,7 @@ public class NPCController : MonoBehaviour
     {
         return nPCs[i].startDialogueSentence;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -106,12 +122,15 @@ public class NPCController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }
 [System.Serializable]
 public class NPCState
 {
     public bool isDead;
     public ADialogueSentence startDialogueSentence;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -120,6 +139,8 @@ public class NPCState
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     [SerializeField] private ADialogueSentence defaultDialogueSentence;
 
     public void SetDefault()
@@ -127,6 +148,7 @@ public class NPCState
         isDead = false;
         startDialogueSentence = defaultDialogueSentence;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -134,4 +156,6 @@ public class NPCState
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }

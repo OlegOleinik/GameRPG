@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class OpenJournalButton : AButton
 {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -26,11 +27,14 @@ public class OpenJournalButton : AButton
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     public JournalPanel journal;
 
     public override void OpenClosePanel()
     {
         base.OpenClosePanel();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -38,6 +42,8 @@ public class OpenJournalButton : AButton
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         UIScript uIScript = GetComponentInParent<UIScript>();
         if (uIScript.CheckNotOpen(journal.gameObject))
         {
@@ -46,6 +52,7 @@ public class OpenJournalButton : AButton
             uIScript.ExpandPanel(journal.gameObject, transform.localPosition);
         }
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -56,4 +63,6 @@ public class OpenJournalButton : AButton
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
 }

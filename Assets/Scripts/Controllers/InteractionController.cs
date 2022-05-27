@@ -52,6 +52,7 @@ public class InteractionController : MonoBehaviour
             this.interaction = null;
             interactionPos = null;
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -62,6 +63,8 @@ public class InteractionController : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     }
     public void Interact(InputAction.CallbackContext inputValue)
     {
@@ -69,6 +72,7 @@ public class InteractionController : MonoBehaviour
         {
             interaction();
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
      }
 =======
@@ -85,4 +89,7 @@ public class InteractionController : MonoBehaviour
      }
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+     }
+>>>>>>> Stashed changes
 }

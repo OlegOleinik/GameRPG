@@ -109,6 +109,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 10
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -127,10 +128,13 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -144,6 +148,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,6 +167,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 5
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -179,10 +186,13 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -196,6 +206,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,6 +225,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -231,10 +244,13 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
         width: 37
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -248,6 +264,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,6 +277,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -273,6 +292,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     - serializedVersion: 2
       name: Rooster_3
       rect:
@@ -294,6 +315,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -307,6 +329,8 @@ TextureImporter:
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+>>>>>>> Stashed changes
     outline: []
     physicsShape: []
     bones: []
@@ -319,6 +343,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Rooster_1: 133314621
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       Rooster_3: -2059575148
 =======
@@ -339,6 +364,9 @@ TextureImporter:
       Rooster_3: -2059575148
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+      Rooster_3: -2059575148
+>>>>>>> Stashed changes
       Rooster_0: 163693428
       Rooster_2: -1947913938
   spritePackingTag: 

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public abstract class AButton : MonoBehaviour
 {
     public virtual void OnAction(InputAction.CallbackContext inputValue)
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
@@ -58,4 +59,18 @@ public abstract class AButton : MonoBehaviour
 =======
 >>>>>>> Stashed changes
 >>>>>>> 60dc9463f30f4101b954fb049e6ba98c24dc5b76
+=======
+    {
+        
+        if (inputValue.started)
+        {
+
+            OpenClosePanel();
+        }
+    }
+    public virtual void OpenClosePanel()
+    {
+        GameManager.ClickPlay();
+    }
+>>>>>>> Stashed changes
 }
