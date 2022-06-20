@@ -21,6 +21,9 @@ public class Sword : MonoBehaviour
     [SerializeField] private PlayerAnimator playerAnimator;
     private bool _isNextStrike = false;
 
+    private const float ANGLEOFFSET = 60;
+    private const float SWORDCDMOD = 0.7f;
+
     public bool isNextStrike
     {
         get
@@ -107,7 +110,7 @@ public class Sword : MonoBehaviour
         else
         {
             swordInHand.gameObject.SetActive(true);
-            GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));
+            GetComponentInParent<AttackController>().SetSwordCoolDown(SWORDCDMOD * (0.1f / player.attackCooldown));
             SwordDisappear();
         }
 
@@ -151,7 +154,7 @@ public class Sword : MonoBehaviour
         {
             angle += 180;
         }
-        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle + (flipMod * 60), angle - (flipMod * 60), end));
+        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle + (flipMod * ANGLEOFFSET), angle - (flipMod * ANGLEOFFSET), end));
     }
 
     //Удар 2
@@ -171,7 +174,7 @@ public class Sword : MonoBehaviour
         {
             angle += 180;
         }
-        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle - (flipMod * 60), angle + (flipMod * 60), end));
+        StartCoroutine(0.5f.Tweeng((u) => transform.rotation = Quaternion.Euler(0, 0, u), angle - (flipMod * ANGLEOFFSET), angle + (flipMod * ANGLEOFFSET), end));
     }
     public void Strike3()
     {
@@ -202,7 +205,7 @@ public class Sword : MonoBehaviour
             swordInHand.gameObject.SetActive(true);
             player.PlaySound(swordWall);
 
-            GetComponentInParent<AttackController>().SetSwordCoolDown(0.7f * (0.1f / player.attackCooldown));
+            GetComponentInParent<AttackController>().SetSwordCoolDown(SWORDCDMOD * (0.1f / player.attackCooldown));
             SwordDisappear();
             return;
         }

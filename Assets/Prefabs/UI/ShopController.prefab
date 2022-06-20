@@ -582,7 +582,7 @@ MonoBehaviour:
   sellButton: {fileID: 8161305308818573825}
   buyButton: {fileID: 4801027208525907607}
   money: {fileID: 5762016840693766162}
-  description: {fileID: 0}
+  description: {fileID: 66077567166486850}
 --- !u!1 &3698433159436470549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,6 +3568,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}
+--- !u!114 &66077567166486850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5949502514765945745, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}
+  m_PrefabInstance: {fileID: 5943098055518470867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a9f1353fae091468d72a2925073c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5088370954990735371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1506355518906372824, guid: 6ec4ab7b1e9da414d947ac5786adcf1c, type: 3}

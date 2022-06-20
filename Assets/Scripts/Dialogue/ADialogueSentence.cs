@@ -5,6 +5,6 @@ using UnityEngine;
 public abstract class ADialogueSentence : ScriptableObject
 {
     public string interlocutorName;
-    public string sentence;
+    [TextArea] public string sentence;
     public string type;
 }

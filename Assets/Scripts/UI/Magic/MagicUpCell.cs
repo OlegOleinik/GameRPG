@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MagicUpCell : AMagicCell
+public class MagicUpCell : AMagicCell, ISetInteractible
 {
     [SerializeField] private Text costText;
     [SerializeField] private Text lvlText;
+    [SerializeField] private Color unavailableColor = new Color(0.78f, 0.78f, 0.78f, 0.5f);
+    private bool Interactible { get; set; } = true;
+
+    private const int LVLCOST = 70;
 
     public void DrawCell(MagicScriptableObject spell, int lvl)
     {
@@ -18,10 +22,13 @@ public class MagicUpCell : AMagicCell
         if (lvl == 5)
         {
             costText.text = "Max";
+            SetInteractible(false);
         }
         else
         {
-            costText.text = System.Convert.ToString(lvl * 70);
+            int upCost = lvl * LVLCOST;
+            costText.text = System.Convert.ToString(upCost);
+            SetInteractible(GameManager.player.GetComponent<Player>().money > upCost);
         }
     }
     public override void ClearCell()
@@ -33,18 +40,42 @@ public class MagicUpCell : AMagicCell
         costText.text = "";
     }
 
+
+
     public override void OnMouseEnter()
     {
-        SetEnterColor();
+        if (Interactible)
+        {
+            SetEnterColor();
+        }
     }
 
     public override void OnMouseExit()
     {
-        SetDefaultColor();
+        if (Interactible)
+        {
+            SetDefaultColor();
+        }
     }
 
     public void OnMouseClick()
     {
-        gameObject.GetComponentInParent<MagicUpPanel>().UpSpellLvl(magic);
+        if (Interactible)
+        {
+            gameObject.GetComponentInParent<MagicUpPanel>().UpSpellLvl(magic);
+        }
+    }
+
+    public void SetInteractible(bool isInteractible)
+    {
+        Interactible = isInteractible;
+        if (isInteractible)
+        {
+            SetDefaultColor();
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().color = GameManager.cellColorDefault * unavailableColor;
+        }
     }
 }

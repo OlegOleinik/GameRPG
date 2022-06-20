@@ -108,11 +108,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
+        y: 6
         width: 14
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,6 +129,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 3
+        width: 14
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e39b47cbdfdc3a4c8f843b920b28f70
+      internalID: 972338430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 14
         height: 3
@@ -139,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e39b47cbdfdc3a4c8f843b920b28f70
-      internalID: 972338430
+      spriteID: d5f691e7f075a944e832e38f548f670c
+      internalID: 1144047157
       vertices: []
       indices: 
       edges: []
@@ -158,6 +179,7 @@ TextureImporter:
     nameFileIdTable:
       Leg_0: 702650399
       Leg_1: 972338430
+      Leg_2: 1144047157
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

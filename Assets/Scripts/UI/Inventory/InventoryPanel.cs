@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : APanel
 {
     InventoryCellScript[] inventoryCellScripts;
     private Inventory playerInventory;
@@ -18,6 +18,14 @@ public class InventoryPanel : MonoBehaviour
     public delegate void NewSelect();
     public event NewSelect onChangeSelected;
 
+
+    public int sliderValue
+    {
+        get
+        {
+            return (int)dropItemCountSlider.value;
+        }
+    }
     public InventoryCellScript selectedCell
     {
         get
@@ -246,5 +254,10 @@ public class InventoryPanel : MonoBehaviour
             DrawInventory();
             ChangeSelectedActive(isItemInCell);
         }
+    }
+
+    public override void OpenPanel()
+    {
+        DrawInventory();
     }
 }

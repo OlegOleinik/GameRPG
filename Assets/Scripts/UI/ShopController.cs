@@ -78,7 +78,10 @@ public class ShopController : MonoBehaviour
 
         if (inventoryPanel.selectedCell != null)
         {
-            merchant.AddItem(inventoryPanel.selectedCell.item);
+            for (int i = 0; i < inventoryPanel.sliderValue; i++)
+            {
+                merchant.AddItem(inventoryPanel.selectedCell.item);
+            }
             inventoryPanel.SellItem();
         }
     }

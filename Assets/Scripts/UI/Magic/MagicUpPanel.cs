@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
+public class MagicUpPanel : APanel, ISerializationCallbackReceiver
 {
     private Dictionary<MagicScriptableObject, int> magicLevels;
     [SerializeField] private List<MagicScriptableObject> _keys;
     [SerializeField] private List<int> _values;
     private MagicUpCell[] magicUpCells;
+    [SerializeField] private Text money;
+    [SerializeField] private ItemDescription magicDescription;
 
     public List<int> GetLvls()
     {
@@ -57,6 +59,7 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
 
     public void DrawPanel()
     {
+        money.text = $"{GameManager.player.GetComponent<Player>().money}";
         for (int i = 0; i < System.Math.Min(magicUpCells.Length, magicLevels.Count); i++)
         {
             magicUpCells[i].DrawCell(magicLevels.ElementAt(i).Key, magicLevels.ElementAt(i).Value);
@@ -77,5 +80,26 @@ public class MagicUpPanel : MonoBehaviour, ISerializationCallbackReceiver
             magicLevels[spell]++;
             DrawPanel();
         }
+    }
+
+    public void SetDescription(AMagicCell cell)
+    {
+        if (cell.magic != null)
+        {
+            MagicScriptableObject magic = cell.magic;
+            string text = magic.description;
+            magicDescription.SetDescription(text);
+        }
+    }
+
+
+    public void ClearDescription()
+    {
+        magicDescription.ClearDescription();
+    }
+
+    public override void OpenPanel()
+    {
+        DrawPanel();
     }
 }

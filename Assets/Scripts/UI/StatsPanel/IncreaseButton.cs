@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IncreaseButton : MonoBehaviour
+public class IncreaseButton : MonoBehaviour, ISetInteractible
 {
     [SerializeField] private int id;
     [SerializeField] private float up;
@@ -31,5 +31,10 @@ public class IncreaseButton : MonoBehaviour
     {
         button.interactable = true;
         gameObject.GetComponentInChildren<Text>().text = text + $": {stat}";
+    }
+
+    public void SetInteractible(bool isInteractible)
+    {
+        button.interactable = isInteractible;
     }
 }

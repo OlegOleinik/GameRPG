@@ -15,7 +15,7 @@ public class BranchingDialogueSentence : ADialogueSentence
 [System.Serializable]
 public class DialogueChoise
 {
-    public string answer;
+    [TextArea] public string answer;
     public ADialogueSentence nextSentence;
     public delegate void OnChoise();
     public event OnChoise onChoise;

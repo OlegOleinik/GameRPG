@@ -112,9 +112,9 @@ public class DialogueController : MonoBehaviour
     private void SetSpritesUnactive()
     {
         playerPic.color = Color.gray;
-        playerPic.gameObject.transform.localScale = new Vector3(494, 494, 1);
+        playerPic.gameObject.transform.localScale = new Vector3(200, 200, 1);
         interlocutorPic.color = Color.gray;
-        interlocutorPic.gameObject.transform.localScale = new Vector3(494, 494, 1);
+        interlocutorPic.gameObject.transform.localScale = new Vector3(200, 200, 1);
         isInterlocutorActive = false;
         isPlayerActive = false;
     }
@@ -125,11 +125,11 @@ public class DialogueController : MonoBehaviour
         if (setActive && !isInterlocutorActive)
         {
             StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.color = u, Color.gray, Color.white));
-            StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.gameObject.transform.localScale = u, new Vector3(494, 494, 1), new Vector3(594, 594, 1)));
+            StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.gameObject.transform.localScale = u, new Vector3(180, 180, 1), new Vector3(200, 200, 1)));
             if (isPlayerActive)
             {
                 StartCoroutine(0.2f.Tweeng((u) => playerPic.color = u, Color.white, Color.gray));
-                StartCoroutine(0.2f.Tweeng((u) => playerPic.gameObject.transform.localScale = u, new Vector3(594, 594, 1), new Vector3(494, 494, 1)));
+                StartCoroutine(0.2f.Tweeng((u) => playerPic.gameObject.transform.localScale = u, new Vector3(200, 200, 1), new Vector3(180, 180, 1)));
             }
             isInterlocutorActive = true;
             isPlayerActive = false;
@@ -137,11 +137,11 @@ public class DialogueController : MonoBehaviour
         else if(!setActive && !isPlayerActive)
         {
             StartCoroutine(0.2f.Tweeng((u) => playerPic.color = u, Color.gray, Color.white));
-            StartCoroutine(0.2f.Tweeng((u) => playerPic.gameObject.transform.localScale = u, new Vector3(494, 494, 1), new Vector3(594, 594, 1)));
+            StartCoroutine(0.2f.Tweeng((u) => playerPic.gameObject.transform.localScale = u, new Vector3(180, 180, 1), new Vector3(200, 200, 1)));
             if (isInterlocutorActive)
             {
                 StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.color = u, Color.white, Color.gray));
-                StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.gameObject.transform.localScale = u, new Vector3(594, 594, 1), new Vector3(494, 494, 1)));
+                StartCoroutine(0.2f.Tweeng((u) => interlocutorPic.gameObject.transform.localScale = u, new Vector3(200, 200, 1), new Vector3(180, 180, 1)));
             }
             isInterlocutorActive = false;
             isPlayerActive = true;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class JournalPanel : MonoBehaviour
+public class JournalPanel : APanel
 {
     [SerializeField] private Text text;
     [SerializeField] private GameObject questList;
@@ -60,5 +60,10 @@ public class JournalPanel : MonoBehaviour
         {
             journalQuests[0].OnClick();
         }
+    }
+
+    public override void OpenPanel()
+    {
+        DrawQuestPanel();
     }
 }

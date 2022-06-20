@@ -41,17 +41,26 @@ public class PlayerAnimator : MonoBehaviour
 
     public void Walk()
     {
-        legAnim.SetInteger("State", 1);
+        legAnim.SetInteger("State", 4);
+        if (bodyAnim.GetInteger("State") < 0)
+        {
+            bodyAnim.SetInteger("State", 4);
+        }
     }
 
     public void Idle()
     {
         legAnim.SetInteger("State", 0);
+        if (bodyAnim.GetInteger("State")>3)
+        {
+            bodyAnim.SetInteger("State", -1);
+
+        }
     }
 
     public void Run()
     {
-        legAnim.SetInteger("State", 2);
+        legAnim.SetInteger("State", 5);
     }
 
     public void Strike1()
@@ -81,7 +90,16 @@ public class PlayerAnimator : MonoBehaviour
 
     public void HideWeapon()
     {
-        bodyAnim.SetInteger("State", -1);
+        int i = legAnim.GetInteger("State");
+        if (i != 0)
+        {
+            bodyAnim.SetInteger("State", i);
+        }
+        else
+        {
+            bodyAnim.SetInteger("State", -1);
+
+        }
     }
 
     public void BlockFlip(float addTime)

@@ -58,6 +58,16 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     [SerializeField] private PlayerAudio playerAudio;
     private float targetYCamOffset;
 
+    private const float NEXTLVLEXPMOD = 1.5f;
+    private const float NEXTHITCD = 0.5f;
+    private const float ROLLCD = 1f;
+    private const float ROLLFORCEMOD = 50;
+    private const float ROLLSTAMINACOST = 3f;
+    private const float STAMINAREGENCD = 1.5f;
+    private const float STAMINARUNWASTE = 5f;
+    private const float MAGICREGEN = 1.5f;
+    private const float STAMINAREGEN = 0.2f;
+
     public float rollCollDown
     {
         get
@@ -258,7 +268,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
         if (_experience >= _requiredExperience)
         {
             _experience -= _requiredExperience;
-            _requiredExperience *= 1.5f;
+            _requiredExperience *= NEXTLVLEXPMOD;
             _specsPoints++;
             _lvl++;
         }
@@ -273,7 +283,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
                 LostHP(damage);
                 GetForce(force);
             }
-            nextHitTime = Time.time + 0.5f;
+            nextHitTime = Time.time + NEXTHITCD;
         }
     }
 
@@ -285,7 +295,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             {
                 LostHP(damage);
             }
-            nextHitTime = Time.time + 0.5f;
+            nextHitTime = Time.time + NEXTHITCD;
         }
     }
 
@@ -375,11 +385,11 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         if (inputValue.phase == InputActionPhase.Started && _rollCollDown < Time.time && _currentStamina >= 3)
         {
-            _rollCollDown = Time.time + 1f;
-            rb.AddForce(moveDir*50, ForceMode2D.Impulse);
-            _currentStamina -= 3;
+            _rollCollDown = Time.time + ROLLCD;
+            rb.AddForce(moveDir*ROLLFORCEMOD, ForceMode2D.Impulse);
+            _currentStamina -= ROLLSTAMINACOST;
             isRegeneratedStamina = false;
-            nextRegenStaminaTime = Time.time + 1.5f;
+            nextRegenStaminaTime = Time.time + STAMINAREGENCD;
         }
     }
 
@@ -439,7 +449,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     {
         while (_currentStamina<_maxStamina && isRegeneratedStamina)
         {
-            _currentStamina += _maxStamina * 0.2f * Time.deltaTime;
+            _currentStamina += _maxStamina * STAMINAREGEN * Time.deltaTime;
             yield return null;
         }
         isRegeneratedStamina = false;
@@ -448,7 +458,7 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
     public void WasteMagic(float waste)
     {
         _currentMagic -= waste;
-        nextRegenMagicTime = Time.time + 1.5f;
+        nextRegenMagicTime = Time.time + MAGICREGEN;
         isRegeneratedMagic = false;
     }
 
@@ -473,8 +483,8 @@ public class Player : MonoBehaviour, IMoveable, IDamagable, IDieable
             {
                 isRegeneratedStamina = false;
                 shiftMod = 2;
-                _currentStamina -= 5f * Time.deltaTime;
-                nextRegenStaminaTime = Time.time + 1.5f;
+                _currentStamina -= STAMINARUNWASTE * Time.deltaTime;
+                nextRegenStaminaTime = Time.time + STAMINAREGENCD;
                 playerAnimator.Run();
                 playerAudio.PlayerRun();
                 yield return null;

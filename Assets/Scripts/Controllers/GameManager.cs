@@ -19,12 +19,6 @@ public static class GameManager
     public static event GamePauseResume OnGamePause;
     public static event GamePauseResume OnGameResume;
 
-    //public static void FindNewRefs()
-    //{
-    //    player = GameObject.FindGameObjectWithTag("Player");
-    //    UI = GameObject.FindGameObjectWithTag("UI");
-    //}
-
     public static void SetNewPlayerLink(GameObject newPlayer)
     {
         player = newPlayer;

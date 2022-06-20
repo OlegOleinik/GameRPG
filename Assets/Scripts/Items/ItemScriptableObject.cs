@@ -6,7 +6,7 @@ public class ItemScriptableObject : ScriptableObject
 {
     public string type;
     public Sprite itemSprite;
-    public string description;
+    [TextArea] public string description;
     public int cost;
     public string itemName;
     public int maxItems;

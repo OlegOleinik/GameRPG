@@ -50,17 +50,21 @@ public class MenuPlayer : MonoBehaviour
             rb.position += new Vector2((moveDir * 0.06f), 0);
             audioSource.UnPause();
         }
+        else
+        {
+            audioSource.Pause();
+        }
     }
 
     private void FlipPlayer(float x)
     {
         if (x>0)
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            gameObject.transform.localScale = Vector3.one;
         }
         else if (x < 0)
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
     public void GetMove(InputAction.CallbackContext inputValue)
@@ -68,7 +72,7 @@ public class MenuPlayer : MonoBehaviour
         float value = inputValue.ReadValue<float>();
         if (inputValue.phase == InputActionPhase.Started)
         {
-            legAnim.SetInteger("State", 1);
+            legAnim.SetInteger("State", 4);
             FlipPlayer(value);
             isHold = true;
         }
@@ -76,7 +80,6 @@ public class MenuPlayer : MonoBehaviour
         {
             legAnim.SetInteger("State", 0);
             isHold = false;
-            audioSource.Pause();
         }
         moveDir = value;
     }

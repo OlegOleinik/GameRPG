@@ -29,6 +29,9 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
     protected List<Transform> targetList = new List<Transform>();
     [SerializeField] protected AudioSource audioSource;
 
+    private const float NEXTDAMAGECD = 0.5f;
+
+
     public float nextDamage
     {
         get
@@ -124,7 +127,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         {
             LostHP(damage);
             GetForce(force);
-            SetDamageCoolDown(0.5f);
+            SetDamageCoolDown(NEXTDAMAGECD);
             if (_currentHP <= 0)
             {
                 Die();
@@ -136,7 +139,7 @@ public abstract class AEnemy : MonoBehaviour, IMoveable, IDamagable, IDieable
         if (nextDamage < Time.time)
         {
             LostHP(damage);
-            SetDamageCoolDown(0.5f);
+            SetDamageCoolDown(NEXTDAMAGECD);
             if (_currentHP <= 0)
             {
                 Die();

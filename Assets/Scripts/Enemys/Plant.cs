@@ -59,7 +59,7 @@ public class Plant : AEnemy
     private void Shoot()
     {
         audioSource.Play();
-        plantBullet.transform.rotation = Quaternion.Euler(0, 0, plantHead.transform.rotation.eulerAngles.z+45);/*new Quaternion(0, 0, Vector2.Angle(plantHead.transform.position, targetList[0].position), 0)*/;
+        plantBullet.transform.rotation = Quaternion.Euler(0, 0, plantHead.transform.rotation.eulerAngles.z+45);
         plantBullet.transform.position = shootPoint.position;
         plantBullet.gameObject.SetActive(true);
         plantBullet.StartShoot();

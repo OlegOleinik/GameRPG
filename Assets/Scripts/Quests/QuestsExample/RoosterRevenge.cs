@@ -23,7 +23,7 @@ public class RoosterRevenge : AQuest
         foreach (var item in inventory.inventorySlots)
         {
 
-            if (item.ItemScriptableObject.itemName == "Feather")
+            if (item.ItemScriptableObject.itemName == "Перо")
             {
                 currentCount += item.count;
             }
@@ -50,11 +50,12 @@ public class RoosterRevenge : AQuest
 
     private void Stage1()
     {
+        inventory.onItemChange -= CheckFeathers;
         questsController.onFinishRoosterRevenge -= Stage1;
         int deletedCount = 0;
         for (int i = 0; i < inventory.inventorySlots.Count; i++)
         {
-            if (inventory.inventorySlots[i].ItemScriptableObject.itemName == "Feather")
+            if (inventory.inventorySlots[i].ItemScriptableObject.itemName == "Перо")
             {
                 if (inventory.inventorySlots[i].count >= 3)
                 {
@@ -62,7 +63,6 @@ public class RoosterRevenge : AQuest
                     {
                         inventory.DeliteItem(i);
                     }
-                    return;
                 }
                 else
                 {
@@ -79,7 +79,6 @@ public class RoosterRevenge : AQuest
         taskDesc += GetStage2Task;
         SetQuestCompleted();
         GameManager.player.GetComponent<NPCController>().SetStartSentence(13, shopAble);
-        inventory.onItemChange -= CheckFeathers;
     }
 
     private string GetStage0Task()

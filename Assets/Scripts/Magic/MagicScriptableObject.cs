@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicScriptableObject : ScriptableObject
 {
     public Sprite spellSprite;
-    public string description;
+    [TextArea] public string description;
     public float magicCost;
     public string spellName;
     public float coolDownTime;
